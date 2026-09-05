@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AZORA.PK | Pakistani Fashion</title>
+<title>AZORA.PK | Premium Pakistani Fashion</title>
 
 <style>
 *{
@@ -22,6 +22,11 @@ body{
 a{
     text-decoration:none;
     color:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
 }
 
 /* TOP BAR */
@@ -74,7 +79,6 @@ a{
 
 .nav a{
     font-size:13px;
-    letter-spacing:.5px;
 }
 
 .nav a:hover{
@@ -84,7 +88,7 @@ a{
 
 .icons{
     display:flex;
-    gap:20px;
+    gap:18px;
     font-size:20px;
 }
 
@@ -92,7 +96,6 @@ a{
     cursor:pointer;
 }
 
-/* MOBILE HEADER */
 .mobile-menu{
     display:none;
 }
@@ -110,7 +113,6 @@ a{
     width:100%;
     height:100%;
     object-fit:cover;
-    object-position:center;
 }
 
 .hero-overlay{
@@ -118,8 +120,8 @@ a{
     inset:0;
     background:linear-gradient(
         90deg,
-        rgba(0,0,0,.48),
-        rgba(0,0,0,.08),
+        rgba(0,0,0,.50),
+        rgba(0,0,0,.12),
         rgba(0,0,0,0)
     );
 }
@@ -130,7 +132,7 @@ a{
     top:50%;
     transform:translateY(-50%);
     color:white;
-    max-width:480px;
+    max-width:500px;
 }
 
 .hero-content small{
@@ -252,7 +254,6 @@ a{
     background:white;
 }
 
-/* PRODUCT GRID */
 .products{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -290,7 +291,6 @@ a{
     color:#fff;
     padding:7px 10px;
     font-size:10px;
-    letter-spacing:.5px;
     z-index:2;
 }
 
@@ -358,7 +358,6 @@ a{
 
 /* PROMO */
 .promo{
-    margin-top:20px;
     height:500px;
     position:relative;
     overflow:hidden;
@@ -396,6 +395,144 @@ a{
     margin:12px 0 20px;
 }
 
+/* PAYMENT BANNER */
+.payment-banner{
+    background:#111;
+    color:white;
+    padding:25px;
+}
+
+.payment-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.payment-title{
+    font-family:Georgia,serif;
+    font-size:25px;
+}
+
+.payment-text{
+    color:#ccc;
+    font-size:12px;
+    margin-top:7px;
+}
+
+.payment-btn{
+    background:white;
+    border:0;
+    padding:14px 24px;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* PAYMENT MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:2000;
+    padding:20px;
+    overflow:auto;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+    background:white;
+    margin:40px auto;
+    padding:30px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:14px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.modal-title{
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.free-delivery{
+    background:#f3f1ec;
+    padding:15px;
+    margin:20px 0;
+    text-align:center;
+    font-size:13px;
+}
+
+.payment-method{
+    border:1px solid #ddd;
+    padding:17px;
+    margin-top:12px;
+}
+
+.payment-method strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.account{
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.copy-btn{
+    margin-top:10px;
+    padding:7px 12px;
+    background:#111;
+    color:white;
+    border:0;
+    font-size:10px;
+}
+
+.payment-note{
+    margin-top:20px;
+    color:#777;
+    font-size:11px;
+    line-height:1.6;
+}
+
+.payment-form{
+    margin-top:20px;
+}
+
+.payment-form label{
+    display:block;
+    font-size:12px;
+    margin-bottom:7px;
+}
+
+.payment-form input{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+.paid-btn{
+    width:100%;
+    margin-top:12px;
+    padding:15px;
+    background:#111;
+    color:white;
+    border:0;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
 /* FEATURES */
 .features{
     background:#f7f6f3;
@@ -416,7 +553,6 @@ a{
 
 .feature strong{
     font-size:12px;
-    letter-spacing:.5px;
 }
 
 .feature p{
@@ -482,8 +618,8 @@ footer a{
     position:fixed;
     right:20px;
     bottom:20px;
-    width:52px;
-    height:52px;
+    width:54px;
+    height:54px;
     border-radius:50%;
     background:#25D366;
     color:white;
@@ -492,7 +628,7 @@ footer a{
     align-items:center;
     font-size:25px;
     z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
 /* MOBILE */
@@ -516,7 +652,7 @@ footer a{
     }
 
     .icons{
-        gap:13px;
+        gap:12px;
         font-size:18px;
     }
 
@@ -565,6 +701,11 @@ footer a{
 
     .promo-content h2{
         font-size:40px;
+    }
+
+    .payment-inner{
+        flex-direction:column;
+        text-align:center;
     }
 
     .features{
@@ -632,6 +773,11 @@ footer a{
     .footer-grid{
         grid-template-columns:1fr;
     }
+
+    .modal-box{
+        margin:15px auto;
+        padding:22px;
+    }
 }
 </style>
 </head>
@@ -640,8 +786,9 @@ footer a{
 
 <!-- TOP BAR -->
 <div class="topbar">
-    FREE DELIVERY ON ORDERS ABOVE RS. 4,999
+    ADVANCE PAYMENT PAR DELIVERY BILKUL FREE • AZORA.PK
 </div>
+
 
 <!-- HEADER -->
 <header class="header">
@@ -657,7 +804,7 @@ footer a{
     <ul class="nav">
         <li><a href="#">NEW IN</a></li>
         <li><a href="#">WOMEN</a></li>
-        <li><a href="#">UNSTITCHED</a></li>
+        <li><a href="#collection">UNSTITCHED</a></li>
         <li><a href="#">READY TO WEAR</a></li>
         <li><a href="#">MEN</a></li>
         <li><a href="#">ACCESSORIES</a></li>
@@ -676,8 +823,7 @@ footer a{
 </header>
 
 
-<!-- HERO BANNER -->
-
+<!-- HERO -->
 <section class="hero">
 
 <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1800&q=85">
@@ -707,8 +853,7 @@ footer a{
 </section>
 
 
-<!-- SHOP BY CATEGORY -->
-
+<!-- CATEGORIES -->
 <section class="section">
 
 <div class="heading">
@@ -751,12 +896,10 @@ footer a{
 </div>
 
 </div>
-
 </section>
 
 
 <!-- PRODUCTS -->
-
 <section class="section" id="collection">
 
 <div class="heading">
@@ -891,12 +1034,10 @@ Rs. 3,699
 </div>
 
 </div>
-
 </section>
 
 
-<!-- BIG PROMO -->
-
+<!-- PROMO -->
 <section class="section">
 
 <div class="promo">
@@ -914,7 +1055,7 @@ Everyday.<br>
 Elevated.
 </h2>
 
-<a class="hero-btn" href="#">
+<a class="hero-btn" href="#collection">
 SHOP WOMEN
 </a>
 
@@ -925,18 +1066,126 @@ SHOP WOMEN
 </section>
 
 
-<!-- FEATURES -->
+<!-- ADVANCE PAYMENT BANNER -->
+<section class="payment-banner">
 
+<div class="payment-inner">
+
+<div>
+<div class="payment-title">
+Advance Payment = FREE Delivery
+</div>
+
+<div class="payment-text">
+Pay in advance through JazzCash or Meezan Bank and get FREE delivery.
+</div>
+</div>
+
+<button class="payment-btn" onclick="openPayment()">
+VIEW PAYMENT DETAILS
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAYMENT MODAL -->
+<div class="modal" id="paymentModal">
+
+<div class="modal-box">
+
+<div class="close" onclick="closePayment()">×</div>
+
+<div class="modal-title">
+Advance Payment
+</div>
+
+<p style="font-size:12px;color:#777;">
+Pay your order in advance and your delivery is completely FREE.
+</p>
+
+
+<div class="free-delivery">
+✓ ADVANCE PAYMENT CONFIRMED = FREE DELIVERY
+</div>
+
+
+<!-- JAZZCASH -->
+<div class="payment-method">
+
+<strong>JazzCash</strong>
+
+<div class="account">
+0308-440-5550
+</div>
+
+<button class="copy-btn"
+onclick="copyText('03084405550')">
+COPY NUMBER
+</button>
+
+</div>
+
+
+<!-- MEEZAN -->
+<div class="payment-method">
+
+<strong>Meezan Bank</strong>
+
+<div class="account">
+98430104527600
+</div>
+
+<button class="copy-btn"
+onclick="copyText('98430104527600')">
+COPY ACCOUNT
+</button>
+
+</div>
+
+
+<div class="payment-note">
+After making payment, enter your transaction ID below.
+Our team will verify the payment and process your order.
+</div>
+
+
+<div class="payment-form">
+
+<label>
+Transaction ID
+</label>
+
+<input
+type="text"
+id="transactionId"
+placeholder="Enter your transaction ID"
+>
+
+
+<button class="paid-btn"
+onclick="paymentSubmitted()">
+I HAVE PAID
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- FEATURES -->
 <div class="features">
 
 <div class="feature">
 <strong>FREE DELIVERY</strong>
-<p>On orders above Rs. 4,999</p>
+<p>On advance payment orders</p>
 </div>
 
 <div class="feature">
 <strong>SECURE PAYMENT</strong>
-<p>100% secure checkout</p>
+<p>JazzCash & Meezan Bank</p>
 </div>
 
 <div class="feature">
@@ -946,14 +1195,13 @@ SHOP WOMEN
 
 <div class="feature">
 <strong>WHATSAPP SUPPORT</strong>
-<p>We're here to help</p>
+<p>0308-440-5550</p>
 </div>
 
 </div>
 
 
 <!-- FOOTER -->
-
 <footer>
 
 <div class="footer-grid">
@@ -978,7 +1226,7 @@ ready-to-wear and accessories.
 <h4>SHOP</h4>
 
 <a href="#">New In</a>
-<a href="#">Unstitched</a>
+<a href="#collection">Unstitched</a>
 <a href="#">Ready To Wear</a>
 <a href="#">Sale</a>
 
@@ -999,12 +1247,23 @@ ready-to-wear and accessories.
 
 <div>
 
-<h4>FOLLOW US</h4>
+<h4>CONTACT</h4>
 
-<a href="#">Instagram</a>
-<a href="#">Facebook</a>
-<a href="#">TikTok</a>
-<a href="#">WhatsApp</a>
+<a href="https://wa.me/923084405550">
+WhatsApp: 0308-440-5550
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+<a href="#">
+Facebook
+</a>
+
+<a href="#">
+TikTok
+</a>
 
 </div>
 
@@ -1018,13 +1277,62 @@ ready-to-wear and accessories.
 </footer>
 
 
-<!-- WHATSAPP -->
-
-<a class="whatsapp"
-href="https://wa.me/923000000000"
-target="_blank">
+<!-- WHATSAPP BUTTON -->
+<a
+class="whatsapp"
+href="https://wa.me/923084405550"
+target="_blank"
+aria-label="WhatsApp">
 ☏
 </a>
 
-</body>
-</html>
+
+<script>
+
+/* OPEN PAYMENT */
+function openPayment(){
+    document.getElementById("paymentModal").style.display="block";
+    document.body.style.overflow="hidden";
+}
+
+
+/* CLOSE PAYMENT */
+function closePayment(){
+    document.getElementById("paymentModal").style.display="none";
+    document.body.style.overflow="auto";
+}
+
+
+/* COPY PAYMENT DETAILS */
+function copyText(text){
+
+    navigator.clipboard.writeText(text)
+    .then(function(){
+
+        alert("Copied: " + text);
+
+    })
+    .catch(function(){
+
+        alert("Please copy manually: " + text);
+
+    });
+
+}
+
+
+/* PAYMENT SUBMITTED */
+function paymentSubmitted(){
+
+    const transaction =
+        document.getElementById("transactionId").value.trim();
+
+    if(transaction === ""){
+
+        alert("Please enter your Transaction ID.");
+
+        return;
+    }
+
+    alert(
+     
