@@ -2,978 +2,1014 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AZORA — Premium Fashion</title>
 
 <style>
-:root{
-  --bg:#090909;
-  --surface:#111;
-  --surface2:#171717;
-  --gold:#c8a96b;
-  --cream:#f4eee4;
-  --muted:#aaa;
-  --line:rgba(255,255,255,.10);
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth}
-
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--cream);
+    font-family:Poppins,sans-serif;
+    color:#222;
+    background:#fff;
 }
 
-button,input,select,textarea{font:inherit}
+button,input,select,textarea{
+    font-family:inherit;
+}
 
 button{cursor:pointer}
 
 a{text-decoration:none;color:inherit}
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
+
 .topbar{
-  background:#050505;
-  color:#d8c49b;
-  text-align:center;
-  padding:9px;
-  font-size:12px;
-  letter-spacing:1.5px;
-  border-bottom:1px solid var(--line);
+    background:#171717;
+    color:#fff;
+    text-align:center;
+    padding:9px 15px;
+    font-size:12px;
+    letter-spacing:.5px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(9,9,9,.94);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  max-width:1400px;
-  margin:auto;
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 24px;
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:#fff;
+    border-bottom:1px solid #eee;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-  font-family:Georgia,serif;
-  font-size:30px;
-  letter-spacing:7px;
-  color:#fff;
+    font-family:"Playfair Display",serif;
+    font-size:31px;
+    letter-spacing:4px;
+    font-weight:600;
 }
 
-.logo span{color:var(--gold)}
-
-.navlinks{
-  display:flex;
-  gap:28px;
-  align-items:center;
+.nav{
+    display:flex;
+    gap:28px;
+    font-size:13px;
 }
 
-.navlinks a{
-  font-size:12px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:#ddd;
+.nav a{
+    position:relative;
+    cursor:pointer;
 }
 
-.navlinks a:hover{color:var(--gold)}
-
-.actions{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.nav a:hover{
+    opacity:.6;
 }
 
-.iconbtn{
-  width:40px;
-  height:40px;
-  border:1px solid var(--line);
-  background:#111;
-  color:#fff;
-  border-radius:50%;
+.header-icons{
+    display:flex;
+    gap:17px;
+    align-items:center;
 }
 
-/* HERO */
-.hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 75% 35%,rgba(190,150,80,.16),transparent 35%),
-    linear-gradient(100deg,#080808 20%,#15120e 100%);
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  right:-120px;
-  top:-100px;
-  width:650px;
-  height:650px;
-  border-radius:50%;
-  border:1px solid rgba(200,169,107,.15);
-}
-
-.heroContent{
-  max-width:1400px;
-  width:100%;
-  margin:auto;
-  padding:80px 7%;
-  position:relative;
-  z-index:2;
-}
-
-.eyebrow{
-  color:var(--gold);
-  letter-spacing:5px;
-  font-size:11px;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-
-.hero h1{
-  font-family:Georgia,serif;
-  font-size:clamp(48px,7vw,92px);
-  line-height:.95;
-  font-weight:400;
-  max-width:650px;
-}
-
-.hero h1 em{
-  color:var(--gold);
-  font-style:normal;
-}
-
-.hero p{
-  max-width:500px;
-  color:#aaa;
-  line-height:1.8;
-  margin:28px 0;
-}
-
-.btn{
-  border:1px solid var(--gold);
-  background:var(--gold);
-  color:#090909;
-  padding:15px 28px;
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.btn.dark{
-  background:transparent;
-  color:#fff;
-}
-
-/* COMMON */
-.section{
-  max-width:1400px;
-  margin:auto;
-  padding:75px 24px;
-}
-
-.sectionHead{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  margin-bottom:32px;
-}
-
-.sectionHead h2{
-  font-family:Georgia,serif;
-  font-size:38px;
-  font-weight:400;
-}
-
-.sectionHead span{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:2px;
-}
-
-/* CIRCULAR CATALOG */
-.catalogWrap{
-  overflow:hidden;
-  margin-bottom:50px;
-}
-
-.catalogRow{
-  display:flex;
-  flex-wrap:nowrap;
-  gap:24px;
-  overflow-x:auto;
-  overflow-y:hidden;
-  padding:5px 2px 18px;
-  scrollbar-width:none;
-  -webkit-overflow-scrolling:touch;
-}
-
-.catalogRow::-webkit-scrollbar{display:none}
-
-.catalogItem{
-  flex:0 0 112px;
-  text-align:center;
-  cursor:pointer;
-}
-
-.catalogCircle{
-  width:104px;
-  height:104px;
-  border-radius:50%;
-  overflow:hidden;
-  border:1px solid rgba(200,169,107,.5);
-  background:#181818;
-  margin:auto;
-  transition:.3s;
-}
-
-.catalogCircle img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.4s;
-}
-
-.catalogItem:hover .catalogCircle{
-  border-color:var(--gold);
-  transform:translateY(-4px);
-}
-
-.catalogItem:hover img{transform:scale(1.08)}
-
-.catalogItem p{
-  margin-top:12px;
-  font-size:11px;
-  letter-spacing:1px;
-  color:#ddd;
-  white-space:nowrap;
-}
-
-/* PRODUCTS */
-.productGrid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.product{
-  background:#111;
-  border:1px solid var(--line);
-  position:relative;
-  overflow:hidden;
-}
-
-.productImage{
-  aspect-ratio:3/4;
-  overflow:hidden;
-  background:#191919;
-  position:relative;
-}
-
-.productImage img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.45s;
-}
-
-.product:hover .productImage img{
-  transform:scale(1.04);
+.icon-btn{
+    border:0;
+    background:none;
+    font-size:19px;
+    position:relative;
 }
 
 .badge{
-  position:absolute;
-  left:12px;
-  top:12px;
-  background:var(--gold);
-  color:#111;
-  padding:6px 9px;
-  font-size:9px;
-  font-weight:bold;
-  letter-spacing:1px;
+    position:absolute;
+    top:-7px;
+    right:-9px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#111;
+    color:#fff;
+    font-size:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.heart{
-  position:absolute;
-  right:12px;
-  top:12px;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(0,0,0,.55);
-  color:#fff;
+/* ================= HERO ================= */
+
+.hero{
+    min-height:520px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#f5f2ee;
 }
 
-.productInfo{
-  padding:17px;
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:70px 10%;
 }
 
-.productInfo small{
-  color:var(--gold);
-  letter-spacing:1px;
+.hero-small{
+    letter-spacing:3px;
+    font-size:11px;
+    margin-bottom:16px;
 }
 
-.productInfo h3{
-  font-family:Georgia,serif;
-  font-size:18px;
-  font-weight:400;
-  margin:7px 0;
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:60px;
+    line-height:1.05;
+    font-weight:500;
+}
+
+.hero p{
+    margin:22px 0 30px;
+    max-width:450px;
+    color:#666;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.primary-btn{
+    width:max-content;
+    padding:13px 28px;
+    background:#171717;
+    color:white;
+    border:1px solid #171717;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+.primary-btn:hover{
+    background:#fff;
+    color:#171717;
+}
+
+.hero-image{
+    min-height:520px;
+    background:
+      linear-gradient(rgba(0,0,0,.04),rgba(0,0,0,.04)),
+      url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1200&q=85")
+      center/cover;
+}
+
+/* ================= GENERAL ================= */
+
+.section{
+    padding:70px 5%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:38px;
+}
+
+.section-title span{
+    font-size:10px;
+    letter-spacing:3px;
+    color:#888;
+}
+
+.section-title h2{
+    font-family:"Playfair Display",serif;
+    font-size:34px;
+    font-weight:500;
+    margin-top:8px;
+}
+
+/* ================= CIRCULAR CATALOG ================= */
+
+.catalog-section{
+    padding:58px 5%;
+    border-bottom:1px solid #f0f0f0;
+}
+
+.catalog-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    margin-bottom:27px;
+}
+
+.catalog-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:29px;
+    font-weight:500;
+}
+
+.catalog-heading span{
+    font-size:11px;
+    letter-spacing:1px;
+    color:#777;
+}
+
+.catalog-row{
+    display:flex;
+    gap:25px;
+    overflow-x:auto;
+    padding:5px 3px 15px;
+    scrollbar-width:none;
+}
+
+.catalog-row::-webkit-scrollbar{
+    display:none;
+}
+
+.catalog-item{
+    min-width:118px;
+    text-align:center;
+    border:0;
+    background:none;
+}
+
+.catalog-image{
+    width:112px;
+    height:112px;
+    border-radius:50%;
+    overflow:hidden;
+    border:1px solid #e5e5e5;
+    margin:auto;
+    background:#f3f1ee;
+}
+
+.catalog-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.catalog-item:hover img{
+    transform:scale(1.07);
+}
+
+.catalog-name{
+    margin-top:12px;
+    font-size:12px;
+    white-space:nowrap;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    background:#fff;
+    position:relative;
+}
+
+.product-img{
+    height:390px;
+    background:#f4f2ef;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product:hover .product-img img{
+    transform:scale(1.035);
+}
+
+.product-info{
+    padding:13px 3px 18px;
+}
+
+.product-name{
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.product-cat{
+    color:#999;
+    font-size:10px;
+    margin-bottom:7px;
 }
 
 .price{
-  font-size:15px;
-  font-weight:bold;
+    font-size:13px;
+    font-weight:500;
 }
 
-.old{
-  color:#777;
-  text-decoration:line-through;
-  margin-left:7px;
-  font-size:12px;
+.old-price{
+    color:#aaa;
+    text-decoration:line-through;
+    margin-left:6px;
+    font-size:11px;
 }
 
-.add{
-  width:100%;
-  margin-top:14px;
-  padding:11px;
-  background:#181818;
-  color:#fff;
-  border:1px solid var(--line);
-  letter-spacing:1.5px;
-  font-size:10px;
+.sale-tag{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#171717;
+    color:#fff;
+    padding:6px 9px;
+    font-size:9px;
+    letter-spacing:1px;
 }
 
-.add:hover{
-  background:var(--gold);
-  color:#111;
+.wish{
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:#fff;
+    border:0;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    font-size:17px;
 }
 
-/* PROMO */
+/* ================= ADD BUTTON ================= */
+
+.add-btn{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:1px solid #ddd;
+    background:#fff;
+    font-size:11px;
+}
+
+.add-btn:hover{
+    background:#171717;
+    color:#fff;
+}
+
+/* ================= PROMO ================= */
+
 .promo{
-  max-width:1400px;
-  margin:30px auto 0;
-  padding:0 24px;
+    margin:25px 5%;
+    min-height:310px;
+    background:
+      linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+      url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1600&q=85")
+      center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
 }
 
-.promoBox{
-  min-height:260px;
-  display:flex;
-  align-items:center;
-  padding:50px;
-  background:
-    radial-gradient(circle at 80% 50%,rgba(200,169,107,.18),transparent 30%),
-    #13110e;
-  border:1px solid rgba(200,169,107,.25);
+.promo h2{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    font-weight:500;
 }
 
-.promoBox h2{
-  font-family:Georgia,serif;
-  font-size:45px;
-  font-weight:400;
+.promo p{
+    margin:12px 0 22px;
+    font-size:13px;
 }
 
-.promoBox p{
-  color:#aaa;
-  margin:12px 0 25px;
+/* ================= PAYMENT ================= */
+
+.payment-banner{
+    margin:60px 5% 0;
+    padding:35px;
+    background:#f5f2ee;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* FEATURES */
+.payment-banner h3{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    font-weight:500;
+}
+
+.payment-banner p{
+    font-size:12px;
+    color:#666;
+    margin-top:7px;
+}
+
+.outline-btn{
+    padding:12px 23px;
+    border:1px solid #222;
+    background:#fff;
+    font-size:11px;
+}
+
+/* ================= FEATURES ================= */
+
 .features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:45px 5%;
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+    margin-top:60px;
 }
 
 .feature{
-  text-align:center;
-  padding:30px 15px;
-  border-right:1px solid var(--line);
+    text-align:center;
+    padding:15px;
 }
 
-.feature:last-child{border:0}
-
 .feature strong{
-  display:block;
-  color:#fff;
-  margin-bottom:7px;
+    display:block;
+    font-size:12px;
+    margin-bottom:6px;
 }
 
 .feature span{
-  font-size:11px;
-  color:#888;
+    color:#888;
+    font-size:10px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
-  background:#050505;
-  padding:65px 24px 30px;
-  margin-top:60px;
+    background:#171717;
+    color:#fff;
+    padding:55px 5% 25px;
 }
 
-.footerGrid{
-  max-width:1400px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:50px;
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+    gap:40px;
 }
 
-.footerLogo{
-  font-family:Georgia,serif;
-  font-size:30px;
-  letter-spacing:6px;
-}
-
-footer p{
-  color:#777;
-  line-height:1.8;
-  margin-top:18px;
-  max-width:400px;
+footer h3{
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+    margin-bottom:15px;
 }
 
 footer h4{
-  color:var(--gold);
-  letter-spacing:2px;
-  font-size:11px;
-  margin-bottom:18px;
+    font-size:12px;
+    margin-bottom:15px;
 }
 
-footer li{
-  list-style:none;
-  color:#888;
-  margin:11px 0;
-  font-size:13px;
-  cursor:pointer;
+footer p,footer li{
+    color:#aaa;
+    font-size:11px;
+    line-height:2;
 }
 
-.copy{
-  max-width:1400px;
-  margin:50px auto 0;
-  padding-top:20px;
-  border-top:1px solid var(--line);
-  color:#555;
-  font-size:11px;
+footer ul{
+    list-style:none;
 }
 
-/* WHATSAPP */
+.footer-bottom{
+    margin-top:45px;
+    padding-top:18px;
+    border-top:1px solid #333;
+    text-align:center;
+    color:#777;
+    font-size:10px;
+}
+
+/* ================= WHATSAPP ================= */
+
 .whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  z-index:100;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#25D366;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  box-shadow:0 8px 30px rgba(0,0,0,.5);
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:57px;
+    height:57px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    z-index:1500;
+    box-shadow:0 5px 25px rgba(0,0,0,.2);
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
+
+.modal-bg{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:3000;
+    padding:15px;
+}
+
+.modal-bg.active{
+    display:flex;
+}
+
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.75);
-  backdrop-filter:blur(8px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:200;
-  padding:20px;
+    width:min(560px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    padding:32px;
+    position:relative;
 }
 
-.modal.active{display:flex}
-
-.modalBox{
-  width:min(600px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:#111;
-  border:1px solid rgba(200,169,107,.3);
-  padding:30px;
-  position:relative;
+.modal h2{
+    font-family:"Playfair Display",serif;
+    font-size:29px;
+    font-weight:500;
+    margin-bottom:20px;
 }
 
 .close{
-  position:absolute;
-  right:15px;
-  top:15px;
-  background:none;
-  border:0;
-  color:#fff;
-  font-size:24px;
+    position:absolute;
+    right:18px;
+    top:15px;
+    border:0;
+    background:none;
+    font-size:24px;
 }
 
-.modalBox h2{
-  font-family:Georgia,serif;
-  font-size:32px;
-  font-weight:400;
-  margin-bottom:20px;
+.modal p{
+    font-size:13px;
+    color:#666;
+    line-height:1.9;
 }
 
-.form{
-  display:grid;
-  gap:12px;
+/* ================= FORM ================= */
+
+.form-group{
+    margin-bottom:14px;
 }
 
-.form input,
-.form select,
-.form textarea{
-  width:100%;
-  background:#090909;
-  color:#fff;
-  border:1px solid var(--line);
-  padding:13px;
-  outline:none;
+.form-group label{
+    display:block;
+    font-size:11px;
+    margin-bottom:6px;
 }
 
-.form textarea{min-height:90px;resize:vertical}
-
-/* CART */
-.cartItem{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:15px 0;
-  border-bottom:1px solid var(--line);
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:11px;
+    border:1px solid #ddd;
+    outline:none;
+    font-size:12px;
 }
 
-.cartItem small{color:#888}
+.form-group textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.submit-btn{
+    width:100%;
+    padding:13px;
+    background:#171717;
+    color:#fff;
+    border:0;
+    font-size:12px;
+}
+
+/* ================= ACCOUNT ================= */
+
+.account-tabs{
+    display:flex;
+    gap:20px;
+    margin-bottom:22px;
+    border-bottom:1px solid #eee;
+}
+
+.account-tab{
+    padding:10px 0;
+    border:0;
+    background:none;
+    font-size:12px;
+}
+
+.account-tab.active{
+    border-bottom:2px solid #111;
+}
+
+/* ================= CART ================= */
+
+.cart-item{
+    display:flex;
+    gap:13px;
+    padding:13px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+    width:75px;
+    height:90px;
+    object-fit:cover;
+}
+
+.cart-details{
+    flex:1;
+}
+
+.cart-details strong{
+    font-size:12px;
+}
+
+.cart-details small{
+    display:block;
+    color:#888;
+    margin:5px 0;
+}
 
 .qty{
-  display:flex;
-  gap:8px;
-  align-items:center;
-  margin-top:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
 .qty button{
-  width:27px;
-  height:27px;
-  background:#222;
-  color:#fff;
-  border:1px solid var(--line);
+    width:25px;
+    height:25px;
+    border:1px solid #ddd;
+    background:#fff;
 }
 
-.total{
-  display:flex;
-  justify-content:space-between;
-  margin:20px 0;
-  font-size:18px;
+.remove{
+    color:#999;
+    border:0;
+    background:none;
+    font-size:11px;
 }
 
-/* MOBILE */
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+    padding:18px 0;
+    font-size:14px;
+}
+
+/* ================= PAYMENT BOX ================= */
+
+.payment-box{
+    border:1px solid #e5e5e5;
+    padding:18px;
+    margin-bottom:15px;
+}
+
+.payment-box strong{
+    font-size:13px;
+}
+
+.payment-box p{
+    margin-top:6px;
+    font-size:11px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+    display:flex;
+    border:1px solid #ddd;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    flex:1;
+    padding:13px;
+    border:0;
+    outline:none;
+}
+
+.search-box button{
+    width:50px;
+    border:0;
+    background:#171717;
+    color:#fff;
+}
+
+/* ================= RESPONSIVE ================= */
+
 @media(max-width:900px){
-  .navlinks{display:none}
+    .nav{
+        display:none;
+    }
 
-  .hero{min-height:570px}
+    .hero{
+        grid-template-columns:1fr;
+    }
 
-  .heroContent{padding:70px 25px}
+    .hero-image{
+        min-height:400px;
+    }
 
-  .productGrid{
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-  }
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .productInfo{padding:12px}
+    .product-img{
+        height:310px;
+    }
 
-  .productInfo h3{font-size:15px}
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .features{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .feature:nth-child(2){
-    border-right:0;
-  }
-
-  .feature:nth-child(-n+2){
-    border-bottom:1px solid var(--line);
-  }
-
-  .footerGrid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .promoBox{
-    padding:35px 25px;
-  }
-
-  .promoBox h2{font-size:35px}
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-@media(max-width:520px){
-  .logo{font-size:23px;letter-spacing:5px}
+@media(max-width:600px){
+    .header{
+        padding:0 4%;
+    }
 
-  .nav{padding:0 14px}
+    .logo{
+        font-size:25px;
+    }
 
-  .section{padding:55px 15px}
+    .hero h1{
+        font-size:43px;
+    }
 
-  .sectionHead h2{font-size:30px}
+    .hero-content{
+        padding:55px 7%;
+    }
 
-  .catalogRow{gap:16px}
+    .section,
+    .catalog-section{
+        padding:48px 5%;
+    }
 
-  .catalogItem{
-    flex:0 0 94px;
-  }
+    .products{
+        gap:12px;
+    }
 
-  .catalogCircle{
-    width:88px;
-    height:88px;
-  }
+    .product-img{
+        height:250px;
+    }
 
-  .productGrid{
-    grid-template-columns:repeat(2,1fr);
-  }
+    .payment-banner{
+        margin:40px 5% 0;
+        display:block;
+    }
 
-  .hero h1{font-size:51px}
+    .payment-banner button{
+        margin-top:18px;
+    }
 
-  .footerGrid{
-    grid-template-columns:1fr;
-  }
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
-  .features{
-    grid-template-columns:1fr 1fr;
-  }
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .modal{
+        padding:24px 18px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
-  FREE DELIVERY ON ADVANCE PAYMENT • PREMIUM PAKISTANI FASHION
+    ADVANCE PAYMENT = FREE DELIVERY • SHOP ONLINE WITH AZORA
 </div>
 
+<!-- HEADER -->
 <header class="header">
-  <nav class="nav">
 
-    <div class="logo">AZ<span>O</span>RA</div>
+    <div class="logo">AZORA</div>
 
-    <div class="navlinks">
-      <a href="#home">Home</a>
-      <a href="#ladies">Ladies</a>
-      <a href="#gents">Gents</a>
-      <a href="#kids">Kids</a>
-      <a href="#sale">Sale</a>
+    <nav class="nav">
+        <a onclick="scrollToSection('newin')">NEW IN</a>
+        <a onclick="scrollToSection('ladies')">LADIES</a>
+        <a onclick="scrollToSection('gents')">GENTS</a>
+        <a onclick="scrollToSection('kids')">KIDS</a>
+        <a onclick="scrollToSection('accessories')">ACCESSORIES</a>
+        <a onclick="filterProducts('Sale')">SALE</a>
+    </nav>
+
+    <div class="header-icons">
+
+        <button class="icon-btn" onclick="openModal('searchModal')">
+            ⌕
+        </button>
+
+        <button class="icon-btn" onclick="openAccount()">
+            ♙
+        </button>
+
+        <button class="icon-btn" onclick="openModal('cartModal')">
+            ♡
+            <span class="badge" id="cartCount">0</span>
+        </button>
+
     </div>
-
-    <div class="actions">
-      <button class="iconbtn" onclick="openModal('searchModal')">⌕</button>
-      <button class="iconbtn" onclick="openModal('accountModal')">♙</button>
-      <button class="iconbtn" onclick="openCart()">🛍</button>
-    </div>
-
-  </nav>
 </header>
 
-<!-- ORIGINAL PREMIUM HERO -->
-<section class="hero" id="home">
-  <div class="heroContent">
+<!-- HERO -->
+<section class="hero">
 
-    <div class="eyebrow">AZORA • PREMIUM COLLECTION</div>
+    <div class="hero-content">
+        <div class="hero-small">AZORA NEW COLLECTION</div>
 
-    <h1>
-      Elegance<br>
-      <em>Made</em> Timeless.
-    </h1>
+        <h1>
+            Elegance<br>
+            In Every Thread
+        </h1>
 
-    <p>
-      Discover premium Pakistani fashion, refined fabrics and
-      carefully selected collections designed for modern elegance.
-    </p>
+        <p>
+            Discover refined Pakistani fashion, premium fabrics
+            and timeless collections designed for every occasion.
+        </p>
 
-    <button class="btn" onclick="document.getElementById('ladies').scrollIntoView()">
-      Explore Collection
-    </button>
+        <button class="primary-btn" onclick="scrollToSection('newin')">
+            SHOP COLLECTION
+        </button>
+    </div>
 
-  </div>
+    <!-- clean fashion/fabric image, no sari ornament -->
+    <div class="hero-image"></div>
+
 </section>
 
 
-<!-- LADIES -->
-<section class="section" id="ladies">
+<!-- ================= SHOP BY CATEGORY ================= -->
 
-  <div class="sectionHead">
-    <div>
-      <span>LADIES COLLECTION</span>
-      <h2>Shop By Category</h2>
-    </div>
-  </div>
+<section class="catalog-section" id="newin">
 
-  <!-- ONE HORIZONTAL LINE ONLY -->
-  <div class="catalogWrap">
-    <div class="catalogRow">
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>2 Piece</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>3 Piece</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Unstitched</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Ready To Wear</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1610189012906-9e5e5f9b6d1f?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Lawn</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Chiffon</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Embroidered</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Printed</p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- LADIES PRODUCTS -->
-  <div class="productGrid">
-
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">NEW</span>
-        <button class="heart" onclick="wishlist('Royal Lawn Set')">♡</button>
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • LAWN</small>
-        <h3>Royal Lawn Set</h3>
-        <span class="price">Rs. 4,299</span>
-        <button class="add" onclick="addCart('Royal Lawn Set',4299)">ADD TO CART</button>
-      </div>
+    <div class="catalog-heading">
+        <h2>Shop By Category</h2>
+        <span>EXPLORE AZORA</span>
     </div>
 
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">SALE</span>
-        <button class="heart" onclick="wishlist('Ivory Embroidery')">♡</button>
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • EMBROIDERED</small>
-        <h3>Ivory Embroidery</h3>
-        <span class="price">Rs. 3,799</span>
-        <span class="old">Rs. 5,200</span>
-        <button class="add" onclick="addCart('Ivory Embroidery',3799)">ADD TO CART</button>
-      </div>
-    </div>
+    <div class="catalog-row">
 
-    <div class="product">
-      <div class="productImage">
-        <button class="heart" onclick="wishlist('Noir Chiffon')">♡</button>
-        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • CHIFFON</small>
-        <h3>Noir Chiffon</h3>
-        <span class="price">Rs. 5,499</span>
-        <button class="add" onclick="addCart('Noir Chiffon',5499)">ADD TO CART</button>
-      </div>
-    </div>
+        <button class="catalog-item" onclick="filterProducts('Ladies')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Ladies</div>
+        </button>
 
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">NEW</span>
-        <button class="heart" onclick="wishlist('Pearl Print')">♡</button>
-        <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • PRINTED</small>
-        <h3>Pearl Print</h3>
-        <span class="price">Rs. 3,999</span>
-        <button class="add" onclick="addCart('Pearl Print',3999)">ADD TO CART</button>
-      </div>
-    </div>
+        <button class="catalog-item" onclick="filterProducts('Gents')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Gents</div>
+        </button>
 
-  </div>
+        <button class="catalog-item" onclick="filterProducts('Kids')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Kids</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Dupatta')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Dupatta</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Trousers')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1506629905607-d9c297d2f7e4?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Trousers</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Accessories')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Accessories</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Sale')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Sale</div>
+        </button>
+
+    </div>
 </section>
 
 
-<!-- GENTS -->
-<section class="section" id="gents">
+<!-- ================= LADIES CATALOG ================= -->
 
-  <div class="sectionHead">
-    <div>
-      <span>GENTS COLLECTION</span>
-      <h2>Premium Fabrics</h2>
-    </div>
-  </div>
+<section class="catalog-section" id="ladies">
 
-  <!-- ONE HORIZONTAL LINE -->
-  <div class="catalogRow">
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Gents Cotton</p>
+    <div class="catalog-heading">
+        <h2>Ladies Collection</h2>
+        <span>SHOP LADIES</span>
     </div>
 
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Soft Cotton</p>
+    <div class="catalog-row">
+
+        <button class="catalog-item" onclick="filterProducts('2 Piece')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">2 Piece</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('3 Piece')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">3 Piece</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Unstitched')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Unstitched</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Ready To Wear')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Ready To Wear</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Lawn')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Lawn</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Chiffon')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Chiffon</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Embroidered')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Embroidered</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Printed')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Printed</div>
+        </button>
+
     </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Hard Cotton</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Wash & Wear</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Gents Suit</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Waistcoat</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Kurta</p>
-    </div>
-
-  </div>
-
-  <div class="productGrid" style="margin-top:35px">
-
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">PREMIUM</span>
-        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • FABRIC</small>
-        <h3>Royal Wash & Wear</h3>
-        <span class="price">Rs. 3,500</span>
-        <button class="add" onclick="addCart('Royal Wash & Wear',3500)">ADD TO CART</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">SALE</span>
-        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • COTTON</small>
-        <h3>Classic Cotton</h3>
-        <span class="price">Rs. 3,200</span>
-        <button class="add" onclick="addCart('Classic Cotton',3200)">ADD TO CART</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • PREMIUM</small>
-        <h3>Executive Fabric</h3>
-        <span class="price">Rs. 4,500</span>
-        <button class="add" onclick="addCart('Executive Fabric',4500)">ADD TO CART</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • SUIT</small>
-        <h3>Premium Suit Fabric</h3>
-        <span class="price">Rs. 5,900</span>
-        <button class="add" onclick="addCart('Premium Suit Fabric',5900)">ADD TO CART</button>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 
-<!-- KIDS -->
-<section class="section" id="kids">
+<!-- ================= GENTS CATALOG ================= -->
 
-  <div class="sectionHead">
-    <div>
-      <span>KIDS COLLECTION</span>
-      <h2>Little Luxury</h2>
+<section class="catalog-section" id="gents">
+
+    <div class="catalog-heading">
+        <h2>Gents Collection</h2>
+        <span>SHOP GENTS</span>
     </div>
-  </div>
 
-  <!-- ONE HORIZONTAL LINE
+    <div class="catalog-row">
+
+        <button class="catalog-item" onclick="filterProducts('Gents Cotton')">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=400&q=80">
+            </div>
+            <div class="catalog-name">Gents Cotton</div>
+        </button>
+
+        <button class="catalog-item" onclick="filterProducts('Soft Cotton')">
+            <div class="catalog-image">
+                <img src="https://images.un
