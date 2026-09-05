@@ -3,235 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azora - Online Fashion Store</title>
+<title>Azora - Ladies & Gents Fashion</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
   body { background:#fff; color:#1a1a1a; }
   a { text-decoration:none; color:inherit; }
-  img { display:block; width:100%; }
+  img { display:block; }
 
-  header { display:flex; align-items:center; justify-content:center; position:relative; padding:14px 16px; background:#fff; border-bottom:1px solid #eee; }
-  .logo { font-size:20px; font-weight:700; letter-spacing:1px; }
-  .logo span { color:#8b1e3f; }
-  .icon-left, .icon-right { position:absolute; top:14px; font-size:18px; }
-  .icon-left { left:16px; }
-  .icon-right { right:16px; display:flex; gap:16px; }
+  /* Header */
+  header { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; background:#111; position:sticky; top:0; z-index:50; }
+  .logo { font-size:22px; font-weight:800; letter-spacing:2px; }
+  .logo span { color:#e0b04b; }
+  .header-icons { display:flex; gap:16px; font-size:18px; color:#fff; }
 
-  /* Hero slider */
-  .hero { position:relative; height:230px; overflow:hidden; }
-  .hero img { height:100%; object-fit:cover; }
-  .hero .tag { position:absolute; top:16px; left:16px; background:#b5121b; color:#fff; font-size:11px; font-weight:700; padding:6px 12px; border-radius:20px; letter-spacing:0.5px; }
-  .dots { position:absolute; bottom:10px; left:0; right:0; display:flex; justify-content:center; gap:5px; }
-  .dots span { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,0.6); }
-  .dots span.active { background:#fff; width:14px; border-radius:3px; }
+  /* Promo Banner */
+  .promo { position:relative; height:220px; overflow:hidden; }
+  .promo img { width:100%; height:100%; object-fit:cover; }
+  .promo .badge { position:absolute; top:16px; left:16px; background:#b5121b; color:#fff; padding:8px 16px; border-radius:20px; font-size:12px; font-weight:700; letter-spacing:0.5px; }
 
   /* Section title */
-  .sec-title { text-align:center; font-size:19px; font-weight:700; letter-spacing:0.5px; margin:26px 0 14px; text-transform:uppercase; }
+  .sec-title { font-size:20px; font-weight:800; text-align:center; margin:26px 0 16px; letter-spacing:0.5px; }
 
-  /* 3-image row */
-  .row3 { display:flex; gap:2px; padding:0 2px; }
-  .row3 .item { flex:1; text-align:center; }
-  .row3 .item img { aspect-ratio:3/4; object-fit:cover; }
-  .row3 .item p { font-size:11.5px; font-weight:600; letter-spacing:1px; margin-top:8px; text-transform:uppercase; }
+  /* Horizontal scroll cards */
+  .hscroll { display:flex; gap:12px; overflow-x:auto; padding:0 16px 8px; scrollbar-width:none; }
+  .hscroll::-webkit-scrollbar { display:none; }
+  .hcard { flex:0 0 150px; text-align:center; }
+  .hcard img { width:150px; height:200px; object-fit:cover; border-radius:6px; }
+  .hcard span { display:block; margin-top:8px; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
 
-  hr.divider { border:none; border-top:1px solid #eee; margin:24px 16px; }
+  /* Circle category row */
+  .circle-row { display:flex; gap:16px; overflow-x:auto; padding:16px; scrollbar-width:none; }
+  .circle-row::-webkit-scrollbar { display:none; }
+  .circle-item { flex:0 0 70px; text-align:center; }
+  .circle-item img { width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid #eee; }
+  .circle-item span { display:block; font-size:10.5px; margin-top:6px; font-weight:600; line-height:1.3; }
 
-  /* Circular scroller */
-  .circ-wrap { padding:0 16px 6px; }
-  .circ-title { font-size:19px; font-weight:700; margin-bottom:14px; }
-  .circ-scroll { display:flex; gap:18px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none; }
-  .circ-scroll::-webkit-scrollbar { display:none; }
-  .circ-item { flex:0 0 auto; text-align:center; width:66px; }
-  .circ-item img { width:64px; height:64px; border-radius:50%; object-fit:cover; margin:0 auto; }
-  .circ-item p { font-size:10.5px; font-weight:600; margin-top:6px; text-transform:uppercase; line-height:1.3; }
+  /* Shop by collection grid */
+  .collection-section { background:#f6f6f6; padding:24px 16px 30px; }
+  .collection-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .collection-card { position:relative; border-radius:6px; overflow:hidden; }
+  .collection-card img { width:100%; height:230px; object-fit:cover; }
+  .collection-card span { display:block; text-align:center; margin-top:8px; font-size:12.5px; font-weight:700; letter-spacing:0.5px; }
 
-  /* Shop by collection */
-  .collection { background:#f5f5f5; padding:30px 16px 40px; margin-top:26px; }
-  .collection .sec-title { margin-top:0; }
-  .col-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .col-card { text-align:center; }
-  .col-card img { aspect-ratio:3/4; object-fit:cover; border-radius:4px; }
-  .col-card p { font-size:12px; font-weight:600; letter-spacing:1px; margin-top:8px; text-transform:uppercase; }
-
-  /* Products */
-  .products { padding:0 16px; margin-top:30px; }
-  .prod-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  .prod-card { position:relative; }
-  .prod-card .img-wrap { position:relative; }
-  .prod-card img { aspect-ratio:3/4; object-fit:cover; border-radius:4px; }
-  .badge { position:absolute; top:8px; left:8px; background:#8b1e3f; color:#fff; font-size:9.5px; padding:4px 8px; border-radius:12px; font-weight:600; }
-  .prod-card h4 { font-size:12.5px; font-weight:500; margin-top:10px; color:#333; line-height:1.4; }
-  .price-row { display:flex; gap:8px; align-items:center; margin-top:4px; }
-  .price-row .old { text-decoration:line-through; color:#aaa; font-size:11.5px; }
-  .price-row .new { color:#8b1e3f; font-weight:700; font-size:13px; }
+  /* Catalog blocks: Gents / Ladies */
+  .catalog-block { padding:26px 16px; }
+  .catalog-head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
+  .catalog-head h3 { font-size:19px; font-weight:800; letter-spacing:0.5px; }
+  .catalog-head a { font-size:12px; color:#b5121b; font-weight:600; }
+  .chip-grid { display:flex; flex-wrap:wrap; gap:10px; }
+  .chip { flex:1 1 45%; background:#fff; border:1px solid #eee; border-radius:8px; overflow:hidden; text-align:center; }
+  .chip img { width:100%; height:150px; object-fit:cover; }
+  .chip span { display:block; padding:9px 4px; font-size:12px; font-weight:600; }
 
   /* Newsletter */
-  .newsletter { background:#1c1c1c; color:#fff; text-align:center; padding:44px 20px; margin-top:40px; }
-  .newsletter h2 { font-size:20px; margin-bottom:8px; }
-  .newsletter p { font-size:12.5px; opacity:.7; margin-bottom:20px; }
-  .newsletter form { display:flex; border:1px solid rgba(255,255,255,0.3); border-radius:30px; overflow:hidden; }
-  .newsletter input { flex:1; padding:13px 18px; border:none; background:transparent; color:#fff; font-size:13px; outline:none; }
-  .newsletter button { padding:13px 22px; background:#8b1e3f; color:#fff; border:none; font-size:12px; font-weight:600; }
+  .newsletter { background:#111; color:#fff; text-align:center; padding:34px 20px; }
+  .newsletter h3 { font-size:18px; margin-bottom:8px; }
+  .newsletter p { font-size:12.5px; opacity:.7; margin-bottom:18px; }
+  .newsletter form { display:flex; max-width:340px; margin:0 auto; border:1px solid rgba(255,255,255,0.3); border-radius:25px; overflow:hidden; }
+  .newsletter input { flex:1; padding:12px 16px; border:none; background:transparent; color:#fff; font-size:13px; outline:none; }
+  .newsletter button { padding:12px 20px; background:#b5121b; color:#fff; border:none; font-size:12px; font-weight:700; }
 
   /* Footer */
-  footer { background:#111; color:#999; padding:36px 20px 20px; }
-  .footer-col h4 { color:#fff; font-size:12.5px; letter-spacing:1.5px; margin-bottom:14px; margin-top:22px; text-transform:uppercase; }
-  .footer-col a, .footer-col p { display:block; font-size:12.5px; margin-bottom:9px; color:#999; }
-  .bottom { text-align:center; border-top:1px solid #292929; padding-top:18px; margin-top:20px; font-size:11.5px; color:#666; }
-
-  @media (min-width:700px){
-    .row3, .col-grid, .prod-grid { max-width:900px; margin-left:auto; margin-right:auto; }
-    .prod-grid { grid-template-columns:repeat(4,1fr); }
-  }
+  footer { background:#000; color:#999; padding:30px 18px 90px; font-size:12.5px; }
+  footer .f-row { margin-bottom:18px; }
+  footer .f-row h4 { color:#fff; font-size:13px; margin-bottom:10px; letter-spacing:0.5px; }
+  footer .f-row a { display:block; margin-bottom:7px; color:#999; }
+  footer .bottom { border-top:1px solid #222; padding-top:14px; text-align:center; font-size:11.5px; color:#666; }
 </style>
 </head>
 <body>
 
 <header>
-  <span class="icon-left">☰</span>
-  <div class="logo">AZ<span>ORA</span></div>
-  <div class="icon-right">
-    <span>🔍</span><span>👤</span><span>🛍️</span>
+  <div class="logo">AZO<span>RA</span></div>
+  <div class="header-icons">
+    <a href="#">&#128269;</a>
+    <a href="#">&#128100;</a>
+    <a href="#">&#128092;</a>
   </div>
 </header>
 
-<div class="hero">
-  <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" alt="banner">
-  <span class="tag">ON ENTIRE STOCK</span>
-  <div class="dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+<div class="promo">
+  <span class="badge">FLAT 30% OFF</span>
+  <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" alt="Promo">
 </div>
 
-<div class="sec-title">Ladies Collection</div>
-<div class="row3">
-  <div class="item">
-    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80" alt="Boutique">
-    <p>Boutique</p>
+<div class="sec-title">UNSTITCHED</div>
+<div class="hscroll">
+  <div class="hcard">
+    <img src="https://images.unsplash.com/photo-1610030469668-8e9f641aa0c6?auto=format&fit=crop&w=300&q=80">
+    <span>Summer</span>
   </div>
-  <div class="item">
-    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=400&q=80" alt="Fancy Dress">
-    <p>Fancy Dress</p>
+  <div class="hcard">
+    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=300&q=80">
+    <span>Embroidered</span>
   </div>
-  <div class="item">
-    <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=400&q=80" alt="Hijab">
-    <p>Hijab</p>
+  <div class="hcard">
+    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=300&q=80">
+    <span>Printed</span>
   </div>
-</div>
-
-<hr class="divider">
-
-<div class="circ-wrap">
-  <div class="circ-title">Gents Collection</div>
-  <div class="circ-scroll">
-    <div class="circ-item">
-      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=200&q=80" alt="Kurta">
-      <p>Kurta</p>
-    </div>
-    <div class="circ-item">
-      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=200&q=80" alt="Waistcoat">
-      <p>Waistcoat</p>
-    </div>
-    <div class="circ-item">
-      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=200&q=80" alt="Formal">
-      <p>Formal</p>
-    </div>
-    <div class="circ-item">
-      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=200&q=80" alt="2 Piece">
-      <p>2 Piece</p>
-    </div>
-    <div class="circ-item">
-      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=200&q=80" alt="3 Piece">
-      <p>3 Piece</p>
-    </div>
+  <div class="hcard">
+    <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=300&q=80">
+    <span>Lawn</span>
   </div>
 </div>
 
-<section class="collection">
-  <div class="sec-title">Shop By Collection</div>
-  <div class="col-grid">
-    <div class="col-card">
-      <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=500&q=80" alt="Bridal Dupatta">
-      <p>Bridal Dupatta</p>
+<div class="sec-title">READY TO WEAR</div>
+<div class="circle-row">
+  <div class="circle-item">
+    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=150&q=80">
+    <span>Embroidered</span>
+  </div>
+  <div class="circle-item">
+    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=150&q=80">
+    <span>Printed</span>
+  </div>
+  <div class="circle-item">
+    <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=150&q=80">
+    <span>Solids</span>
+  </div>
+  <div class="circle-item">
+    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=150&q=80">
+    <span>Co-ords</span>
+  </div>
+  <div class="circle-item">
+    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=150&q=80">
+    <span>Formals</span>
+  </div>
+  <div class="circle-item">
+    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=150&q=80">
+    <span>Kurtis</span>
+  </div>
+</div>
+
+<div class="collection-section">
+  <div class="sec-title" style="margin-top:0">SHOP BY COLLECTION</div>
+  <div class="collection-grid">
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=500&q=80">
+      <span>SIGNATURE (PRET)</span>
     </div>
-    <div class="col-card">
-      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80" alt="2 Piece Dress">
-      <p>2 Piece Dress</p>
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80">
+      <span>SILK</span>
     </div>
-    <div class="col-card">
-      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="3 Piece Print">
-      <p>3 Piece Print</p>
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80">
+      <span>MEN</span>
     </div>
-    <div class="col-card">
-      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80" alt="Boutique">
-      <p>Boutique</p>
+    <div class="collection-card">
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=500&q=80">
+      <span>BRIDAL</span>
     </div>
   </div>
-</section>
+</div>
 
-<section class="products">
-  <div class="sec-title">New Arrivals</div>
-  <div class="prod-grid">
-    <div class="prod-card">
-      <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=400&q=80" alt="3 Piece">
-        <span class="badge">22% OFF</span>
-      </div>
-      <h4>3 Piece Lawn Print Suit</h4>
-      <div class="price-row"><span class="old">Rs. 5,999</span><span class="new">Rs. 4,699</span></div>
+<!-- GENTS CATALOG -->
+<div class="catalog-block">
+  <div class="catalog-head">
+    <h3>GENTS</h3>
+    <a href="#">View All</a>
+  </div>
+  <div class="chip-grid">
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=300&q=80">
+      <span>Wash & Wear</span>
     </div>
-    <div class="prod-card">
-      <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=400&q=80" alt="2 Piece">
-        <span class="badge">17% OFF</span>
-      </div>
-      <h4>2 Piece Embroidered Suit</h4>
-      <div class="price-row"><span class="old">Rs. 3,599</span><span class="new">Rs. 2,999</span></div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=300&q=80">
+      <span>Soft Cotton</span>
     </div>
-    <div class="prod-card">
-      <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80" alt="Bridal Dupatta">
-        <span class="badge">NEW</span>
-      </div>
-      <h4>Bridal Net Dupatta</h4>
-      <div class="price-row"><span class="new">Rs. 6,499</span></div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=300&q=80">
+      <span>Hard Cotton</span>
     </div>
-    <div class="prod-card">
-      <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=400&q=80" alt="Gents">
-        <span class="badge">10% OFF</span>
-      </div>
-      <h4>Gents 2 Piece Suit</h4>
-      <div class="price-row"><span class="old">Rs. 7,499</span><span class="new">Rs. 6,749</span></div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=300&q=80">
+      <span>Premium</span>
     </div>
   </div>
-</section>
+</div>
 
-<section class="newsletter">
-  <h2>Join The Azora Circle</h2>
-  <p>Get exclusive drops & discounts in your inbox</p>
+<!-- LADIES CATALOG -->
+<div class="catalog-block" style="background:#faf6f2;">
+  <div class="catalog-head">
+    <h3>LADIES</h3>
+    <a href="#">View All</a>
+  </div>
+  <div class="chip-grid">
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=300&q=80">
+      <span>Boutique</span>
+    </div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=300&q=80">
+      <span>Fancy Dress</span>
+    </div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=300&q=80">
+      <span>Hijab</span>
+    </div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=300&q=80">
+      <span>Bridal Dupatta</span>
+    </div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=300&q=80">
+      <span>2 Piece Dress</span>
+    </div>
+    <div class="chip">
+      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=300&q=80">
+      <span>3 Piece Dress Print</span>
+    </div>
+  </div>
+</div>
+
+<div class="newsletter">
+  <h3>Join Azora</h3>
+  <p>Get exclusive discounts and new arrivals straight to your inbox</p>
   <form onsubmit="return false;">
-    <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
+    <input type="email" placeholder="Your email">
+    <button type="submit">Join</button>
   </form>
-</section>
+</div>
 
 <footer>
-  <div class="footer-col">
-    <h4>Categories</h4>
-    <a href="#">Ladies</a>
-    <a href="#">Gents</a>
-    <a href="#">Boutique</a>
-    <a href="#">Fancy Dress</a>
-    <a href="#">Hijab</a>
-    <a href="#">Bridal Dupatta</a>
-    <a href="#">2 Piece Dress</a>
-    <a href="#">3 Piece Print</a>
+  <div class="f-row">
+    <h4>CUSTOMER CARE</h4>
+    <a href="#">Order Tracking</a>
+    <a href="#">Size Chart</a>
+    <a href="#">FAQ's</a>
+    <a href="#">Contact Us</a>
   </div>
-  <div class="footer-col">
-    <h4>Contact</h4>
-    <p>+92 300 0000000</p>
-    <p>info@azorafashion.com</p>
-    <p>Main Tariq Road, Karachi</p>
+  <div class="f-row">
+    <h4>CONTACT</h4>
+    <a href="#">+92 300 0000000</a>
+    <a href="#">info@azorafashion.com</a>
+    <a href="#">Main Tariq Road, Karachi</a>
   </div>
   <div class="bottom">© 2026 Azora Fashion. All Rights Reserved.</div>
 </footer>
