@@ -3,122 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azora - Ladies & Gents Fashion</title>
+<title>Azora Fabrics - Ladies & Gents Fashion</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-  body { background: #fafafa; color: #222; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+  body { background:#faf7f2; color:#222; }
+  a { text-decoration:none; color:inherit; }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #111;
-    color: #fff;
-  }
-  header .logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; }
-  nav ul { list-style: none; display: flex; gap: 30px; }
-  nav ul li a { color: #fff; text-decoration: none; font-size: 16px; }
-  nav ul li a:hover { color: #d4af37; }
+  .topbar { background:#111; color:#fff; text-align:center; padding:8px; font-size:13px; letter-spacing:0.5px; }
 
-  .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-      url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    height: 480px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-  }
-  .hero h1 { font-size: 48px; margin-bottom: 15px; }
-  .hero p { font-size: 20px; margin-bottom: 25px; }
-  .hero button {
-    padding: 12px 30px;
-    font-size: 16px;
-    background: #d4af37;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #111;
-    font-weight: bold;
-  }
+  header { display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:#fff; border-bottom:1px solid #eee; }
+  .logo { font-size:26px; font-weight:bold; letter-spacing:2px; color:#8b1e3f; }
+  nav ul { list-style:none; display:flex; gap:22px; flex-wrap:wrap; }
+  nav ul li a { font-size:14px; font-weight:600; }
+  nav ul li a:hover { color:#8b1e3f; }
+  .header-icons { display:flex; gap:18px; font-size:14px; }
 
-  .categories {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 50px 20px;
-    flex-wrap: wrap;
-  }
-  .category-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 260px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    text-align: center;
-    transition: transform 0.3s;
-  }
-  .category-card:hover { transform: translateY(-8px); }
-  .category-card img { width: 100%; height: 300px; object-fit: cover; }
-  .category-card h3 { padding: 15px; font-size: 20px; }
+  .hero { background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; height:420px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff; }
+  .hero h1 { font-size:44px; margin-bottom:12px; }
+  .hero p { font-size:18px; margin-bottom:22px; }
+  .hero button { padding:12px 28px; font-size:15px; background:#8b1e3f; border:none; border-radius:4px; color:#fff; font-weight:bold; cursor:pointer; }
 
-  .products { padding: 40px 20px; background: #fff; }
-  .products h2 { text-align: center; font-size: 32px; margin-bottom: 30px; }
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .product-card {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 15px;
-  }
-  .product-card img { width: 100%; height: 260px; object-fit: cover; }
-  .product-card h4 { margin: 12px 0 5px; font-size: 17px; }
-  .product-card .price { color: #d4af37; font-weight: bold; font-size: 16px; }
-  .product-card button {
-    margin-top: 10px;
-    padding: 8px 20px;
-    background: #111;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  .features { display:flex; justify-content:center; gap:40px; padding:35px 20px; background:#fff; flex-wrap:wrap; text-align:center; }
+  .feature { max-width:180px; }
+  .feature h4 { font-size:15px; margin:8px 0 4px; }
+  .feature p { font-size:13px; color:#777; }
 
-  footer {
-    background: #111;
-    color: #fff;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-  }
-  footer p { margin-top: 8px; font-size: 14px; color: #aaa; }
+  .categories { padding:50px 20px; text-align:center; }
+  .categories h2 { font-size:30px; margin-bottom:8px; }
+  .categories .sub { color:#777; margin-bottom:30px; font-size:14px; }
+  .cat-grid { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; }
+  .cat-card { width:220px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.08); transition:transform .3s; }
+  .cat-card:hover { transform:translateY(-6px); }
+  .cat-card img { width:100%; height:260px; object-fit:cover; }
+  .cat-card h3 { padding:14px; font-size:16px; }
+
+  .products { padding:45px 20px; background:#fff; }
+  .products h2 { text-align:center; font-size:30px; margin-bottom:30px; }
+  .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:25px; max-width:1200px; margin:0 auto; }
+  .product-card { border:1px solid #eee; border-radius:8px; overflow:hidden; text-align:center; padding-bottom:15px; }
+  .product-card img { width:100%; height:280px; object-fit:cover; }
+  .product-card h4 { margin:12px 10px 5px; font-size:15px; }
+  .product-card .price { color:#8b1e3f; font-weight:bold; font-size:15px; }
+  .product-card button { margin-top:10px; padding:8px 20px; background:#111; color:#fff; border:none; border-radius:5px; cursor:pointer; }
+
+  .newsletter { background:#8b1e3f; color:#fff; text-align:center; padding:45px 20px; }
+  .newsletter h2 { font-size:26px; margin-bottom:8px; }
+  .newsletter p { margin-bottom:20px; font-size:14px; opacity:0.9; }
+  .newsletter form { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .newsletter input { padding:12px; width:260px; border:none; border-radius:4px; }
+  .newsletter button { padding:12px 25px; background:#111; color:#fff; border:none; border-radius:4px; cursor:pointer; font-weight:bold; }
+
+  footer { background:#111; color:#ccc; padding:40px 20px 20px; }
+  .footer-grid { display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1100px; margin:0 auto 25px; }
+  .footer-col h4 { color:#fff; margin-bottom:12px; font-size:15px; }
+  .footer-col p, .footer-col a { display:block; font-size:13px; margin-bottom:8px; color:#aaa; }
+  footer .bottom { text-align:center; border-top:1px solid #333; padding-top:15px; font-size:13px; color:#888; }
 </style>
 </head>
 <body>
+
+<div class="topbar">Enjoy FREE shipping on orders over PKR 20,000 | SHOP NOW</div>
 
 <header>
   <div class="logo">AZORA</div>
   <nav>
     <ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Ready To Wear</a></li>
+      <li><a href="#">Unstitched</a></li>
       <li><a href="#">Ladies</a></li>
       <li><a href="#">Gents</a></li>
-      <li><a href="#">New Arrivals</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#">Kids</a></li>
     </ul>
   </nav>
+  <div class="header-icons">
+    <a href="#">Login</a>
+    <a href="#">Cart (0)</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -127,56 +88,105 @@
   <button>Shop Now</button>
 </section>
 
+<section class="features">
+  <div class="feature"><h4>Fast Shipping</h4><p>Worldwide delivery available</p></div>
+  <div class="feature"><h4>Safe Payment</h4><p>100% secure checkout</p></div>
+  <div class="feature"><h4>Customer Support</h4><p>11:30 - 9:30, Mon - Sat</p></div>
+  <div class="feature"><h4>Return Policy</h4><p>2 weeks return & exchange</p></div>
+</section>
+
 <section class="categories">
-  <div class="category-card">
-    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="Ladies Fashion">
-    <h3>Ladies Fashion</h3>
-  </div>
-  <div class="category-card">
-    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80" alt="Gents Fashion">
-    <h3>Gents Fashion</h3>
+  <h2>Categories</h2>
+  <p class="sub">Explore our most loved collections for Ladies & Gents</p>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="Ladies Fashion">
+      <h3>Ladies Fashion</h3>
+    </div>
+    <div class="cat-card">
+      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80" alt="Gents Fashion">
+      <h3>Gents Fashion</h3>
+    </div>
+    <div class="cat-card">
+      <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=500&q=80" alt="Kids Collection">
+      <h3>Kids Collection</h3>
+    </div>
   </div>
 </section>
 
 <section class="products">
-  <h2>Featured Collection</h2>
+  <h2>New Arrivals</h2>
   <div class="product-grid">
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=400&q=80" alt="Ladies Two Piece">
-      <h4>Ladies Two Piece</h4>
-      <p class="price">PKR 3,500</p>
+      <h4>Ladies 2 Piece Stitched Lawn</h4>
+      <p class="price">Rs.3,190</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=400&q=80" alt="Ladies Three Piece">
-      <h4>Ladies Three Piece</h4>
-      <p class="price">PKR 4,800</p>
+      <h4>Ladies 3 Piece Emb Lawn</h4>
+      <p class="price">Rs.6,990</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=400&q=80" alt="Gents Two Piece">
-      <h4>Gents Two Piece</h4>
-      <p class="price">PKR 3,200</p>
+      <h4>Gents 2 Piece Cotton</h4>
+      <p class="price">Rs.4,990</p>
       <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=400&q=80" alt="Gents Three Piece">
-      <h4>Gents Three Piece</h4>
-      <p class="price">PKR 5,000</p>
+      <h4>Gents 3 Piece Karrandi</h4>
+      <p class="price">Rs.6,990</p>
       <button>Add to Cart</button>
     </div>
 
   </div>
 </section>
 
+<section class="newsletter">
+  <h2>Sign Up For Newsletter</h2>
+  <p>Join our subscribers and get a new discount coupon every Saturday.</p>
+  <form onsubmit="return false;">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe!</button>
+  </form>
+</section>
+
 <footer>
-  <p>Azora Fashion &mdash; Ladies & Gents Wear</p>
-  <p>All Rights Reserved</p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Our Products</h4>
+      <a href="#">New Arrivals</a>
+      <a href="#">Ready To Wear</a>
+      <a href="#">Unstitched</a>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <a href="#">About Us</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Shipping Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <a href="#">Exchange Policy</a>
+      <a href="#">FAQ's</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>WhatsApp: +92 300 0000000</p>
+      <p>Email: info@azorafashion.com</p>
+      <p>Shop Address: Main Tariq Road, Karachi</p>
+    </div>
+  </div>
+  <div class="bottom">© 2026 Azora Fashion. All Rights Reserved.</div>
 </footer>
 
 </body>
-</html>
+</html>a 
