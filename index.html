@@ -3,59 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azora - Online Clothing Store</title>
+<title>Azora - Premium Fashion Store</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
-  body { background:#fff; color:#1a1a1a; }
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Poppins', sans-serif; color:#1a1a1a; background:#fffdfb; overflow-x:hidden; }
   a { text-decoration:none; color:inherit; }
+  h1,h2,h3 { font-family:'Playfair Display', serif; }
+  img { display:block; }
 
-  .topbar { background:#000; color:#fff; text-align:center; padding:9px; font-size:13px; }
+  /* Topbar */
+  .topbar { background:#1c1c1c; color:#f2e6d8; text-align:center; padding:10px; font-size:12.5px; letter-spacing:1.2px; text-transform:uppercase; }
 
-  header { display:flex; justify-content:space-between; align-items:center; padding:16px 40px; border-bottom:1px solid #eee; }
-  .logo { font-size:24px; font-weight:800; letter-spacing:1px; }
-  nav ul { list-style:none; display:flex; gap:26px; flex-wrap:wrap; }
-  nav ul li a { font-size:14px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
-  nav ul li a:hover { color:#b5121b; }
-  .header-icons { display:flex; gap:20px; font-size:14px; align-items:center; }
-  .header-icons a { font-size:13px; }
+  /* Header */
+  header { display:flex; justify-content:space-between; align-items:center; padding:22px 50px; background:#fff; position:sticky; top:0; z-index:50; box-shadow:0 1px 0 rgba(0,0,0,0.05); }
+  .logo { font-size:30px; font-weight:800; letter-spacing:3px; background:linear-gradient(135deg,#8b1e3f,#c9a24b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  nav ul { list-style:none; display:flex; gap:34px; }
+  nav ul li a { font-size:13.5px; font-weight:500; letter-spacing:1px; text-transform:uppercase; position:relative; padding-bottom:4px; }
+  nav ul li a::after { content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px; background:#8b1e3f; transition:width .3s; }
+  nav ul li a:hover::after { width:100%; }
+  .header-icons { display:flex; gap:22px; font-size:13px; align-items:center; }
 
-  .hero { position:relative; height:440px; background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff; }
-  .hero h1 { font-size:42px; margin-bottom:10px; }
-  .hero p { font-size:17px; margin-bottom:20px; }
-  .hero button { padding:12px 30px; background:#fff; color:#000; border:none; font-weight:bold; cursor:pointer; letter-spacing:1px; }
+  /* Hero */
+  .hero { position:relative; height:600px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:linear-gradient(rgba(10,10,10,0.45),rgba(10,10,10,0.25)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=80'); background-size:cover; background-position:center 25%; animation:zoom 18s ease-in-out infinite alternate; }
+  @keyframes zoom { from{transform:scale(1);} to{transform:scale(1.08);} }
+  .hero-content { position:relative; z-index:2; color:#fff; }
+  .hero-content span { display:block; font-size:13px; letter-spacing:4px; text-transform:uppercase; margin-bottom:14px; color:#e8c988; }
+  .hero-content h1 { font-size:58px; font-weight:700; margin-bottom:16px; line-height:1.15; }
+  .hero-content p { font-size:17px; font-weight:300; margin-bottom:30px; opacity:.9; }
+  .hero-content button { padding:15px 42px; background:#fff; color:#111; border:none; font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:.3s; }
+  .hero-content button:hover { background:#8b1e3f; color:#fff; }
 
-  .section-title { text-align:center; font-size:26px; font-weight:800; letter-spacing:1px; margin:50px 0 6px; }
-  .section-sub { text-align:center; font-size:13px; color:#b5121b; font-weight:600; margin-bottom:28px; text-transform:uppercase; }
+  /* Section headers */
+  .section-head { text-align:center; margin:80px 0 40px; }
+  .section-head .tag { font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#8b1e3f; font-weight:600; }
+  .section-head h2 { font-size:34px; margin-top:8px; font-weight:700; }
 
-  .cat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2px; max-width:1300px; margin:0 auto; padding:0 20px 50px; }
-  .cat-card { position:relative; overflow:hidden; }
-  .cat-card img { width:100%; height:320px; object-fit:cover; display:block; transition:transform .4s; }
-  .cat-card:hover img { transform:scale(1.05); }
-  .cat-card h3 { position:absolute; bottom:16px; left:16px; color:#fff; font-size:16px; letter-spacing:1px; text-shadow:0 1px 4px rgba(0,0,0,0.6); }
+  /* Categories */
+  .cat-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; max-width:1320px; margin:0 auto; padding:0 50px 90px; }
+  .cat-card { position:relative; border-radius:14px; overflow:hidden; height:400px; cursor:pointer; }
+  .cat-card img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+  .cat-card:hover img { transform:scale(1.1); }
+  .cat-card::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.7), transparent 55%); }
+  .cat-label { position:absolute; bottom:24px; left:24px; z-index:2; color:#fff; }
+  .cat-label h3 { font-size:20px; margin-bottom:4px; letter-spacing:0.5px; }
+  .cat-label span { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; opacity:.85; border-bottom:1px solid #fff; padding-bottom:2px; }
 
-  .products { padding:10px 20px 50px; }
-  .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:22px; max-width:1300px; margin:0 auto; }
-  .product-card { text-align:left; position:relative; }
-  .product-card .img-wrap { position:relative; overflow:hidden; }
-  .product-card img { width:100%; height:300px; object-fit:cover; }
-  .badge { position:absolute; top:10px; left:10px; background:#b5121b; color:#fff; font-size:11px; padding:4px 8px; font-weight:bold; }
-  .product-card h4 { margin:12px 0 6px; font-size:14px; font-weight:500; }
-  .price-row { display:flex; gap:8px; align-items:center; }
-  .price-row .old { text-decoration:line-through; color:#999; font-size:13px; }
-  .price-row .new { color:#b5121b; font-weight:bold; font-size:15px; }
-  .product-card button { margin-top:10px; width:100%; padding:10px; background:#000; color:#fff; border:none; cursor:pointer; font-size:13px; letter-spacing:1px; }
+  /* Products */
+  .products { max-width:1320px; margin:0 auto; padding:0 50px 90px; }
+  .product-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:26px; }
+  .product-card { position:relative; }
+  .img-wrap { position:relative; border-radius:12px; overflow:hidden; aspect-ratio:3/4; background:#f2ede6; }
+  .img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+  .product-card:hover .img-wrap img { transform:scale(1.06); }
+  .badge { position:absolute; top:14px; left:14px; background:#8b1e3f; color:#fff; font-size:10.5px; padding:6px 11px; border-radius:20px; font-weight:600; letter-spacing:0.5px; }
+  .quick-add { position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,0.95); text-align:center; padding:12px; font-size:12.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase; transform:translateY(100%); transition:transform .3s; cursor:pointer; }
+  .product-card:hover .quick-add { transform:translateY(0); }
+  .product-card h4 { margin-top:16px; font-size:14.5px; font-weight:500; color:#333; }
+  .price-row { display:flex; gap:10px; align-items:center; margin-top:6px; }
+  .price-row .old { text-decoration:line-through; color:#aaa; font-size:13px; }
+  .price-row .new { color:#8b1e3f; font-weight:600; font-size:15.5px; }
 
-  footer { background:#111; color:#ccc; padding:45px 20px 20px; margin-top:30px; }
-  .footer-grid { display:flex; justify-content:center; gap:60px; flex-wrap:wrap; max-width:1100px; margin:0 auto 25px; }
-  .footer-col h4 { color:#fff; margin-bottom:14px; font-size:14px; letter-spacing:1px; }
-  .footer-col a, .footer-col p { display:block; font-size:13px; margin-bottom:8px; color:#aaa; }
-  .socials { display:flex; justify-content:center; gap:16px; margin-bottom:15px; font-size:13px; }
-  footer .bottom { text-align:center; border-top:1px solid #333; padding-top:15px; font-size:12px; color:#888; }
+  /* Newsletter */
+  .newsletter { background:#1c1c1c; color:#fff; text-align:center; padding:80px 20px; position:relative; overflow:hidden; }
+  .newsletter h2 { font-size:32px; margin-bottom:12px; }
+  .newsletter p { font-size:14px; opacity:.7; margin-bottom:28px; }
+  .newsletter form { display:flex; justify-content:center; gap:0; max-width:420px; margin:0 auto; border:1px solid rgba(255,255,255,0.3); border-radius:30px; overflow:hidden; }
+  .newsletter input { flex:1; padding:15px 22px; border:none; background:transparent; color:#fff; font-size:13.5px; outline:none; }
+  .newsletter input::placeholder { color:rgba(255,255,255,0.5); }
+  .newsletter button { padding:15px 30px; background:#8b1e3f; color:#fff; border:none; font-size:12.5px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; }
+
+  /* Footer */
+  footer { background:#111; color:#999; padding:60px 50px 25px; }
+  .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; max-width:1320px; margin:0 auto 40px; }
+  .footer-col .logo { font-size:24px; margin-bottom:12px; display:block; }
+  .footer-col p { font-size:13px; line-height:1.8; color:#888; }
+  .footer-col h4 { color:#fff; font-size:13px; letter-spacing:1.5px; margin-bottom:18px; text-transform:uppercase; }
+  .footer-col a { display:block; font-size:13.5px; margin-bottom:11px; color:#999; transition:.2s; }
+  .footer-col a:hover { color:#e8c988; }
+  .socials { display:flex; gap:14px; margin-top:16px; }
+  .socials a { width:36px; height:36px; border:1px solid #444; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; }
+  .bottom { text-align:center; border-top:1px solid #292929; padding-top:22px; font-size:12.5px; color:#666; max-width:1320px; margin:0 auto; }
+
+  @media (max-width:900px) {
+    header { padding:16px 22px; }
+    nav { display:none; }
+    .hero-content h1 { font-size:36px; }
+    .cat-grid, .product-grid { grid-template-columns:repeat(2,1fr); padding-left:22px; padding-right:22px; }
+    .footer-grid { grid-template-columns:1fr 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<div class="topbar">Free delivery for orders above Rs 4999 within Pakistan</div>
+<div class="topbar">Free Delivery On Orders Above Rs 4,999 — Shop The New Season</div>
 
 <header>
   <div class="logo">AZORA</div>
@@ -64,7 +107,7 @@
       <li><a href="#">New In</a></li>
       <li><a href="#">Women</a></li>
       <li><a href="#">Men</a></li>
-      <li><a href="#">Girls</a></li>
+      <li><a href="#">Co-ords</a></li>
       <li><a href="#">Sale</a></li>
     </ul>
   </nav>
@@ -75,106 +118,127 @@
 </header>
 
 <section class="hero">
-  <h1>Azora Fashion</h1>
-  <p>Ladies & Gents Two Piece and Three Piece Collection</p>
-  <button>Shop Now</button>
+  <div class="hero-content">
+    <span>New Season Collection</span>
+    <h1>Elegance, Redefined</h1>
+    <p>Premium Ladies & Gents Two Piece and Three Piece Fashion</p>
+    <button>Shop The Collection</button>
+  </div>
 </section>
 
-<div class="section-title">Shop By Collection</div>
-<div class="section-sub">Ladies & Gents</div>
+<div class="section-head">
+  <div class="tag">Explore</div>
+  <h2>Shop By Category</h2>
+</div>
 <div class="cat-grid">
   <div class="cat-card">
-    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="Unstitched">
-    <h3>UNSTITCHED</h3>
+    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80" alt="Unstitched">
+    <div class="cat-label"><h3>Unstitched</h3><span>Shop Now</span></div>
   </div>
   <div class="cat-card">
-    <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=500&q=80" alt="Ready to Wear">
-    <h3>READY TO WEAR</h3>
+    <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=600&q=80" alt="Ready to Wear">
+    <div class="cat-label"><h3>Ready To Wear</h3><span>Shop Now</span></div>
   </div>
   <div class="cat-card">
-    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80" alt="Men">
-    <h3>MEN</h3>
+    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=600&q=80" alt="Men">
+    <div class="cat-label"><h3>Men's Wear</h3><span>Shop Now</span></div>
   </div>
   <div class="cat-card">
-    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80" alt="Girls">
-    <h3>GIRLS</h3>
+    <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=600&q=80" alt="Co-ords">
+    <div class="cat-label"><h3>Co-ords</h3><span>Shop Now</span></div>
   </div>
 </div>
 
-<div class="section-title">New Arrivals</div>
-<div class="section-sub">Latest Drops</div>
+<div class="section-head">
+  <div class="tag">Just Landed</div>
+  <h2>New Arrivals</h2>
+</div>
 <section class="products">
   <div class="product-grid">
 
     <div class="product-card">
       <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=400&q=80" alt="Ladies 3 Piece">
+        <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=450&q=80" alt="Ladies 3 Piece">
         <span class="badge">22% OFF</span>
+        <div class="quick-add">Add To Cart</div>
       </div>
-      <h4>3 Piece Lawn Suit - Embroidered (Unstitched)</h4>
+      <h4>3 Piece Lawn Suit — Embroidered</h4>
       <div class="price-row"><span class="old">Rs. 5,999</span><span class="new">Rs. 4,699</span></div>
-      <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
       <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=400&q=80" alt="Ladies 2 Piece">
+        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=450&q=80" alt="Ladies 2 Piece">
         <span class="badge">17% OFF</span>
+        <div class="quick-add">Add To Cart</div>
       </div>
-      <h4>2 Piece Grip Suit (Pret)</h4>
+      <h4>2 Piece Grip Suit — Pret</h4>
       <div class="price-row"><span class="old">Rs. 3,599</span><span class="new">Rs. 2,999</span></div>
-      <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
       <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=400&q=80" alt="Gents Suit">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=450&q=80" alt="Gents Suit">
         <span class="badge">10% OFF</span>
+        <div class="quick-add">Add To Cart</div>
       </div>
-      <h4>Gents 2 Piece Suit</h4>
+      <h4>Gents 2 Piece Formal Suit</h4>
       <div class="price-row"><span class="old">Rs. 7,499</span><span class="new">Rs. 6,749</span></div>
-      <button>Add to Cart</button>
     </div>
 
     <div class="product-card">
       <div class="img-wrap">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=400&q=80" alt="Gents 3 Piece">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=450&q=80" alt="Gents 3 Piece">
         <span class="badge">15% OFF</span>
+        <div class="quick-add">Add To Cart</div>
       </div>
       <h4>Gents 3 Piece Karrandi</h4>
       <div class="price-row"><span class="old">Rs. 8,999</span><span class="new">Rs. 7,649</span></div>
-      <button>Add to Cart</button>
     </div>
 
   </div>
 </section>
 
+<section class="newsletter">
+  <h2>Join The Azora Circle</h2>
+  <p>Subscribe for exclusive drops, early access & special discounts</p>
+  <form onsubmit="return false;">
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
-      <h4>CONTACT US</h4>
-      <p>(042) 111-300-800</p>
-      <p>online@azorafashion.com</p>
+      <span class="logo">AZORA</span>
+      <p>Pakistan's premium fashion destination for ladies and gents — two piece, three piece & co-ord collections crafted with elegance.</p>
+      <div class="socials">
+        <a href="#">f</a>
+        <a href="#">ig</a>
+        <a href="#">yt</a>
+      </div>
     </div>
     <div class="footer-col">
-      <h4>CUSTOMER CARE</h4>
+      <h4>Shop</h4>
+      <a href="#">New In</a>
+      <a href="#">Women</a>
+      <a href="#">Men</a>
+      <a href="#">Sale</a>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Care</h4>
       <a href="#">Order Tracking</a>
       <a href="#">Policies</a>
       <a href="#">FAQ's</a>
       <a href="#">Contact Us</a>
     </div>
     <div class="footer-col">
-      <h4>INFORMATION</h4>
-      <a href="#">About Us</a>
-      <a href="#">Careers</a>
-      <a href="#">Store Locator</a>
-      <a href="#">Blogs</a>
+      <h4>Contact</h4>
+      <a href="#">+92 300 0000000</a>
+      <a href="#">info@azorafashion.com</a>
+      <a href="#">Main Tariq Road, Karachi</a>
     </div>
-  </div>
-  <div class="socials">
-    <a href="#">Facebook</a>
-    <a href="#">Instagram</a>
-    <a href="#">YouTube</a>
   </div>
   <div class="bottom">© 2026 Azora Fashion. All Rights Reserved.</div>
 </footer>
