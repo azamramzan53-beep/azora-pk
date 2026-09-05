@@ -1,1618 +1,991 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+Create a complete premium, modern and unique Pakistani fashion e-commerce website for the brand:
 
-<title>AZORA.PK | Premium Fashion</title>
+AZORA
 
-<style>
+IMPORTANT BRAND RULE:
+The website brand/logo must display ONLY:
+AZORA
 
-/* =========================
-   RESET
-========================= */
+Never display:
+AZORA.PK
+AZORA PK
+AZORA.PK logo
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+Use only “AZORA” throughout the visible website branding.
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fff;
-    color:#171717;
-}
+The website should feel like a premium Pakistani fashion brand, inspired by high-end fashion e-commerce websites but NOT copied from any existing website.
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+Do NOT use:
+- Indian sari models
+- Indian-style fashion visuals
+- Decorative leaves
+- Cheap-looking templates
+- Overly colorful backgrounds
+- Cartoon graphics
 
-button,
-select,
-input{
-    font-family:inherit;
-}
+Use a clean luxury fashion aesthetic with:
+- Black
+- White
+- Warm beige
+- Soft cream
+- Champagne/gold accents
+- Elegant typography
+- Large product imagery
+- Lots of clean spacing
+- Premium cards
+- Smooth hover animations
+- Rounded/circular catalog design
 
+==================================================
+1. HEADER
+==================================================
 
-/* =========================
-   TOP BAR
-========================= */
+Create a sticky premium header.
 
-.topbar{
-    background:#111;
-    color:#fff;
-    text-align:center;
-    padding:9px 12px;
-    font-size:11px;
-    letter-spacing:1px;
-}
+Top announcement bar:
 
+“ADVANCE PAYMENT = FREE DELIVERY”
 
-/* =========================
-   HEADER
-========================= */
+Header:
 
-.header{
-    background:#fff;
-    border-bottom:1px solid #e7e7e7;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+LEFT:
+AZORA
 
-.header-inner{
-    max-width:1400px;
-    height:78px;
-    margin:auto;
-    padding:0 25px;
+CENTER / DESKTOP NAVIGATION:
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-family:Georgia,serif;
-    font-size:28px;
-    font-weight:bold;
-    letter-spacing:4px;
-    white-space:nowrap;
-}
-
-.logo span{
-    font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:1px;
-}
-
-.nav{
-    list-style:none;
-    display:flex;
-    gap:24px;
-}
-
-.nav a{
-    font-size:12px;
-    letter-spacing:.5px;
-}
-
-.nav a:hover{
-    border-bottom:1px solid #111;
-    padding-bottom:5px;
-}
-
-.icons{
-    display:flex;
-    gap:17px;
-    font-size:20px;
-}
-
-.icon{
-    cursor:pointer;
-}
-
-.mobile-menu{
-    display:none;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    width:100%;
-    height:620px;
-    position:relative;
-    overflow:hidden;
-    background:#eee;
-}
-
-.hero img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.52),
-        rgba(0,0,0,.18),
-        rgba(0,0,0,0)
-    );
-}
-
-.hero-content{
-    position:absolute;
-    left:8%;
-    top:50%;
-    transform:translateY(-50%);
-    color:#fff;
-    max-width:520px;
-}
-
-.hero-content small{
-    font-size:11px;
-    letter-spacing:4px;
-}
-
-.hero-content h1{
-    font-family:Georgia,serif;
-    font-size:65px;
-    line-height:.98;
-    font-weight:400;
-    margin:18px 0;
-}
-
-.hero-content p{
-    font-size:15px;
-    line-height:1.7;
-    margin-bottom:26px;
-}
-
-.hero-btn{
-    display:inline-block;
-    background:#fff;
-    color:#111;
-    padding:15px 29px;
-    font-size:11px;
-    letter-spacing:1px;
-}
-
-
-/* =========================
-   GENERAL SECTION
-========================= */
-
-.section{
-    max-width:1400px;
-    margin:auto;
-    padding:75px 25px;
-}
-
-.heading{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.heading small{
-    font-size:10px;
-    letter-spacing:3px;
-}
-
-.heading h2{
-    font-family:Georgia,serif;
-    font-size:40px;
-    font-weight:400;
-    margin-top:9px;
-}
-
-
-/* =========================
-   MAIN CATEGORY TABS
-========================= */
-
-.main-tabs{
-    display:flex;
-    justify-content:center;
-    gap:35px;
-    margin-bottom:35px;
-    flex-wrap:wrap;
-}
-
-.main-tabs button{
-    background:none;
-    border:0;
-    border-bottom:1px solid transparent;
-    padding:7px 0;
-    font-size:13px;
-    letter-spacing:1px;
-}
-
-.main-tabs button.active,
-.main-tabs button:hover{
-    border-bottom:1px solid #111;
-}
-
-
-/* =========================
-   CATEGORY GRID
-========================= */
-
-.categories{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.category{
-    height:390px;
-    position:relative;
-    overflow:hidden;
-    background:#eee;
-}
-
-.category img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.category:hover img{
-    transform:scale(1.05);
-}
-
-.category-text{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-
-    padding:45px 20px 22px;
-
-    color:#fff;
-
-    background:
-    linear-gradient(
-        transparent,
-        rgba(0,0,0,.78)
-    );
-}
-
-.category-text h3{
-    font-family:Georgia,serif;
-    font-size:25px;
-    font-weight:400;
-}
-
-.category-text span{
-    display:block;
-    margin-top:8px;
-    font-size:10px;
-    letter-spacing:1px;
-}
-
-
-/* =========================
-   CATEGORY SUB NAV
-========================= */
-
-.sub-category{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:35px;
-}
-
-.sub-category button{
-    border:1px solid #ddd;
-    background:#fff;
-    padding:11px 20px;
-    font-size:11px;
-    cursor:pointer;
-}
-
-.sub-category button:hover,
-.sub-category button.active{
-    background:#111;
-    color:#fff;
-    border-color:#111;
-}
-
-
-/* =========================
-   PRODUCT TOOLBAR
-========================= */
-
-.product-toolbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    border-bottom:1px solid #ddd;
-
-    padding-bottom:15px;
-    margin-bottom:20px;
-}
-
-.product-toolbar span{
-    font-size:12px;
-}
-
-.sort{
-    padding:9px 14px;
-    border:1px solid #ddd;
-    background:#fff;
-}
-
-
-/* =========================
-   PRODUCT GRID
-========================= */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
-}
-
-.product{
-    min-width:0;
-}
-
-.product-image{
-    position:relative;
-    overflow:hidden;
-    background:#f4f4f4;
-}
-
-.product-image img{
-    width:100%;
-    aspect-ratio:3/4;
-    object-fit:cover;
-    display:block;
-    transition:.45s;
-}
-
-.product:hover .product-image img{
-    transform:scale(1.035);
-}
-
-.sale{
-    position:absolute;
-    top:12px;
-    left:12px;
-    background:#111;
-    color:#fff;
-    padding:7px 10px;
-    font-size:9px;
-    z-index:2;
-}
-
-.wishlist{
-    position:absolute;
-    top:11px;
-    right:12px;
-
-    width:34px;
-    height:34px;
-
-    background:#fff;
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:17px;
-    z-index:2;
-}
-
-.quick-add{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-
-    background:#111;
-    color:#fff;
-
-    text-align:center;
-
-    padding:13px;
-
-    font-size:10px;
-    letter-spacing:1px;
-
-    transform:translateY(100%);
-    transition:.3s;
-}
-
-.product:hover .quick-add{
-    transform:translateY(0);
-}
-
-.product-info{
-    padding-top:13px;
-}
-
-.product-name{
-    font-size:13px;
-    line-height:1.5;
-}
-
-.price{
-    font-size:13px;
-    font-weight:bold;
-    margin-top:6px;
-}
-
-.old-price{
-    color:#999;
-    text-decoration:line-through;
-    font-weight:normal;
-    margin-left:6px;
-}
-
-.discount{
-    color:#777;
-    font-size:10px;
-    margin-top:4px;
-}
-
-
-/* =========================
-   PROMO BANNER
-========================= */
-
-.promo{
-    height:500px;
-    position:relative;
-    overflow:hidden;
-}
-
-.promo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.promo-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.28);
-}
-
-.promo-content{
-    position:absolute;
-    left:8%;
-    top:50%;
-    transform:translateY(-50%);
-    color:#fff;
-}
-
-.promo-content small{
-    font-size:10px;
-    letter-spacing:4px;
-}
-
-.promo-content h2{
-    font-family:Georgia,serif;
-    font-size:56px;
-    font-weight:400;
-    line-height:1;
-    margin:15px 0 25px;
-}
-
-
-/* =========================
-   ADVANCE PAYMENT
-========================= */
-
-.payment-banner{
-    background:#111;
-    color:#fff;
-    padding:28px 25px;
-}
-
-.payment-inner{
-    max-width:1200px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:25px;
-}
-
-.payment-title{
-    font-family:Georgia,serif;
-    font-size:25px;
-}
-
-.payment-text{
-    color:#ccc;
-    font-size:12px;
-    margin-top:7px;
-}
-
-.payment-btn{
-    border:0;
-    background:#fff;
-    color:#111;
-    padding:14px 23px;
-    font-size:10px;
-    letter-spacing:1px;
-}
-
-
-/* =========================
-   PAYMENT MODAL
-========================= */
-
-.modal{
-    display:none;
-
-    position:fixed;
-    inset:0;
-
-    background:rgba(0,0,0,.68);
-
-    z-index:3000;
-
-    padding:20px;
-
-    overflow:auto;
-}
-
-.modal-box{
-    width:100%;
-    max-width:520px;
-
-    background:#fff;
-
-    margin:35px auto;
-
-    padding:30px;
-
-    position:relative;
-}
-
-.close{
-    position:absolute;
-    top:12px;
-    right:18px;
-
-    font-size:27px;
-    cursor:pointer;
-}
-
-.modal-title{
-    font-family:Georgia,serif;
-    font-size:31px;
-}
-
-.modal-subtitle{
-    color:#777;
-    font-size:12px;
-    line-height:1.6;
-    margin-top:8px;
-}
-
-.free-delivery{
-    margin:20px 0;
-
-    background:#f2f0eb;
-
-    text-align:center;
-
-    padding:16px;
-
-    font-size:12px;
-    font-weight:bold;
-}
-
-.payment-method{
-    border:1px solid #ddd;
-
-    padding:17px;
-
-    margin-top:12px;
-}
-
-.payment-method strong{
-    display:block;
-    font-size:13px;
-    margin-bottom:8px;
-}
-
-.account{
-    font-size:14px;
-    font-weight:bold;
-}
-
-.copy-btn{
-    margin-top:10px;
-
-    background:#111;
-    color:#fff;
-
-    border:0;
-
-    padding:8px 12px;
-
-    font-size:9px;
-}
-
-.payment-note{
-    color:#777;
-
-    font-size:11px;
-
-    line-height:1.6;
-
-    margin-top:20px;
-}
-
-.payment-form{
-    margin-top:20px;
-}
-
-.payment-form label{
-    display:block;
-
-    font-size:11px;
-
-    margin-bottom:7px;
-}
-
-.payment-form input{
-    width:100%;
-
-    border:1px solid #ccc;
-
-    padding:13px;
-
-    outline:none;
-}
-
-.paid-btn{
-    width:100%;
-
-    border:0;
-
-    background:#111;
-    color:#fff;
-
-    padding:15px;
-
-    margin-top:12px;
-
-    font-size:11px;
-    letter-spacing:1px;
-}
-
-
-/* =========================
-   FEATURES
-========================= */
-
-.features{
-    background:#f7f6f3;
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    text-align:center;
-
-    padding:35px 20px;
-}
-
-.feature{
-    padding:15px;
-
-    border-right:1px solid #ddd;
-}
-
-.feature:last-child{
-    border-right:0;
-}
-
-.feature strong{
-    font-size:11px;
-}
-
-.feature p{
-    color:#777;
-
-    font-size:10px;
-
-    margin-top:7px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#111;
-
-    color:#fff;
-
-    padding:65px 25px 25px;
-}
-
-.footer-grid{
-    max-width:1400px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr 1fr 1fr;
-
-    gap:50px;
-}
-
-.footer-logo{
-    font-family:Georgia,serif;
-
-    font-size:28px;
-
-    letter-spacing:4px;
-}
-
-.footer-about{
-    color:#aaa;
-
-    font-size:13px;
-
-    line-height:1.8;
-
-    max-width:340px;
-
-    margin-top:15px;
-}
-
-footer h4{
-    font-size:11px;
-
-    letter-spacing:1px;
-
-    margin-bottom:18px;
-}
-
-footer a{
-    display:block;
-
-    color:#aaa;
-
-    font-size:11px;
-
-    margin-bottom:12px;
-}
-
-.copyright{
-    max-width:1400px;
-
-    margin:50px auto 0;
-
-    padding-top:20px;
-
-    border-top:1px solid #333;
-
-    color:#777;
-
-    text-align:center;
-
-    font-size:10px;
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp{
-    position:fixed;
-
-    right:20px;
-    bottom:20px;
-
-    width:55px;
-    height:55px;
-
-    border-radius:50%;
-
-    background:#25D366;
-
-    color:#fff;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:25px;
-
-    z-index:1500;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .nav{
-        display:none;
-    }
-
-    .mobile-menu{
-        display:block;
-        font-size:22px;
-    }
-
-    .header-inner{
-        height:65px;
-        padding:0 15px;
-    }
-
-    .logo{
-        font-size:22px;
-    }
-
-    .icons{
-        gap:11px;
-        font-size:18px;
-    }
-
-    .hero{
-        height:540px;
-    }
-
-    .hero-content{
-        left:6%;
-        right:20px;
-    }
-
-    .hero-content h1{
-        font-size:48px;
-    }
-
-    .categories{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .category{
-        height:280px;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-    }
-
-    .quick-add{
-        display:none;
-    }
-
-    .section{
-        padding:55px 12px;
-    }
-
-    .heading h2{
-        font-size:31px;
-    }
-
-    .payment-inner{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .features{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .feature{
-        border-right:0;
-        border-bottom:1px solid #ddd;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-        gap:35px;
-    }
-}
-
-
-@media(max-width:500px){
-
-    .topbar{
-        font-size:9px;
-    }
-
-    .hero{
-        height:500px;
-    }
-
-    .hero-content h1{
-        font-size:42px;
-    }
-
-    .hero-content p{
-        font-size:13px;
-    }
-
-    .category{
-        height:240px;
-    }
-
-    .category-text h3{
-        font-size:20px;
-    }
-
-    .product-name{
-        font-size:11px;
-    }
-
-    .price{
-        font-size:11px;
-    }
-
-    .promo{
-        height:350px;
-    }
-
-    .promo-content{
-        left:6%;
-    }
-
-    .promo-content h2{
-        font-size:38px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .modal-box{
-        margin:10px auto;
-        padding:22px;
-    }
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     TOP BAR
-========================= -->
-
-<div class="topbar">
-    ADVANCE PAYMENT PAR DELIVERY BILKUL FREE • AZORA.PK
-</div>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header class="header">
-
-<div class="header-inner">
-
-    <div class="mobile-menu">
-        ☰
-    </div>
-
-    <div class="logo">
-        AZORA<span>.PK</span>
-    </div>
-
-    <ul class="nav">
-
-        <li>
-            <a href="#">NEW IN</a>
-        </li>
-
-        <li>
-            <a href="#women">WOMEN</a>
-        </li>
-
-        <li>
-            <a href="#unstitched">UNSTITCHED</a>
-        </li>
-
-        <li>
-            <a href="#ready">READY TO WEAR</a>
-        </li>
-
-        <li>
-            <a href="#gents">GENTS</a>
-        </li>
-
-        <li>
-            <a href="#kids">KIDS</a>
-        </li>
-
-        <li>
-            <a href="#sale">SALE</a>
-        </li>
-
-    </ul>
-
-
-    <div class="icons">
-
-        <span class="icon">
-            ⌕
-        </span>
-
-        <span class="icon">
-            ♙
-        </span>
-
-        <span class="icon">
-            ♡
-        </span>
-
-        <span class="icon">
-            🛍
-        </span>
-
-    </div>
-
-</div>
-
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero" id="women">
-
-<img
-src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1800&q=85"
-alt="Azora Collection"
->
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<small>
-AZORA NEW COLLECTION
-</small>
-
-<h1>
-Summer<br>
-Edit '26
-</h1>
-
-<p>
-Discover effortless Pakistani fashion,
-crafted for every moment.
-</p>
-
-<a
-class="hero-btn"
-href="#collection"
->
-SHOP NOW
-</a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     SHOP BY CATEGORY
-========================= -->
-
-<section class="section">
-
-<div class="heading">
-
-<small>
-EXPLORE AZORA
-</small>
-
-<h2>
-Shop By Category
-</h2>
-
-</div>
-
-
-<div class="main-tabs">
-
-<button class="active">
+NEW IN
 WOMEN
-</button>
-
-<button>
-GENTS
-</button>
-
-<button>
-KIDS
-</button>
-
-</div>
-
-
-<!-- WOMEN -->
-
-<div class="sub-category">
-
-<button class="active">
 UNSTITCHED
-</button>
-
-<button>
 READY TO WEAR
-</button>
-
-<button>
-DUPATTAS
-</button>
-
-<button>
-HIJABS
-</button>
-
-<button>
+GENTS
+KIDS
 ACCESSORIES
-</button>
-
-</div>
-
-
-<div class="categories">
-
-<div class="category" id="unstitched">
-
-<img
-src="https://images.unsplash.com/photo-1610030469983-98e550d080a6?auto=format&fit=crop&w=800&q=85"
-alt="Unstitched"
->
-
-<div class="category-text">
-
-<h3>
-Unstitched
-</h3>
-
-<span>
-SHOP COLLECTION →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category" id="ready">
-
-<img
-src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85"
-alt="Ready To Wear"
->
-
-<div class="category-text">
-
-<h3>
-Ready To Wear
-</h3>
-
-<span>
-SHOP COLLECTION →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=85"
-alt="Accessories"
->
-
-<div class="category-text">
-
-<h3>
-Accessories
-</h3>
-
-<span>
-SHOP COLLECTION →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=800&q=85"
-alt="Sale"
->
-
-<div class="category-text">
-
-<h3>
-Sale
-</h3>
-
-<span>
-SHOP NOW →
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     GENTS COLLECTION
-========================= -->
-
-<section class="section" id="gents">
-
-<div class="heading">
-
-<small>
-AZORA GENTS
-</small>
-
-<h2>
-Gents Collection
-</h2>
-
-</div>
-
-
-<div class="sub-category">
-
-<button class="active">
-SOFT COTTON
-</button>
-
-<button>
-HARD COTTON
-</button>
-
-<button>
-WAISTCOAT SUIT
-</button>
-
-</div>
-
-
-<div class="categories">
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=800&q=85"
-alt="Soft Cotton"
->
-
-<div class="category-text">
-
-<h3>
-Soft Cotton
-</h3>
-
-<span>
-SHOP GENTS →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=800&q=85"
-alt="Hard Cotton"
->
-
-<div class="category-text">
-
-<h3>
-Hard Cotton
-</h3>
-
-<span>
-SHOP GENTS →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=85"
-alt="Waistcoat Suit"
->
-
-<div class="category-text">
-
-<h3>
-Waistcoat Suit
-</h3>
-
-<span>
-SHOP GENTS →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=800&q=85"
-alt="Gents Collection"
->
-
-<div class="category-text">
-
-<h3>
-Gents Edit
-</h3>
-
-<span>
-VIEW COLLECTION →
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     KIDS COLLECTION
-========================= -->
-
-<section class="section" id="kids">
-
-<div class="heading">
-
-<small>
-AZORA KIDS
-</small>
-
-<h2>
-Kids Collection
-</h2>
-
-</div>
-
-
-<div class="sub-category">
-
-<button class="active">
-PRINT
-</button>
-
-<button>
-EMBROIDERY
-</button>
-
-<button>
-PLAIN
-</button>
-
-</div>
-
-
-<div class="categories">
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=85"
-alt="Kids Print"
->
-
-<div class="category-text">
-
-<h3>
-Print
-</h3>
-
-<span>
-SHOP KIDS →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=800&q=85"
-alt="Kids Embroidery"
->
-
-<div class="category-text">
-
-<h3>
-Embroidery
-</h3>
-
-<span>
-SHOP KIDS →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=85"
-alt="Kids Plain"
->
-
-<div class="category-text">
-
-<h3>
-Plain
-</h3>
-
-<span>
-SHOP KIDS →
-</span>
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<img
-src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85"
-alt="Kids Collection"
->
-
-<div class="category-text">
-
-<h3>
-Kids Edit
-</h3>
-
-<span>
-VIEW COLLECTION →
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     BEST SELLERS
-========================= -->
-
-<section
-class="section"
-id="collection"
->
-
-<div class="heading">
-
-<small>
-AZORA PICKS
-</small>
-
-<h2>
-Best Sellers
-</h2>
-
-</div>
-
-
-<div class="product-toolbar">
-
-<span>
-24 PRODUCTS
-</span>
-
-<select class="sort">
-
-<option>
-Featured
-</option>
-
-<option>
-Price: Low to High
-</option>
-
-<option>
-Price: High to Low
-</option>
-
-<option>
-Newest
-</option>
-
-</select>
-
-</div>
-
-
-<div class="products">
-
-
-<!-- PRODUCT 1 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<span class="sale">
 SALE
-</span>
 
-<span class="wishlist">
-♡
-</span>
+RIGHT:
 
-<img
-src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format
+Search icon
+Account icon
+Cart icon
+
+On mobile:
+- Hamburger menu
+- AZORA logo in center
+- Search
+- Cart
+
+The AZORA logo must be highlighted and premium.
+
+Logo style:
+AZORA
+Elegant serif typography
+Letter spacing
+Minimal gold underline
+Luxury fashion branding
+
+==================================================
+2. HERO SECTION
+==================================================
+
+Create a large premium fashion hero banner.
+
+Do NOT use sari-clad Indian models.
+
+Use elegant Pakistani fashion / fabric photography.
+
+Hero text:
+
+“THE NEW AZORA EDIT”
+
+Subtitle:
+
+“Timeless Pakistani Fashion, Reimagined.”
+
+Buttons:
+
+SHOP WOMEN
+SHOP GENTS
+
+Hero should be full width and premium.
+
+Add subtle image zoom animation on hover.
+
+==================================================
+3. SHOP / CATALOG SECTION
+==================================================
+
+IMPORTANT:
+
+The catalog must NOT be rectangular normal boxes.
+
+Use LARGE ROUND / CIRCULAR catalog cards.
+
+Each category should appear as a beautiful circular image with:
+- perfectly round image
+- thin luxury border
+- category name underneath
+- subtle hover zoom
+- premium shadow
+- elegant typography
+
+The catalog section should come BEFORE the detailed product/category sections.
+
+Title:
+
+“SHOP BY CATEGORY”
+
+Create separate circular catalogs.
+
+==================================================
+4. LADIES CATALOG
+==================================================
+
+Circular catalog group:
+
+LADIES
+
+Inside Ladies create separate circular category items:
+
+1. Ladies 2 Piece
+2. Ladies 3 Piece
+3. Ladies Unstitched
+4. Ladies Ready To Wear
+5. Ladies Lawn
+6. Ladies Chiffon
+7. Ladies Georgette
+8. Ladies Velvet
+9. Ladies Embroidered
+10. Ladies Printed
+
+Every category must be a separate circular catalog.
+
+Example layout:
+
+      [Circular Image]
+      Ladies 2 Piece
+
+      [Circular Image]
+      Ladies 3 Piece
+
+      [Circular Image]
+      Unstitched
+
+etc.
+
+On clicking a category, open that category's product listing.
+
+==================================================
+5. DUPATTA CATALOG
+==================================================
+
+Create a completely separate circular catalog section:
+
+“DUPATTA COLLECTION”
+
+Circular categories:
+
+1. Printed Dupatta
+2. Embroidered Dupatta
+3. Chiffon Dupatta
+4. Organza Dupatta
+5. Silk Dupatta
+6. Fancy Dupatta
+7. Plain Dupatta
+
+Each one must be a separate round catalog.
+
+==================================================
+6. TROUSERS CATALOG
+==================================================
+
+Create a separate section:
+
+“TROUSERS COLLECTION”
+
+Circular catalogs:
+
+1. Plain Trousers
+2. Printed Trousers
+3. Cotton Trousers
+4. Linen Trousers
+5. Khaddar Trousers
+6. Fancy Trousers
+7. Jamawar Trousers
+
+Each category must be a separate round catalog.
+
+==================================================
+7. GENTS CATALOG
+==================================================
+
+Create a completely separate GENTS circular catalog section.
+
+Title:
+
+“GENTS COLLECTION”
+
+Circular catalog items:
+
+1. Gents Cotton
+2. Soft Cotton
+3. Hard Cotton
+4. Wash & Wear
+5. Gents Unstitched
+6. Gents Suit
+7. Waistcoat
+8. Waistcoat Suit
+9. Kurta
+10. Shalwar Kameez
+11. Premium Fabric
+12. Summer Collection
+13. Winter Collection
+
+IMPORTANT:
+
+Gents categories must be visually separate from Ladies.
+
+Every Gents category should have its own circular image.
+
+Clicking:
+Soft Cotton
+opens Soft Cotton products.
+
+Clicking:
+Hard Cotton
+opens Hard Cotton products.
+
+Clicking:
+Wash & Wear
+opens Wash & Wear products.
+
+Clicking:
+Waistcoat
+opens Waistcoat products.
+
+Clicking:
+Waistcoat Suit
+opens Waistcoat Suit products.
+
+==================================================
+8. KIDS CATALOG
+==================================================
+
+Create separate circular catalog section:
+
+“KIDS COLLECTION”
+
+Circular categories:
+
+1. Kids Print
+2. Kids Embroidery
+3. Kids Plain
+4. Kids 2 Piece
+5. Kids 3 Piece
+6. Girls Collection
+7. Boys Collection
+8. Kids Festive
+9. Kids Casual
+
+Each must have a separate circular catalog.
+
+==================================================
+9. ACCESSORIES
+==================================================
+
+Create separate circular catalog:
+
+“ACCESSORIES”
+
+Categories:
+
+1. Hijabs
+2. Shawls
+3. Dupattas
+4. Scarves
+5. Bags
+6. Fashion Accessories
+
+==================================================
+10. SALE CATALOG
+==================================================
+
+Create a premium sale section.
+
+Title:
+
+“SALE”
+
+Circular catalogs:
+
+1. Ladies Sale
+2. Gents Sale
+3. Kids Sale
+4. Dupatta Sale
+5. Trousers Sale
+
+Use elegant SALE badges.
+
+==================================================
+11. CATEGORY NAVIGATION
+==================================================
+
+When user clicks any circular catalog:
+
+Open a dedicated category/product listing page or dynamic category view.
+
+Example:
+
+Click:
+Gents → Soft Cotton
+
+Show:
+
+SOFT COTTON
+
+Filter:
+- Price
+- Size
+- Color
+- Fabric
+- Availability
+
+Sort:
+- Newest
+- Price Low to High
+- Price High to Low
+- Best Selling
+
+Product cards must contain:
+
+Product image
+Product name
+Price
+Old price if on sale
+SALE badge if applicable
+Add to Cart
+Quick View
+
+==================================================
+12. PRODUCT CARD DESIGN
+==================================================
+
+Create premium product cards.
+
+Desktop:
+4 products per row.
+
+Tablet:
+3 products per row.
+
+Mobile:
+2 products per row.
+
+Product card:
+- clean white background
+- rounded corners
+- subtle shadow
+- image ratio suitable for fashion
+- hover zoom
+- heart/favorite button
+- quick view button
+
+Example:
+
+Premium Cotton Suit
+Rs. 3,999
+Rs. 4,999
+
+[ADD TO CART]
+
+==================================================
+13. BEST SELLERS
+==================================================
+
+After the catalog sections create:
+
+“BEST SELLERS”
+
+Show premium products.
+
+Add:
+VIEW ALL
+
+==================================================
+14. NEW ARRIVALS
+==================================================
+
+Create:
+
+“NEW ARRIVALS”
+
+Show latest products.
+
+Add:
+SHOP NEW ARRIVALS
+
+==================================================
+15. PROMOTIONAL BANNER
+==================================================
+
+Create a luxury promotional banner.
+
+Text:
+
+“ELEVATE YOUR EVERYDAY STYLE”
+
+Subtitle:
+
+“Premium fabrics. Elegant designs. Timeless AZORA.”
+
+Button:
+
+SHOP NOW
+
+==================================================
+16. ADVANCE PAYMENT OFFER
+==================================================
+
+Create a clearly visible premium payment banner.
+
+Main text:
+
+“ADVANCE PAYMENT = FREE DELIVERY”
+
+Subtext:
+
+“Pay in advance and enjoy FREE delivery on your order.”
+
+Button:
+
+VIEW PAYMENT METHODS
+
+Clicking the button must open the Payment Methods modal/page.
+
+==================================================
+17. PAYMENT METHODS
+==================================================
+
+Payment Methods must be fully visible and functional.
+
+Title:
+
+“PAYMENT METHODS”
+
+Show:
+
+ADVANCE PAYMENT = FREE DELIVERY
+
+JAZZCASH
+
+Number:
+0308-440-5550
+
+Add:
+COPY NUMBER
+
+MEEZAN BANK
+
+Account Number:
+98430104527600
+
+Add:
+COPY ACCOUNT NUMBER
+
+Important:
+These payment details must remain exactly as provided.
+
+After advance payment:
+
+“After payment, enter your Transaction ID during checkout or send payment proof on WhatsApp.”
+
+==================================================
+18. WHATSAPP
+==================================================
+
+IMPORTANT:
+
+WhatsApp number is:
+
+0304-440-5550
+
+Do NOT use the JazzCash number as the WhatsApp number.
+
+WhatsApp link:
+
+https://wa.me/923044405550
+
+Create a floating WhatsApp button.
+
+Text:
+
+“Chat on WhatsApp”
+
+Clicking it opens WhatsApp.
+
+==================================================
+19. ACCOUNT SYSTEM
+==================================================
+
+Create a working customer account interface.
+
+Header account icon:
+
+MY ACCOUNT
+
+Login fields:
+
+Email Address
+Password
+
+Buttons:
+
+LOGIN
+CREATE ACCOUNT
+
+Create Account fields:
+
+Full Name
+Email Address
+Phone Number
+Password
+Confirm Password
+
+After login:
+show:
+
+Welcome, Customer Name
+
+Account dashboard:
+
+MY PROFILE
+MY ORDERS
+SAVED ADDRESSES
+LOGOUT
+
+The customer's email must be stored with their account.
+
+==================================================
+20. CUSTOMER DETAILS / CHECKOUT
+==================================================
+
+Customer must have a proper checkout form.
+
+Title:
+
+“DELIVERY DETAILS”
+
+Fields:
+
+Full Name *
+Email Address *
+Phone Number *
+City *
+Complete Delivery Address *
+Postal Code
+Order Notes
+
+Payment Method:
+
+Advance Payment - JazzCash
+Advance Payment - Meezan Bank
+Cash on Delivery
+
+If customer selects advance payment:
+
+Show:
+
+“ADVANCE PAYMENT = FREE DELIVERY”
+
+Show:
+
+JazzCash:
+0308-440-5550
+
+Meezan Bank:
+98430104527600
+
+Transaction ID field:
+
+“Transaction ID”
+
+Payment proof option:
+
+“Send Payment Proof on WhatsApp”
+
+==================================================
+21. CART
+==================================================
+
+Create a working shopping cart.
+
+Cart should show:
+
+Product
+Image
+Price
+Quantity +/-
+Remove
+Subtotal
+
+Show:
+
+Subtotal
+Delivery
+Total
+
+If customer selects advance payment:
+
+Delivery:
+
+FREE
+
+Show:
+
+“FREE DELIVERY — ADVANCE PAYMENT”
+
+Buttons:
+
+CONTINUE SHOPPING
+PROCEED TO CHECKOUT
+
+==================================================
+22. ORDER VIA WHATSAPP
+==================================================
+
+After checkout, generate a WhatsApp order message automatically.
+
+Send to:
+
+0304-440-5550
+
+Message should include:
+
+AZORA NEW ORDER
+
+Customer Name
+Email
+Phone
+City
+Complete Address
+Postal Code
+Products
+Quantity
+Total Amount
+Payment Method
+Transaction ID
+Order Notes
+
+Also include:
+
+ADVANCE PAYMENT = FREE DELIVERY
+
+==================================================
+23. ABOUT AZORA
+==================================================
+
+About must actually open when clicked.
+
+Create:
+
+“ABOUT AZORA”
+
+Content:
+
+“Welcome to AZORA — a modern Pakistani fashion destination offering elegant clothing and premium fabrics for women, men and kids.
+
+Our collections are designed around timeless style, quality fabrics and a refined shopping experience.
+
+Explore AZORA for unstitched fashion, ready-to-wear outfits, gents collections, kids wear, dupattas, trousers and accessories.”
+
+Create button:
+
+CLOSE
+
+About should open as a modal/page when clicking:
+
+ABOUT
+
+==================================================
+24. FOOTER
+==================================================
+
+Create a premium multi-column footer.
+
+Column 1:
+
+AZORA
+
+“Timeless Pakistani Fashion.”
+
+Column 2:
+
+SHOP
+
+New In
+Women
+Unstitched
+Ready To Wear
+Gents
+Kids
+Sale
+
+Column 3:
+
+CUSTOMER CARE
+
+Contact Us
+WhatsApp
+Payment Methods
+Shipping
+Returns
+FAQs
+
+Column 4:
+
+INFORMATION
+
+About AZORA
+My Account
+Privacy Policy
+Terms & Conditions
+
+Payment section:
+
+PAYMENT METHODS
+
+JazzCash
+0308-440-5550
+
+Meezan Bank
+98430104527600
+
+Offer:
+
+ADVANCE PAYMENT = FREE DELIVERY
+
+WhatsApp:
+
+0304-440-5550
+
+==================================================
+25. MOBILE DESIGN
+==================================================
+
+Website must be fully responsive.
+
+Mobile:
+
+2 circular catalogs per row.
+
+Catalog circles should remain perfectly round.
+
+Product grid:
+2 products per row.
+
+Header:
+Hamburger
+AZORA
+Search
+Cart
+
+Mobile menu:
+
+NEW IN
+WOMEN
+UNSTITCHED
+READY TO WEAR
+GENTS
+KIDS
+ACCESSORIES
+SALE
+ABOUT
+PAYMENT METHODS
+MY ACCOUNT
+CONTACT
+
+==================================================
+26. PREMIUM ANIMATIONS
+==================================================
+
+Use subtle animations only.
+
+Circular catalog:
+- hover scale
+- soft shadow
+- image zoom
+
+Buttons:
+- smooth hover
+- slight movement
+
+Product cards:
+- image zoom
+- heart animation
+
+Sections:
+- fade-in while scrolling
+
+Do NOT make animations excessive.
+
+==================================================
+27. SEARCH
+==================================================
+
+Create working search.
+
+User can search:
+
+Cotton
+Lawn
+3 Piece
+Dupatta
+Gents
+Kids
+Trousers
+Waistcoat
+Wash & Wear
+
+Search results should display matching products/categories.
+
+==================================================
+28. FAVORITES
+==================================================
+
+Add heart icon to products.
+
+Customer can add products to wishlist/favorites.
+
+Save wishlist locally for the demo version.
+
+==================================================
+29. IMPORTANT DATA
+==================================================
+
+Use these exact business details:
+
+BRAND:
+AZORA
+
+JAZZCASH:
+0308-440-5550
+
+MEEZAN BANK:
+98430104527600
+
+WHATSAPP:
+0304-440-5550
+
+WHATSAPP LINK:
+https://wa.me/923044405550
+
+DELIVERY OFFER:
+ADVANCE PAYMENT = FREE DELIVERY
+
+==================================================
+30. DESIGN RULE
+==================================================
+
+The most important visual requirement:
+
+CATALOGS MUST BE ROUND.
+
+Do NOT create square rectangular category boxes.
+
+Use large circular fashion images.
+
+Separate the catalog into:
+
+LADIES
+GENTS
+KIDS
+DUPATTAS
+TROUSERS
+ACCESSORIES
+SALE
+
+Each category gets its own circular catalog.
+
+Example:
+
+SHOP BY CATEGORY
+
+        ○
+     LADIES
+
+        ○
+      GENTS
+
+        ○
+       KIDS
+
+        ○
+     DUPATTA
+
+        ○
+     TROUSERS
+
+Then detailed category circles underneath.
+
+==================================================
+31. FINAL TECHNICAL REQUIREMENT
+==================================================
+
+Create the complete website as a single self-contained HTML file.
+
+Include:
+
+HTML
+CSS
+JavaScript
+
+Everything should work from one file.
+
+No broken buttons.
+
+No dead links.
+
+All modals must open and close.
+
+Account modal must work.
+
+Checkout modal must work.
+
+Payment Methods must open.
+
+About must open.
+
+Copy payment numbers must work.
+
+WhatsApp buttons must work.
+
+Cart must work.
+
+Search must work.
+
+Category filtering/navigation must work.
+
+Responsive mobile layout must work.
+
+Use localStorage for:
+- customer account demo
+- login state
+- cart
+- wishlist
+- checkout/order data
+
+The visual result should feel:
+
+PREMIUM
+MODERN
+MINIMAL
+LUXURY
+PAKISTANI FASHION
+MOBILE FRIENDLY
+
+The final visible brand name everywhere must be:
+
+AZORA
+
+Never use:
+
+AZORA.PK
