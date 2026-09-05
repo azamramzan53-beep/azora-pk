@@ -1,570 +1,1030 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Azora.pk | Premium Fashion</title>
+<title>AZORA.PK | Pakistani Fashion</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#171717;
+    background:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:9px;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* HEADER */
+.header{
+    border-bottom:1px solid #e8e8e8;
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.header-inner{
+    max-width:1400px;
+    height:78px;
+    margin:auto;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:29px;
+    letter-spacing:4px;
+    font-weight:bold;
+}
+
+.logo span{
+    font-size:12px;
+    letter-spacing:1px;
+    margin-left:3px;
+}
+
+.nav{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav a{
+    font-size:13px;
+    letter-spacing:.5px;
+}
+
+.nav a:hover{
+    border-bottom:1px solid #111;
+    padding-bottom:5px;
+}
+
+.icons{
+    display:flex;
+    gap:20px;
+    font-size:20px;
+}
+
+.icon{
+    cursor:pointer;
+}
+
+/* MOBILE HEADER */
+.mobile-menu{
+    display:none;
+}
+
+/* HERO */
+.hero{
+    width:100%;
+    height:620px;
+    position:relative;
+    overflow:hidden;
+    background:#eee;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.08),
+        rgba(0,0,0,0)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    left:8%;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+    max-width:480px;
+}
+
+.hero-content small{
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+.hero-content h1{
+    font-family:Georgia,serif;
+    font-size:64px;
+    font-weight:400;
+    line-height:1;
+    margin:18px 0;
+}
+
+.hero-content p{
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#fff;
+    color:#111;
+    padding:15px 28px;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* SECTION */
+.section{
+    max-width:1400px;
+    margin:auto;
+    padding:70px 25px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading small{
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.heading h2{
+    font-family:Georgia,serif;
+    font-size:38px;
+    font-weight:400;
+    margin-top:9px;
+}
+
+/* CATEGORIES */
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.category{
+    height:390px;
+    position:relative;
+    overflow:hidden;
+}
+
+.category img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.category:hover img{
+    transform:scale(1.05);
+}
+
+.category-text{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:35px 20px 22px;
+    color:#fff;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+}
+
+.category-text h3{
+    font-family:Georgia,serif;
+    font-size:25px;
+    font-weight:400;
+}
+
+.category-text span{
+    display:block;
+    margin-top:8px;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+/* PRODUCTS */
+.product-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:15px;
+}
+
+.product-toolbar span{
+    font-size:13px;
+}
+
+.sort{
+    padding:9px 15px;
+    border:1px solid #ddd;
+    background:white;
+}
+
+/* PRODUCT GRID */
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    position:relative;
+    min-width:0;
+}
+
+.product-image{
+    position:relative;
+    overflow:hidden;
+    background:#f5f5f5;
+}
+
+.product-image img{
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    display:block;
+    transition:.45s;
+}
+
+.product:hover img{
+    transform:scale(1.035);
+}
+
+.sale{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#111;
+    color:#fff;
+    padding:7px 10px;
+    font-size:10px;
+    letter-spacing:.5px;
+    z-index:2;
+}
+
+.wishlist{
+    position:absolute;
+    right:13px;
+    top:11px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+    z-index:2;
+}
+
+.quick-add{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:13px;
+    font-size:11px;
+    letter-spacing:1px;
+    transform:translateY(100%);
+    transition:.3s;
+}
+
+.product:hover .quick-add{
+    transform:translateY(0);
+}
+
+.product-info{
+    padding-top:13px;
+}
+
+.product-name{
+    font-size:13px;
+    line-height:1.5;
+}
+
+.price{
+    margin-top:7px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-weight:normal;
+    margin-left:6px;
+}
+
+.discount{
+    color:#777;
+    font-size:10px;
+    margin-top:5px;
+}
+
+/* PROMO */
+.promo{
+    margin-top:20px;
+    height:500px;
+    position:relative;
+    overflow:hidden;
+}
+
+.promo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.promo-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+}
+
+.promo-content{
+    position:absolute;
+    left:8%;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+}
+
+.promo-content small{
+    letter-spacing:4px;
+    font-size:11px;
+}
+
+.promo-content h2{
+    font-family:Georgia,serif;
+    font-size:55px;
+    font-weight:400;
+    margin:12px 0 20px;
+}
+
+/* FEATURES */
+.features{
+    background:#f7f6f3;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+    padding:35px 20px;
+}
+
+.feature{
+    padding:15px;
+    border-right:1px solid #ddd;
+}
+
+.feature:last-child{
+    border:0;
+}
+
+.feature strong{
+    font-size:12px;
+    letter-spacing:.5px;
+}
+
+.feature p{
+    margin-top:7px;
+    color:#777;
+    font-size:11px;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    padding:65px 25px 25px;
+}
+
+.footer-grid{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-logo{
+    font-family:Georgia,serif;
+    font-size:28px;
+    letter-spacing:4px;
+}
+
+.footer-about{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.8;
+    margin-top:15px;
+    max-width:330px;
+}
+
+footer h4{
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+footer a{
+    display:block;
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.copyright{
+    max-width:1400px;
+    margin:50px auto 0;
+    padding-top:20px;
+    border-top:1px solid #333;
+    text-align:center;
+    color:#777;
+    font-size:10px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .nav{
+        display:none;
     }
 
-    body {
-      background: #faf9f7;
-      color: #171717;
+    .mobile-menu{
+        display:block;
+        font-size:23px;
     }
 
-    /* HEADER */
-    header {
-      width: 100%;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid #e9e5df;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .header-inner{
+        height:65px;
     }
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
+    .logo{
+        font-size:23px;
     }
 
-    .logo {
-      font-size: 27px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #171717;
+    .icons{
+        gap:13px;
+        font-size:18px;
     }
 
-    .logo span {
-      color: #b08d57;
+    .hero{
+        height:540px;
     }
 
-    .menu {
-      display: flex;
-      gap: 30px;
-      list-style: none;
+    .hero-content{
+        left:6%;
+        right:20px;
     }
 
-    .menu a {
-      text-decoration: none;
-      color: #222;
-      font-size: 14px;
-      font-weight: 500;
+    .hero-content h1{
+        font-size:48px;
     }
 
-    .menu a:hover {
-      color: #b08d57;
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-    .cart {
-      font-size: 21px;
-      cursor: pointer;
+    .category{
+        height:280px;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg,
-        rgba(250,249,247,1) 0%,
-        rgba(250,249,247,.92) 45%,
-        rgba(250,249,247,.15) 100%),
-        url("https://images.unsplash.com/photo-1610030469983-98e550d080a6?auto=format&fit=crop&w=1600&q=85");
-
-      background-size: cover;
-      background-position: center;
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
     }
 
-    .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 40px 20px;
+    .section{
+        padding:50px 12px;
     }
 
-    .small-title {
-      color: #b08d57;
-      letter-spacing: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 18px;
+    .heading h2{
+        font-size:30px;
     }
 
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(48px, 8vw, 88px);
-      line-height: .95;
-      max-width: 600px;
-      font-weight: 500;
+    .quick-add{
+        display:none;
     }
 
-    .hero p {
-      margin-top: 25px;
-      max-width: 470px;
-      line-height: 1.8;
-      color: #555;
-      font-size: 15px;
+    .promo{
+        height:400px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 32px;
-      background: #171717;
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 1px;
-      transition: .3s;
+    .promo-content h2{
+        font-size:40px;
     }
 
-    .btn:hover {
-      background: #b08d57;
+    .features{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-    /* COLLECTION */
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 20px;
+    .feature{
+        border:0;
+        border-bottom:1px solid #ddd;
     }
 
-    .section-heading {
-      text-align: center;
-      margin-bottom: 45px;
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+    }
+}
+
+@media(max-width:500px){
+
+    .topbar{
+        font-size:9px;
     }
 
-    .section-heading span {
-      color: #b08d57;
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: bold;
+    .hero{
+        height:500px;
     }
 
-    .section-heading h2 {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      font-weight: 500;
-      margin-top: 10px;
+    .hero-content h1{
+        font-size:42px;
     }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+    .hero-content p{
+        font-size:13px;
     }
 
-    .product {
-      background: white;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid #eeeae4;
+    .category{
+        height:240px;
     }
 
-    .product-img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: block;
-      transition: .5s;
+    .category-text h3{
+        font-size:20px;
     }
 
-    .product:hover .product-img {
-      transform: scale(1.04);
+    .product-name{
+        font-size:11px;
     }
 
-    .product-info {
-      padding: 20px;
+    .price{
+        font-size:11px;
     }
 
-    .product-info h3 {
-      font-family: Georgia, serif;
-      font-size: 20px;
-      font-weight: 500;
+    .promo{
+        height:350px;
     }
 
-    .price {
-      margin-top: 8px;
-      color: #b08d57;
-      font-weight: bold;
+    .promo-content{
+        left:6%;
     }
 
-    .buy {
-      display: inline-block;
-      margin-top: 15px;
-      color: #171717;
-      text-decoration: none;
-      border-bottom: 1px solid #171717;
-      font-size: 12px;
-      letter-spacing: 1px;
+    .promo-content h2{
+        font-size:35px;
     }
 
-    /* FEATURE */
-    .feature {
-      background: #171717;
-      color: white;
+    .footer-grid{
+        grid-template-columns:1fr;
     }
-
-    .feature-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .feature-image {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-    }
-
-    .feature-text span {
-      color: #c6a36b;
-      font-size: 12px;
-      letter-spacing: 3px;
-    }
-
-    .feature-text h2 {
-      font-family: Georgia, serif;
-      font-size: 50px;
-      font-weight: 400;
-      margin: 18px 0;
-    }
-
-    .feature-text p {
-      color: #c9c9c9;
-      line-height: 1.8;
-      max-width: 470px;
-    }
-
-    .light-btn {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 15px 30px;
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #f0eee9;
-      padding: 55px 20px 25px;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 50px;
-    }
-
-    footer h3 {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      margin-bottom: 15px;
-    }
-
-    footer p,
-    footer a {
-      color: #666;
-      line-height: 1.8;
-      text-decoration: none;
-      font-size: 14px;
-      display: block;
-    }
-
-    .copyright {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #ddd8d0;
-      color: #777;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-
-      .nav {
-        height: 65px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      .menu {
-        display: none;
-      }
-
-      .hero {
-        min-height: 600px;
-        background-position: 65% center;
-      }
-
-      .hero-content {
-        padding-top: 80px;
-        align-self: flex-start;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-      }
-
-      .hero p {
-        font-size: 14px;
-        max-width: 330px;
-      }
-
-      .section {
-        padding: 65px 15px;
-      }
-
-      .section-heading h2 {
-        font-size: 34px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .product-img {
-        height: 430px;
-      }
-
-      .feature-inner {
-        grid-template-columns: 1fr;
-        padding: 65px 20px;
-        gap: 35px;
-      }
-
-      .feature-image {
-        height: 420px;
-      }
-
-      .feature-text h2 {
-        font-size: 40px;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <nav class="nav">
+<!-- TOP BAR -->
+<div class="topbar">
+    FREE DELIVERY ON ORDERS ABOVE RS. 4,999
+</div>
 
-      <div class="logo">
+<!-- HEADER -->
+<header class="header">
+
+<div class="header-inner">
+
+    <div class="mobile-menu">☰</div>
+
+    <div class="logo">
         AZORA<span>.PK</span>
-      </div>
-
-      <ul class="menu">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#collection">COLLECTION</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-
-      <div class="cart">🛍️</div>
-
-    </nav>
-  </header>
-
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-
-    <div class="hero-content">
-
-      <div class="small-title">
-        THE NEW STANDARD OF STYLE
-      </div>
-
-      <h1>
-        Elegance<br>
-        Without<br>
-        Limits.
-      </h1>
-
-      <p>
-        Discover carefully selected fashion pieces designed
-        for women who believe true luxury is effortless.
-      </p>
-
-      <a href="#collection" class="btn">
-        EXPLORE COLLECTION
-      </a>
-
     </div>
 
-  </section>
+    <ul class="nav">
+        <li><a href="#">NEW IN</a></li>
+        <li><a href="#">WOMEN</a></li>
+        <li><a href="#">UNSTITCHED</a></li>
+        <li><a href="#">READY TO WEAR</a></li>
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">ACCESSORIES</a></li>
+        <li><a href="#">SALE</a></li>
+    </ul>
 
-
-  <!-- COLLECTION -->
-  <section class="section" id="collection">
-
-    <div class="section-heading">
-      <span>AZORA EDIT</span>
-      <h2>Featured Collection</h2>
+    <div class="icons">
+        <span class="icon">⌕</span>
+        <span class="icon">♙</span>
+        <span class="icon">♡</span>
+        <span class="icon">🛍</span>
     </div>
 
-    <div class="products">
+</div>
 
-      <div class="product">
-
-        <img
-          class="product-img"
-          src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85"
-          alt="Premium Fashion"
-        >
-
-        <div class="product-info">
-          <h3>Ivory Signature</h3>
-          <div class="price">Rs. 4,999</div>
-          <a href="#" class="buy">VIEW PRODUCT →</a>
-        </div>
-
-      </div>
+</header>
 
 
-      <div class="product">
+<!-- HERO BANNER -->
 
-        <img
-          class="product-img"
-          src="https://images.unsplash.com/photo-1585488431561-7e7d4cdb7d8b?auto=format&fit=crop&w=900&q=85"
-          alt="Premium Collection"
-        >
+<section class="hero">
 
-        <div class="product-info">
-          <h3>Midnight Grace</h3>
-          <div class="price">Rs. 5,499</div>
-          <a href="#" class="buy">VIEW PRODUCT →</a>
-        </div>
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1800&q=85">
 
-      </div>
+<div class="hero-overlay"></div>
 
+<div class="hero-content">
 
-      <div class="product">
+<small>AZORA NEW COLLECTION</small>
 
-        <img
-          class="product-img"
-          src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=900&q=85"
-          alt="Luxury Dress"
-        >
+<h1>
+    Summer<br>
+    Edit '26
+</h1>
 
-        <div class="product-info">
-          <h3>Rose Atelier</h3>
-          <div class="price">Rs. 4,499</div>
-          <a href="#" class="buy">VIEW PRODUCT →</a>
-        </div>
+<p>
+    Discover effortless Pakistani fashion,
+    crafted for every moment.
+</p>
 
-      </div>
+<a class="hero-btn" href="#collection">
+    SHOP NOW
+</a>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
 
-  <!-- PREMIUM FEATURE -->
-  <section class="feature" id="about">
+<!-- SHOP BY CATEGORY -->
 
-    <div class="feature-inner">
+<section class="section">
 
-      <img
-        class="feature-image"
-        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85"
-        alt="Azora Premium Fashion"
-      >
+<div class="heading">
+    <small>EXPLORE AZORA</small>
+    <h2>Shop By Category</h2>
+</div>
 
-      <div class="feature-text">
+<div class="categories">
 
-        <span>THE AZORA PHILOSOPHY</span>
+<div class="category">
+<img src="https://images.unsplash.com/photo-1610030469983-98e550d080a6?auto=format&fit=crop&w=800&q=85">
+<div class="category-text">
+<h3>Unstitched</h3>
+<span>SHOP COLLECTION →</span>
+</div>
+</div>
 
-        <h2>
-          Designed to<br>
-          be remembered.
-        </h2>
+<div class="category">
+<img src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85">
+<div class="category-text">
+<h3>Ready To Wear</h3>
+<span>SHOP COLLECTION →</span>
+</div>
+</div>
 
-        <p>
-          Azora brings together modern silhouettes,
-          refined details and timeless elegance.
-          Every piece is selected to make your everyday
-          style feel extraordinary.
-        </p>
+<div class="category">
+<img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=85">
+<div class="category-text">
+<h3>Accessories</h3>
+<span>SHOP COLLECTION →</span>
+</div>
+</div>
 
-        <a href="#collection" class="light-btn">
-          DISCOVER AZORA
-        </a>
+<div class="category">
+<img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=800&q=85">
+<div class="category-text">
+<h3>Sale</h3>
+<span>SHOP NOW →</span>
+</div>
+</div>
 
-      </div>
+</div>
 
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- FOOTER -->
-  <footer id="contact">
+<!-- PRODUCTS -->
 
-    <div class="footer-inner">
+<section class="section" id="collection">
 
-      <div>
-        <h3>AZORA.PK</h3>
-        <p>
-          Premium fashion for the modern woman.
-          Discover elegance, confidence and timeless style.
-        </p>
-      </div>
+<div class="heading">
+<small>AZORA PICKS</small>
+<h2>Best Sellers</h2>
+</div>
 
-      <div>
-        <h3>Explore</h3>
-        <a href="#home">Home</a>
-        <a href="#collection">Collection</a>
-        <a href="#about">About</a>
-      </div>
+<div class="product-toolbar">
+<span>24 PRODUCTS</span>
 
-      <div>
-        <h3>Contact</h3>
-        <p>WhatsApp: +92 XXX XXXXXXX</p>
-        <p>Instagram: @azora.pk</p>
-        <p>Email: info@azora.pk</p>
-      </div>
+<select class="sort">
+<option>Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest</option>
+</select>
 
-    </div>
+</div>
 
-    <div class="copyright">
-      © 2026 AZORA.PK — All Rights Reserved.
-    </div>
 
-  </footer>
+<div class="products">
+
+<!-- PRODUCT 1 -->
+<div class="product">
+
+<div class="product-image">
+
+<span class="sale">SALE</span>
+<span class="wishlist">♡</span>
+
+<img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85">
+
+<div class="quick-add">
+ADD TO CART
+</div>
+
+</div>
+
+<div class="product-info">
+<div class="product-name">Printed Lawn 3 Piece Suit</div>
+<div class="price">
+Rs. 3,199
+<span class="old-price">Rs. 3,799</span>
+</div>
+<div class="discount">16% OFF</div>
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+<div class="product">
+
+<div class="product-image">
+
+<span class="sale">SALE</span>
+<span class="wishlist">♡</span>
+
+<img src="https://images.unsplash.com/photo-1585488431561-7e7d4cdb7d8b?auto=format&fit=crop&w=700&q=85">
+
+<div class="quick-add">
+ADD TO CART
+</div>
+
+</div>
+
+<div class="product-info">
+<div class="product-name">Embroidered Lawn Suit</div>
+<div class="price">
+Rs. 4,499
+<span class="old-price">Rs. 5,899</span>
+</div>
+<div class="discount">24% OFF</div>
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+<div class="product">
+
+<div class="product-image">
+
+<span class="sale">SALE</span>
+<span class="wishlist">♡</span>
+
+<img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=85">
+
+<div class="quick-add">
+ADD TO CART
+</div>
+
+</div>
+
+<div class="product-info">
+<div class="product-name">Premium Lawn 2 Piece</div>
+<div class="price">
+Rs. 2,499
+<span class="old-price">Rs. 3,399</span>
+</div>
+<div class="discount">26% OFF</div>
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+<div class="product">
+
+<div class="product-image">
+
+<span class="sale">SALE</span>
+<span class="wishlist">♡</span>
+
+<img src="https://images.unsplash.com/photo-1610030469668-8e9f2b7f7b8e?auto=format&fit=crop&w=700&q=85">
+
+<div class="quick-add">
+ADD TO CART
+</div>
+
+</div>
+
+<div class="product-info">
+<div class="product-name">Luxury Printed Collection</div>
+<div class="price">
+Rs. 3,699
+<span class="old-price">Rs. 4,699</span>
+</div>
+<div class="discount">21% OFF</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BIG PROMO -->
+
+<section class="section">
+
+<div class="promo">
+
+<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85">
+
+<div class="promo-overlay"></div>
+
+<div class="promo-content">
+
+<small>AZORA ESSENTIALS</small>
+
+<h2>
+Everyday.<br>
+Elevated.
+</h2>
+
+<a class="hero-btn" href="#">
+SHOP WOMEN
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<div class="features">
+
+<div class="feature">
+<strong>FREE DELIVERY</strong>
+<p>On orders above Rs. 4,999</p>
+</div>
+
+<div class="feature">
+<strong>SECURE PAYMENT</strong>
+<p>100% secure checkout</p>
+</div>
+
+<div class="feature">
+<strong>EASY RETURNS</strong>
+<p>Simple return policy</p>
+</div>
+
+<div class="feature">
+<strong>WHATSAPP SUPPORT</strong>
+<p>We're here to help</p>
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+AZORA.PK
+</div>
+
+<p class="footer-about">
+Premium Pakistani fashion designed for
+modern women. Discover unstitched,
+ready-to-wear and accessories.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>SHOP</h4>
+
+<a href="#">New In</a>
+<a href="#">Unstitched</a>
+<a href="#">Ready To Wear</a>
+<a href="#">Sale</a>
+
+</div>
+
+
+<div>
+
+<h4>HELP</h4>
+
+<a href="#">Contact Us</a>
+<a href="#">Track Order</a>
+<a href="#">Shipping</a>
+<a href="#">Returns</a>
+
+</div>
+
+
+<div>
+
+<h4>FOLLOW US</h4>
+
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">TikTok</a>
+<a href="#">WhatsApp</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 AZORA.PK — ALL RIGHTS RESERVED
+</div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp"
+href="https://wa.me/923000000000"
+target="_blank">
+☏
+</a>
 
 </body>
 </html>
