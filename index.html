@@ -1,991 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZORA | Pakistani Fashion</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#171717;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
 
-AZORA
+.topbar{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:9px 15px;
+  font-size:12px;
+  letter-spacing:1px;
+}
 
-IMPORTANT BRAND RULE:
-The website brand/logo must display ONLY:
-AZORA
+header{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5%;
+  border-bottom:1px solid #eee;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-Never display:
-AZORA.PK
-AZORA PK
-AZORA.PK logo
+.logo{
+  font-family:Georgia,serif;
+  font-size:29px;
+  font-weight:bold;
+  letter-spacing:5px;
+  background:linear-gradient(90deg,#111,#b28a4a,#111);
+  -webkit-background-clip:text;
+  color:transparent;
+  position:relative;
+  white-space:nowrap;
+}
 
-Use only “AZORA” throughout the visible website branding.
+.logo:after{
+  content:"";
+  display:block;
+  width:34px;
+  height:2px;
+  background:#b28a4a;
+  margin:5px auto 0;
+}
 
-The website should feel like a premium Pakistani fashion brand, inspired by high-end fashion e-commerce websites but NOT copied from any existing website.
+nav{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
 
-Do NOT use:
-- Indian sari models
-- Indian-style fashion visuals
-- Decorative leaves
-- Cheap-looking templates
-- Overly colorful backgrounds
-- Cartoon graphics
+nav button{
+  border:0;
+  background:none;
+  font-size:12px;
+  letter-spacing:.8px;
+}
 
-Use a clean luxury fashion aesthetic with:
-- Black
-- White
-- Warm beige
-- Soft cream
-- Champagne/gold accents
-- Elegant typography
-- Large product imagery
-- Lots of clean spacing
-- Premium cards
-- Smooth hover animations
-- Rounded/circular catalog design
+.icons{
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
 
-==================================================
-1. HEADER
-==================================================
+.iconBtn{
+  border:0;
+  background:none;
+  font-size:20px;
+  position:relative;
+}
 
-Create a sticky premium header.
+.cartCount{
+  position:absolute;
+  top:-7px;
+  right:-9px;
+  background:#111;
+  color:#fff;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  font-size:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-Top announcement bar:
+.menuBtn{display:none}
 
-“ADVANCE PAYMENT = FREE DELIVERY”
+.hero{
+  min-height:560px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.65),rgba(0,0,0,.08)),
+    url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display:flex;
+  align-items:center;
+  padding:60px 8%;
+  color:white;
+}
 
-Header:
+.heroText{max-width:570px}
 
-LEFT:
-AZORA
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:60px;
+  line-height:1.05;
+  margin-bottom:18px;
+}
 
-CENTER / DESKTOP NAVIGATION:
+.hero p{
+  font-size:17px;
+  margin-bottom:28px;
+  line-height:1.7;
+}
 
-NEW IN
-WOMEN
-UNSTITCHED
-READY TO WEAR
-GENTS
-KIDS
-ACCESSORIES
-SALE
+.btn{
+  border:0;
+  padding:14px 27px;
+  background:#111;
+  color:#fff;
+  letter-spacing:.5px;
+  margin-right:8px;
+  transition:.25s;
+}
 
-RIGHT:
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
 
-Search icon
-Account icon
-Cart icon
+.btn.light{
+  background:#fff;
+  color:#111;
+}
 
-On mobile:
-- Hamburger menu
-- AZORA logo in center
-- Search
-- Cart
+.section{
+  padding:70px 5%;
+}
 
-The AZORA logo must be highlighted and premium.
+.sectionTitle{
+  text-align:center;
+  margin-bottom:38px;
+}
 
-Logo style:
-AZORA
-Elegant serif typography
-Letter spacing
-Minimal gold underline
-Luxury fashion branding
+.sectionTitle h2{
+  font-family:Georgia,serif;
+  font-size:34px;
+  margin-bottom:8px;
+}
 
-==================================================
-2. HERO SECTION
-==================================================
+.sectionTitle p{
+  color:#777;
+  font-size:14px;
+}
 
-Create a large premium fashion hero banner.
+/* ROUND CATALOGS */
+.catalogGrid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:28px;
+}
 
-Do NOT use sari-clad Indian models.
+.catalog{
+  width:145px;
+  text-align:center;
+  border:0;
+  background:none;
+}
 
-Use elegant Pakistani fashion / fabric photography.
+.catalogImage{
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  overflow:hidden;
+  border:1px solid #ddd;
+  padding:5px;
+  background:#fff;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  transition:.35s;
+}
 
-Hero text:
+.catalogImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  transition:.4s;
+}
 
-“THE NEW AZORA EDIT”
+.catalog:hover .catalogImage{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  border-color:#b28a4a;
+}
 
-Subtitle:
+.catalog:hover img{
+  transform:scale(1.08);
+}
 
-“Timeless Pakistani Fashion, Reimagined.”
+.catalogName{
+  margin-top:13px;
+  font-size:13px;
+  font-weight:bold;
+}
 
-Buttons:
+.groupTitle{
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:25px;
+  margin:15px 0 30px;
+}
 
+/* PRODUCT */
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.product{
+  border:1px solid #eee;
+  background:#fff;
+  overflow:hidden;
+  position:relative;
+}
+
+.productImg{
+  height:330px;
+  position:relative;
+  overflow:hidden;
+}
+
+.productImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.product:hover img{transform:scale(1.04)}
+
+.saleBadge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#111;
+  color:#fff;
+  padding:6px 10px;
+  font-size:10px;
+}
+
+.heart{
+  position:absolute;
+  right:12px;
+  top:12px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:0;
+  background:#fff;
+}
+
+.productInfo{padding:16px}
+
+.productInfo h3{
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.price{
+  font-weight:bold;
+  margin-bottom:13px;
+}
+
+.old{
+  color:#999;
+  text-decoration:line-through;
+  margin-right:7px;
+  font-weight:normal;
+}
+
+.add{
+  width:100%;
+  padding:11px;
+  background:#111;
+  color:#fff;
+  border:0;
+  font-size:12px;
+}
+
+/* PROMO */
+.promo{
+  margin:20px 5%;
+  min-height:270px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.1)),
+    url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  padding:45px;
+}
+
+.promo h2{
+  font-family:Georgia,serif;
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+/* PAYMENT */
+.paymentBanner{
+  margin:70px 5%;
+  background:#f4eee4;
+  padding:35px;
+  text-align:center;
+}
+
+.paymentBanner h2{
+  font-family:Georgia,serif;
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.paymentBanner p{
+  color:#666;
+  margin-bottom:20px;
+}
+
+/* FEATURES */
+.features{
+  background:#fafafa;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:38px 5%;
+  gap:20px;
+  text-align:center;
+}
+
+.feature h3{
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+.feature p{
+  font-size:12px;
+  color:#777;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  padding:55px 5% 25px;
+}
+
+.footerGrid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:35px;
+}
+
+footer h3{
+  font-family:Georgia,serif;
+  margin-bottom:17px;
+}
+
+footer p,footer button{
+  color:#aaa;
+  font-size:13px;
+  line-height:2;
+}
+
+footer button{
+  display:block;
+  background:none;
+  border:0;
+  text-align:left;
+}
+
+.footerBottom{
+  border-top:1px solid #333;
+  margin-top:40px;
+  padding-top:20px;
+  text-align:center;
+  color:#777;
+  font-size:12px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:25px;
+  z-index:3000;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:5000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.active{display:flex}
+
+.modalBox{
+  background:#fff;
+  width:100%;
+  max-width:560px;
+  max-height:90vh;
+  overflow:auto;
+  padding:30px;
+  border-radius:16px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:12px;
+  background:none;
+  border:0;
+  font-size:28px;
+}
+
+.modalBox h2{
+  font-family:Georgia,serif;
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.sub{
+  color:#777;
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.form{
+  display:grid;
+  gap:13px;
+}
+
+.form input,
+.form textarea,
+.form select{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  outline:none;
+}
+
+.form textarea{min-height:90px}
+
+.formBtn{
+  padding:14px;
+  background:#111;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+}
+
+.paymentCard{
+  border:1px solid #ddd;
+  padding:17px;
+  border-radius:10px;
+  margin:12px 0;
+}
+
+.free{
+  background:#f4eee4;
+  color:#705321;
+  padding:13px;
+  text-align:center;
+  font-weight:bold;
+  border-radius:8px;
+  margin-bottom:15px;
+}
+
+.copy{
+  margin-top:8px;
+  padding:7px 10px;
+  border:1px solid #ddd;
+  background:#fafafa;
+  border-radius:5px;
+}
+
+.cartItem{
+  display:flex;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.cartItem img{
+  width:70px;
+  height:80px;
+  object-fit:cover;
+}
+
+.cartDetails{flex:1}
+
+.qty{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top:8px;
+}
+
+.qty button{
+  width:25px;
+  height:25px;
+  border:1px solid #ddd;
+  background:#fff;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  margin:20px 0;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{display:none}
+  .menuBtn{display:block}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .footerGrid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:600px){
+  header{
+    height:65px;
+    padding:0 15px;
+  }
+
+  .logo{font-size:23px}
+
+  .icons{gap:9px}
+
+  .hero{
+    min-height:520px;
+    padding:40px 22px;
+  }
+
+  .hero h1{font-size:42px}
+
+  .hero p{font-size:14px}
+
+  .section{padding:50px 15px}
+
+  .catalogGrid{gap:22px 12px}
+
+  .catalog{width:110px}
+
+  .catalogImage{
+    width:110px;
+    height:110px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .productImg{height:235px}
+
+  .productInfo{padding:10px}
+
+  .productInfo h3{font-size:12px}
+
+  .promo{
+    margin:30px 15px;
+    padding:30px 20px;
+  }
+
+  .promo h2{font-size:29px}
+
+  .paymentBanner{
+    margin:40px 15px;
+    padding:28px 15px;
+  }
+
+  .features{
+    padding:30px 15px;
+  }
+
+  .footerGrid{
+    grid-template-columns:1fr 1fr;
+    gap:25px 15px;
+  }
+
+  .modalBox{
+    padding:23px 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+ADVANCE PAYMENT = FREE DELIVERY
+</div>
+
+<!-- HEADER -->
+<header>
+
+<button class="iconBtn menuBtn" onclick="toggleMenu()">☰</button>
+
+<div class="logo">AZORA</div>
+
+<nav>
+<button onclick="scrollToSection('new')">NEW IN</button>
+<button onclick="scrollToSection('ladies')">WOMEN</button>
+<button onclick="scrollToSection('ladies')">UNSTITCHED</button>
+<button onclick="scrollToSection('new')">READY TO WEAR</button>
+<button onclick="scrollToSection('gents')">GENTS</button>
+<button onclick="scrollToSection('kids')">KIDS</button>
+<button onclick="scrollToSection('accessories')">ACCESSORIES</button>
+<button onclick="scrollToSection('sale')">SALE</button>
+</nav>
+
+<div class="icons">
+<button class="iconBtn" onclick="openModal('searchModal')">⌕</button>
+<button class="iconBtn" onclick="openAccount()">♙</button>
+<button class="iconBtn" onclick="openCart()">
+🛒
+<span class="cartCount" id="cartCount">0</span>
+</button>
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" style="
+display:none;
+position:fixed;
+top:65px;
+left:0;
+right:0;
+background:white;
+z-index:999;
+padding:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+">
+<button class="menuLink" onclick="scrollToSection('new')">NEW IN</button>
+<button class="menuLink" onclick="scrollToSection('ladies')">WOMEN</button>
+<button class="menuLink" onclick="scrollToSection('gents')">GENTS</button>
+<button class="menuLink" onclick="scrollToSection('kids')">KIDS</button>
+<button class="menuLink" onclick="scrollToSection('accessories')">ACCESSORIES</button>
+<button class="menuLink" onclick="scrollToSection('sale')">SALE</button>
+<button class="menuLink" onclick="openModal('aboutModal')">ABOUT AZORA</button>
+<button class="menuLink" onclick="openModal('paymentModal')">PAYMENT METHODS</button>
+</div>
+
+<style>
+.menuLink{
+display:block;
+width:100%;
+padding:13px 0;
+border:0;
+border-bottom:1px solid #eee;
+background:none;
+text-align:left;
+}
+</style>
+
+<!-- HERO -->
+<section class="hero" id="new">
+<div class="heroText">
+<h1>THE NEW<br>AZORA EDIT</h1>
+<p>
+Timeless Pakistani fashion, premium fabrics and elegant
+collections designed for every occasion.
+</p>
+<button class="btn light" onclick="scrollToSection('ladies')">
 SHOP WOMEN
+</button>
+<button class="btn" onclick="scrollToSection('gents')">
 SHOP GENTS
-
-Hero should be full width and premium.
-
-Add subtle image zoom animation on hover.
-
-==================================================
-3. SHOP / CATALOG SECTION
-==================================================
-
-IMPORTANT:
-
-The catalog must NOT be rectangular normal boxes.
-
-Use LARGE ROUND / CIRCULAR catalog cards.
-
-Each category should appear as a beautiful circular image with:
-- perfectly round image
-- thin luxury border
-- category name underneath
-- subtle hover zoom
-- premium shadow
-- elegant typography
-
-The catalog section should come BEFORE the detailed product/category sections.
-
-Title:
-
-“SHOP BY CATEGORY”
-
-Create separate circular catalogs.
-
-==================================================
-4. LADIES CATALOG
-==================================================
-
-Circular catalog group:
-
-LADIES
-
-Inside Ladies create separate circular category items:
-
-1. Ladies 2 Piece
-2. Ladies 3 Piece
-3. Ladies Unstitched
-4. Ladies Ready To Wear
-5. Ladies Lawn
-6. Ladies Chiffon
-7. Ladies Georgette
-8. Ladies Velvet
-9. Ladies Embroidered
-10. Ladies Printed
-
-Every category must be a separate circular catalog.
-
-Example layout:
-
-      [Circular Image]
-      Ladies 2 Piece
-
-      [Circular Image]
-      Ladies 3 Piece
-
-      [Circular Image]
-      Unstitched
-
-etc.
-
-On clicking a category, open that category's product listing.
-
-==================================================
-5. DUPATTA CATALOG
-==================================================
-
-Create a completely separate circular catalog section:
-
-“DUPATTA COLLECTION”
-
-Circular categories:
-
-1. Printed Dupatta
-2. Embroidered Dupatta
-3. Chiffon Dupatta
-4. Organza Dupatta
-5. Silk Dupatta
-6. Fancy Dupatta
-7. Plain Dupatta
-
-Each one must be a separate round catalog.
-
-==================================================
-6. TROUSERS CATALOG
-==================================================
-
-Create a separate section:
-
-“TROUSERS COLLECTION”
-
-Circular catalogs:
-
-1. Plain Trousers
-2. Printed Trousers
-3. Cotton Trousers
-4. Linen Trousers
-5. Khaddar Trousers
-6. Fancy Trousers
-7. Jamawar Trousers
-
-Each category must be a separate round catalog.
-
-==================================================
-7. GENTS CATALOG
-==================================================
-
-Create a completely separate GENTS circular catalog section.
-
-Title:
-
-“GENTS COLLECTION”
-
-Circular catalog items:
-
-1. Gents Cotton
-2. Soft Cotton
-3. Hard Cotton
-4. Wash & Wear
-5. Gents Unstitched
-6. Gents Suit
-7. Waistcoat
-8. Waistcoat Suit
-9. Kurta
-10. Shalwar Kameez
-11. Premium Fabric
-12. Summer Collection
-13. Winter Collection
-
-IMPORTANT:
-
-Gents categories must be visually separate from Ladies.
-
-Every Gents category should have its own circular image.
-
-Clicking:
-Soft Cotton
-opens Soft Cotton products.
-
-Clicking:
-Hard Cotton
-opens Hard Cotton products.
-
-Clicking:
-Wash & Wear
-opens Wash & Wear products.
-
-Clicking:
-Waistcoat
-opens Waistcoat products.
-
-Clicking:
-Waistcoat Suit
-opens Waistcoat Suit products.
-
-==================================================
-8. KIDS CATALOG
-==================================================
-
-Create separate circular catalog section:
-
-“KIDS COLLECTION”
-
-Circular categories:
-
-1. Kids Print
-2. Kids Embroidery
-3. Kids Plain
-4. Kids 2 Piece
-5. Kids 3 Piece
-6. Girls Collection
-7. Boys Collection
-8. Kids Festive
-9. Kids Casual
-
-Each must have a separate circular catalog.
-
-==================================================
-9. ACCESSORIES
-==================================================
-
-Create separate circular catalog:
-
-“ACCESSORIES”
-
-Categories:
-
-1. Hijabs
-2. Shawls
-3. Dupattas
-4. Scarves
-5. Bags
-6. Fashion Accessories
-
-==================================================
-10. SALE CATALOG
-==================================================
-
-Create a premium sale section.
-
-Title:
-
-“SALE”
-
-Circular catalogs:
-
-1. Ladies Sale
-2. Gents Sale
-3. Kids Sale
-4. Dupatta Sale
-5. Trousers Sale
-
-Use elegant SALE badges.
-
-==================================================
-11. CATEGORY NAVIGATION
-==================================================
-
-When user clicks any circular catalog:
-
-Open a dedicated category/product listing page or dynamic category view.
-
-Example:
-
-Click:
-Gents → Soft Cotton
-
-Show:
-
-SOFT COTTON
-
-Filter:
-- Price
-- Size
-- Color
-- Fabric
-- Availability
-
-Sort:
-- Newest
-- Price Low to High
-- Price High to Low
-- Best Selling
-
-Product cards must contain:
-
-Product image
-Product name
-Price
-Old price if on sale
-SALE badge if applicable
-Add to Cart
-Quick View
-
-==================================================
-12. PRODUCT CARD DESIGN
-==================================================
-
-Create premium product cards.
-
-Desktop:
-4 products per row.
-
-Tablet:
-3 products per row.
-
-Mobile:
-2 products per row.
-
-Product card:
-- clean white background
-- rounded corners
-- subtle shadow
-- image ratio suitable for fashion
-- hover zoom
-- heart/favorite button
-- quick view button
-
-Example:
-
-Premium Cotton Suit
-Rs. 3,999
-Rs. 4,999
-
-[ADD TO CART]
-
-==================================================
-13. BEST SELLERS
-==================================================
-
-After the catalog sections create:
-
-“BEST SELLERS”
-
-Show premium products.
-
-Add:
-VIEW ALL
-
-==================================================
-14. NEW ARRIVALS
-==================================================
-
-Create:
-
-“NEW ARRIVALS”
-
-Show latest products.
-
-Add:
-SHOP NEW ARRIVALS
-
-==================================================
-15. PROMOTIONAL BANNER
-==================================================
-
-Create a luxury promotional banner.
-
-Text:
-
-“ELEVATE YOUR EVERYDAY STYLE”
-
-Subtitle:
-
-“Premium fabrics. Elegant designs. Timeless AZORA.”
-
-Button:
-
-SHOP NOW
-
-==================================================
-16. ADVANCE PAYMENT OFFER
-==================================================
-
-Create a clearly visible premium payment banner.
-
-Main text:
-
-“ADVANCE PAYMENT = FREE DELIVERY”
-
-Subtext:
-
-“Pay in advance and enjoy FREE delivery on your order.”
-
-Button:
-
-VIEW PAYMENT METHODS
-
-Clicking the button must open the Payment Methods modal/page.
-
-==================================================
-17. PAYMENT METHODS
-==================================================
-
-Payment Methods must be fully visible and functional.
-
-Title:
-
-“PAYMENT METHODS”
-
-Show:
-
-ADVANCE PAYMENT = FREE DELIVERY
-
-JAZZCASH
-
-Number:
-0308-440-5550
-
-Add:
-COPY NUMBER
-
-MEEZAN BANK
-
-Account Number:
-98430104527600
-
-Add:
-COPY ACCOUNT NUMBER
-
-Important:
-These payment details must remain exactly as provided.
-
-After advance payment:
-
-“After payment, enter your Transaction ID during checkout or send payment proof on WhatsApp.”
-
-==================================================
-18. WHATSAPP
-==================================================
-
-IMPORTANT:
-
-WhatsApp number is:
-
-0304-440-5550
-
-Do NOT use the JazzCash number as the WhatsApp number.
-
-WhatsApp link:
-
-https://wa.me/923044405550
-
-Create a floating WhatsApp button.
-
-Text:
-
-“Chat on WhatsApp”
-
-Clicking it opens WhatsApp.
-
-==================================================
-19. ACCOUNT SYSTEM
-==================================================
-
-Create a working customer account interface.
-
-Header account icon:
-
-MY ACCOUNT
-
-Login fields:
-
-Email Address
-Password
-
-Buttons:
-
-LOGIN
-CREATE ACCOUNT
-
-Create Account fields:
-
-Full Name
-Email Address
-Phone Number
-Password
-Confirm Password
-
-After login:
-show:
-
-Welcome, Customer Name
-
-Account dashboard:
-
-MY PROFILE
-MY ORDERS
-SAVED ADDRESSES
-LOGOUT
-
-The customer's email must be stored with their account.
-
-==================================================
-20. CUSTOMER DETAILS / CHECKOUT
-==================================================
-
-Customer must have a proper checkout form.
-
-Title:
-
-“DELIVERY DETAILS”
-
-Fields:
-
-Full Name *
-Email Address *
-Phone Number *
-City *
-Complete Delivery Address *
-Postal Code
-Order Notes
-
-Payment Method:
-
-Advance Payment - JazzCash
-Advance Payment - Meezan Bank
-Cash on Delivery
-
-If customer selects advance payment:
-
-Show:
-
-“ADVANCE PAYMENT = FREE DELIVERY”
-
-Show:
-
-JazzCash:
-0308-440-5550
-
-Meezan Bank:
-98430104527600
-
-Transaction ID field:
-
-“Transaction ID”
-
-Payment proof option:
-
-“Send Payment Proof on WhatsApp”
-
-==================================================
-21. CART
-==================================================
-
-Create a working shopping cart.
-
-Cart should show:
-
-Product
-Image
-Price
-Quantity +/-
-Remove
-Subtotal
-
-Show:
-
-Subtotal
-Delivery
-Total
-
-If customer selects advance payment:
-
-Delivery:
-
-FREE
-
-Show:
-
-“FREE DELIVERY — ADVANCE PAYMENT”
-
-Buttons:
-
-CONTINUE SHOPPING
-PROCEED TO CHECKOUT
-
-==================================================
-22. ORDER VIA WHATSAPP
-==================================================
-
-After checkout, generate a WhatsApp order message automatically.
-
-Send to:
-
-0304-440-5550
-
-Message should include:
-
-AZORA NEW ORDER
-
-Customer Name
-Email
-Phone
-City
-Complete Address
-Postal Code
-Products
-Quantity
-Total Amount
-Payment Method
-Transaction ID
-Order Notes
-
-Also include:
-
-ADVANCE PAYMENT = FREE DELIVERY
-
-==================================================
-23. ABOUT AZORA
-==================================================
-
-About must actually open when clicked.
-
-Create:
-
-“ABOUT AZORA”
-
-Content:
-
-“Welcome to AZORA — a modern Pakistani fashion destination offering elegant clothing and premium fabrics for women, men and kids.
-
-Our collections are designed around timeless style, quality fabrics and a refined shopping experience.
-
-Explore AZORA for unstitched fashion, ready-to-wear outfits, gents collections, kids wear, dupattas, trousers and accessories.”
-
-Create button:
-
-CLOSE
-
-About should open as a modal/page when clicking:
-
-ABOUT
-
-==================================================
-24. FOOTER
-==================================================
-
-Create a premium multi-column footer.
-
-Column 1:
-
-AZORA
-
-“Timeless Pakistani Fashion.”
-
-Column 2:
-
-SHOP
-
-New In
-Women
-Unstitched
-Ready To Wear
-Gents
-Kids
-Sale
-
-Column 3:
-
-CUSTOMER CARE
-
-Contact Us
-WhatsApp
-Payment Methods
-Shipping
-Returns
-FAQs
-
-Column 4:
-
-INFORMATION
-
-About AZORA
-My Account
-Privacy Policy
-Terms & Conditions
-
-Payment section:
-
-PAYMENT METHODS
-
-JazzCash
-0308-440-5550
-
-Meezan Bank
-98430104527600
-
-Offer:
-
-ADVANCE PAYMENT = FREE DELIVERY
-
-WhatsApp:
-
-0304-440-5550
-
-==================================================
-25. MOBILE DESIGN
-==================================================
-
-Website must be fully responsive.
-
-Mobile:
-
-2 circular catalogs per row.
-
-Catalog circles should remain perfectly round.
-
-Product grid:
-2 products per row.
-
-Header:
-Hamburger
-AZORA
-Search
-Cart
-
-Mobile menu:
-
-NEW IN
-WOMEN
-UNSTITCHED
-READY TO WEAR
-GENTS
-KIDS
-ACCESSORIES
-SALE
-ABOUT
-PAYMENT METHODS
-MY ACCOUNT
-CONTACT
-
-==================================================
-26. PREMIUM ANIMATIONS
-==================================================
-
-Use subtle animations only.
-
-Circular catalog:
-- hover scale
-- soft shadow
-- image zoom
-
-Buttons:
-- smooth hover
-- slight movement
-
-Product cards:
-- image zoom
-- heart animation
-
-Sections:
-- fade-in while scrolling
-
-Do NOT make animations excessive.
-
-==================================================
-27. SEARCH
-==================================================
-
-Create working search.
-
-User can search:
-
-Cotton
-Lawn
-3 Piece
-Dupatta
-Gents
-Kids
-Trousers
-Waistcoat
-Wash & Wear
-
-Search results should display matching products/categories.
-
-==================================================
-28. FAVORITES
-==================================================
-
-Add heart icon to products.
-
-Customer can add products to wishlist/favorites.
-
-Save wishlist locally for the demo version.
-
-==================================================
-29. IMPORTANT DATA
-==================================================
-
-Use these exact business details:
-
-BRAND:
-AZORA
-
-JAZZCASH:
-0308-440-5550
-
-MEEZAN BANK:
-98430104527600
-
-WHATSAPP:
-0304-440-5550
-
-WHATSAPP LINK:
-https://wa.me/923044405550
-
-DELIVERY OFFER:
-ADVANCE PAYMENT = FREE DELIVERY
-
-==================================================
-30. DESIGN RULE
-==================================================
-
-The most important visual requirement:
-
-CATALOGS MUST BE ROUND.
-
-Do NOT create square rectangular category boxes.
-
-Use large circular fashion images.
-
-Separate the catalog into:
-
-LADIES
-GENTS
-KIDS
-DUPATTAS
-TROUSERS
-ACCESSORIES
-SALE
-
-Each category gets its own circular catalog.
-
-Example:
-
-SHOP BY CATEGORY
-
-        ○
-     LADIES
-
-        ○
-      GENTS
-
-        ○
-       KIDS
-
-        ○
-     DUPATTA
-
-        ○
-     TROUSERS
-
-Then detailed category circles underneath.
-
-==================================================
-31. FINAL TECHNICAL REQUIREMENT
-==================================================
-
-Create the complete website as a single self-contained HTML file.
-
-Include:
-
-HTML
-CSS
-JavaScript
-
-Everything should work from one file.
-
-No broken buttons.
-
-No dead links.
-
-All modals must open and close.
-
-Account modal must work.
-
-Checkout modal must work.
-
-Payment Methods must open.
-
-About must open.
-
-Copy payment numbers must work.
-
-WhatsApp buttons must work.
-
-Cart must work.
-
-Search must work.
-
-Category filtering/navigation must work.
-
-Responsive mobile layout must work.
-
-Use localStorage for:
-- customer account demo
-- login state
-- cart
-- wishlist
-- checkout/order data
-
-The visual result should feel:
-
-PREMIUM
-MODERN
-MINIMAL
-LUXURY
-PAKISTANI FASHION
-MOBILE FRIENDLY
-
-The final visible brand name everywhere must be:
-
-AZORA
-
-Never use:
-
-AZORA.PK
+</button>
+</div>
+</section>
+
+
+<!-- MAIN CATALOG -->
+<section class="section">
+
+<div class="sectionTitle">
+<h2>SHOP BY CATEGORY</h2>
+<p>Explore our premium collections</p>
+</div>
+
+<div class="catalogGrid">
+
+<button class="catalog" onclick="scrollToSection('ladies')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">LADIES</div>
+</button>
+
+<button class="catalog" onclick="scrollToSection('gents')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">GENTS</div>
+</button>
+
+<button class="catalog" onclick="scrollToSection('kids')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">KIDS</div>
+</button>
+
+<button class="catalog" onclick="scrollToSection('dupatta')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1601924928376-9b3f4a2e4f7b?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">DUPATTAS</div>
+</button>
+
+<button class="catalog" onclick="scrollToSection('trousers')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">TROUSERS</div>
+</button>
+
+<button class="catalog" onclick="scrollToSection('accessories')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">ACCESSORIES</div>
+</button>
+
+</div>
+</section>
+
+
+<!-- LADIES -->
+<section class="section" id="ladies">
+
+<div class="sectionTitle">
+<h2>LADIES COLLECTION</h2>
+<p>Elegant Pakistani fashion for every occasion</p>
+</div>
+
+<div class="catalogGrid">
+
+<button class="catalog" onclick="showCategory('Ladies 2 Piece')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">2 PIECE</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Ladies 3 Piece')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">3 PIECE</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Unstitched')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">UNSTITCHED</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Ready To Wear')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">READY TO WEAR</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Lawn')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">LAWN</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Chiffon')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">CHIFFON</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Embroidered')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">EMBROIDERED</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Printed')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1610030469668-8e9e0a1a8d6a?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">PRINTED</div>
+</button>
+
+</div>
+</section>
+
+
+<!-- DUPATTA -->
+<section class="section" id="dupatta">
+
+<div class="sectionTitle">
+<h2>DUPATTA COLLECTION</h2>
+</div>
+
+<div class="catalogGrid">
+
+<button class="catalog" onclick="showCategory('Printed Dupatta')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">PRINTED</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Embroidered Dupatta')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">EMBROIDERED</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Chiffon Dupatta')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1583391733981-5b2d6c0d4d18?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">CHIFFON</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Organza Dupatta')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1610030469668-8e9e0a1a8d6a?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">ORGANZA</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Fancy Dupatta')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1601924928376-9b3f4a2e4f7b?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">FANCY</div>
+</button>
+
+</div>
+</section>
+
+
+<!-- TROUSERS -->
+<section class="section" id="trousers">
+
+<div class="sectionTitle">
+<h2>TROUSERS COLLECTION</h2>
+</div>
+
+<div class="catalogGrid">
+
+<button class="catalog" onclick="showCategory('Plain Trousers')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">PLAIN TROUSERS</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Cotton Trousers')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">COTTON</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Linen Trousers')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">LINEN</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Fancy Trousers')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1585488430312-3f4e7a0c7b47?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">FANCY</div>
+</button>
+
+</div>
+</section>
+
+
+<!-- GENTS -->
+<section class="section" id="gents">
+
+<div class="sectionTitle">
+<h2>GENTS COLLECTION</h2>
+<p>Premium fabrics and refined menswear</p>
+</div>
+
+<div class="catalogGrid">
+
+<button class="catalog" onclick="showCategory('Gents Cotton')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">GENTS COTTON</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Soft Cotton')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">SOFT COTTON</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Hard Cotton')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">HARD COTTON</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Wash & Wear')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">WASH & WEAR</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Gents Suit')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">SUIT</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Waistcoat')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">WAISTCOAT</div>
+</button>
+
+<button class="catalog" onclick="showCategory('Waistcoat Suit')">
+<div class="catalogImage">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80">
+</div>
+<div class="catalogName">WAISTCOAT SUIT</div>
+</butto
