@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AZORA.PK | Premium Pakistani Fashion</title>
+<title>AZORA.PK | Premium Fashion</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -14,9 +19,9 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:#171717;
+    font-family:Arial, Helvetica, sans-serif;
     background:#fff;
+    color:#171717;
 }
 
 a{
@@ -24,28 +29,37 @@ a{
     color:inherit;
 }
 
-button{
+button,
+select,
+input{
     font-family:inherit;
-    cursor:pointer;
 }
 
-/* TOP BAR */
+
+/* =========================
+   TOP BAR
+========================= */
+
 .topbar{
     background:#111;
     color:#fff;
     text-align:center;
-    padding:9px;
+    padding:9px 12px;
     font-size:11px;
     letter-spacing:1px;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
+
 .header{
-    border-bottom:1px solid #e8e8e8;
     background:#fff;
+    border-bottom:1px solid #e7e7e7;
     position:sticky;
     top:0;
-    z-index:999;
+    z-index:1000;
 }
 
 .header-inner{
@@ -53,6 +67,7 @@ button{
     height:78px;
     margin:auto;
     padding:0 25px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -60,25 +75,27 @@ button{
 
 .logo{
     font-family:Georgia,serif;
-    font-size:29px;
-    letter-spacing:4px;
+    font-size:28px;
     font-weight:bold;
+    letter-spacing:4px;
+    white-space:nowrap;
 }
 
 .logo span{
-    font-size:12px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
     letter-spacing:1px;
-    margin-left:3px;
 }
 
 .nav{
-    display:flex;
-    gap:30px;
     list-style:none;
+    display:flex;
+    gap:24px;
 }
 
 .nav a{
-    font-size:13px;
+    font-size:12px;
+    letter-spacing:.5px;
 }
 
 .nav a:hover{
@@ -88,7 +105,7 @@ button{
 
 .icons{
     display:flex;
-    gap:18px;
+    gap:17px;
     font-size:20px;
 }
 
@@ -100,7 +117,11 @@ button{
     display:none;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
     width:100%;
     height:620px;
@@ -118,10 +139,12 @@ button{
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         90deg,
-        rgba(0,0,0,.50),
-        rgba(0,0,0,.12),
+        rgba(0,0,0,.52),
+        rgba(0,0,0,.18),
         rgba(0,0,0,0)
     );
 }
@@ -131,43 +154,47 @@ button{
     left:8%;
     top:50%;
     transform:translateY(-50%);
-    color:white;
-    max-width:500px;
+    color:#fff;
+    max-width:520px;
 }
 
 .hero-content small{
-    font-size:12px;
+    font-size:11px;
     letter-spacing:4px;
 }
 
 .hero-content h1{
     font-family:Georgia,serif;
-    font-size:64px;
+    font-size:65px;
+    line-height:.98;
     font-weight:400;
-    line-height:1;
     margin:18px 0;
 }
 
 .hero-content p{
     font-size:15px;
     line-height:1.7;
-    margin-bottom:25px;
+    margin-bottom:26px;
 }
 
 .hero-btn{
     display:inline-block;
     background:#fff;
     color:#111;
-    padding:15px 28px;
-    font-size:12px;
+    padding:15px 29px;
+    font-size:11px;
     letter-spacing:1px;
 }
 
-/* SECTION */
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
 .section{
     max-width:1400px;
     margin:auto;
-    padding:70px 25px;
+    padding:75px 25px;
 }
 
 .heading{
@@ -176,18 +203,49 @@ button{
 }
 
 .heading small{
-    font-size:11px;
+    font-size:10px;
     letter-spacing:3px;
 }
 
 .heading h2{
     font-family:Georgia,serif;
-    font-size:38px;
+    font-size:40px;
     font-weight:400;
     margin-top:9px;
 }
 
-/* CATEGORIES */
+
+/* =========================
+   MAIN CATEGORY TABS
+========================= */
+
+.main-tabs{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+.main-tabs button{
+    background:none;
+    border:0;
+    border-bottom:1px solid transparent;
+    padding:7px 0;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.main-tabs button.active,
+.main-tabs button:hover{
+    border-bottom:1px solid #111;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
 .categories{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -198,6 +256,7 @@ button{
     height:390px;
     position:relative;
     overflow:hidden;
+    background:#eee;
 }
 
 .category img{
@@ -213,12 +272,19 @@ button{
 
 .category-text{
     position:absolute;
-    bottom:0;
     left:0;
     right:0;
-    padding:35px 20px 22px;
+    bottom:0;
+
+    padding:45px 20px 22px;
+
     color:#fff;
-    background:linear-gradient(transparent,rgba(0,0,0,.75));
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.78)
+    );
 }
 
 .category-text h3{
@@ -230,29 +296,68 @@ button{
 .category-text span{
     display:block;
     margin-top:8px;
-    font-size:11px;
+    font-size:10px;
     letter-spacing:1px;
 }
 
-/* PRODUCTS */
+
+/* =========================
+   CATEGORY SUB NAV
+========================= */
+
+.sub-category{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.sub-category button{
+    border:1px solid #ddd;
+    background:#fff;
+    padding:11px 20px;
+    font-size:11px;
+    cursor:pointer;
+}
+
+.sub-category button:hover,
+.sub-category button.active{
+    background:#111;
+    color:#fff;
+    border-color:#111;
+}
+
+
+/* =========================
+   PRODUCT TOOLBAR
+========================= */
+
 .product-toolbar{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    margin-bottom:20px;
+    justify-content:space-between;
+
     border-bottom:1px solid #ddd;
+
     padding-bottom:15px;
+    margin-bottom:20px;
 }
 
 .product-toolbar span{
-    font-size:13px;
+    font-size:12px;
 }
 
 .sort{
-    padding:9px 15px;
+    padding:9px 14px;
     border:1px solid #ddd;
-    background:white;
+    background:#fff;
 }
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
 
 .products{
     display:grid;
@@ -261,14 +366,13 @@ button{
 }
 
 .product{
-    position:relative;
     min-width:0;
 }
 
 .product-image{
     position:relative;
     overflow:hidden;
-    background:#f5f5f5;
+    background:#f4f4f4;
 }
 
 .product-image img{
@@ -279,7 +383,7 @@ button{
     transition:.45s;
 }
 
-.product:hover img{
+.product:hover .product-image img{
     transform:scale(1.035);
 }
 
@@ -290,21 +394,25 @@ button{
     background:#111;
     color:#fff;
     padding:7px 10px;
-    font-size:10px;
+    font-size:9px;
     z-index:2;
 }
 
 .wishlist{
     position:absolute;
-    right:13px;
     top:11px;
+    right:12px;
+
     width:34px;
     height:34px;
+
+    background:#fff;
     border-radius:50%;
-    background:white;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     font-size:17px;
     z-index:2;
 }
@@ -314,12 +422,17 @@ button{
     bottom:0;
     left:0;
     right:0;
+
     background:#111;
-    color:white;
+    color:#fff;
+
     text-align:center;
+
     padding:13px;
-    font-size:11px;
+
+    font-size:10px;
     letter-spacing:1px;
+
     transform:translateY(100%);
     transition:.3s;
 }
@@ -338,9 +451,9 @@ button{
 }
 
 .price{
-    margin-top:7px;
     font-size:13px;
     font-weight:bold;
+    margin-top:6px;
 }
 
 .old-price{
@@ -353,10 +466,14 @@ button{
 .discount{
     color:#777;
     font-size:10px;
-    margin-top:5px;
+    margin-top:4px;
 }
 
-/* PROMO */
+
+/* =========================
+   PROMO BANNER
+========================= */
+
 .promo{
     height:500px;
     position:relative;
@@ -372,7 +489,7 @@ button{
 .promo-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.25);
+    background:rgba(0,0,0,.28);
 }
 
 .promo-content{
@@ -380,35 +497,42 @@ button{
     left:8%;
     top:50%;
     transform:translateY(-50%);
-    color:white;
+    color:#fff;
 }
 
 .promo-content small{
+    font-size:10px;
     letter-spacing:4px;
-    font-size:11px;
 }
 
 .promo-content h2{
     font-family:Georgia,serif;
-    font-size:55px;
+    font-size:56px;
     font-weight:400;
-    margin:12px 0 20px;
+    line-height:1;
+    margin:15px 0 25px;
 }
 
-/* PAYMENT BANNER */
+
+/* =========================
+   ADVANCE PAYMENT
+========================= */
+
 .payment-banner{
     background:#111;
-    color:white;
-    padding:25px;
+    color:#fff;
+    padding:28px 25px;
 }
 
 .payment-inner{
     max-width:1200px;
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+
+    gap:25px;
 }
 
 .payment-title{
@@ -423,86 +547,121 @@ button{
 }
 
 .payment-btn{
-    background:white;
     border:0;
-    padding:14px 24px;
-    font-size:11px;
+    background:#fff;
+    color:#111;
+    padding:14px 23px;
+    font-size:10px;
     letter-spacing:1px;
 }
 
-/* PAYMENT MODAL */
+
+/* =========================
+   PAYMENT MODAL
+========================= */
+
 .modal{
     display:none;
+
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.65);
-    z-index:2000;
+
+    background:rgba(0,0,0,.68);
+
+    z-index:3000;
+
     padding:20px;
+
     overflow:auto;
 }
 
 .modal-box{
     width:100%;
-    max-width:500px;
-    background:white;
-    margin:40px auto;
+    max-width:520px;
+
+    background:#fff;
+
+    margin:35px auto;
+
     padding:30px;
+
     position:relative;
 }
 
 .close{
     position:absolute;
+    top:12px;
     right:18px;
-    top:14px;
-    font-size:25px;
+
+    font-size:27px;
     cursor:pointer;
 }
 
 .modal-title{
     font-family:Georgia,serif;
-    font-size:30px;
-    margin-bottom:8px;
+    font-size:31px;
+}
+
+.modal-subtitle{
+    color:#777;
+    font-size:12px;
+    line-height:1.6;
+    margin-top:8px;
 }
 
 .free-delivery{
-    background:#f3f1ec;
-    padding:15px;
     margin:20px 0;
+
+    background:#f2f0eb;
+
     text-align:center;
-    font-size:13px;
+
+    padding:16px;
+
+    font-size:12px;
+    font-weight:bold;
 }
 
 .payment-method{
     border:1px solid #ddd;
+
     padding:17px;
+
     margin-top:12px;
 }
 
 .payment-method strong{
     display:block;
-    margin-bottom:7px;
+    font-size:13px;
+    margin-bottom:8px;
 }
 
 .account{
     font-size:14px;
     font-weight:bold;
-    letter-spacing:.5px;
 }
 
 .copy-btn{
     margin-top:10px;
-    padding:7px 12px;
+
     background:#111;
-    color:white;
+    color:#fff;
+
     border:0;
-    font-size:10px;
+
+    padding:8px 12px;
+
+    font-size:9px;
 }
 
 .payment-note{
-    margin-top:20px;
     color:#777;
+
     font-size:11px;
+
     line-height:1.6;
+
+    margin-top:20px;
 }
 
 .payment-form{
@@ -511,127 +670,193 @@ button{
 
 .payment-form label{
     display:block;
-    font-size:12px;
+
+    font-size:11px;
+
     margin-bottom:7px;
 }
 
 .payment-form input{
     width:100%;
-    padding:13px;
+
     border:1px solid #ccc;
+
+    padding:13px;
+
     outline:none;
 }
 
 .paid-btn{
     width:100%;
-    margin-top:12px;
-    padding:15px;
-    background:#111;
-    color:white;
+
     border:0;
-    font-size:12px;
+
+    background:#111;
+    color:#fff;
+
+    padding:15px;
+
+    margin-top:12px;
+
+    font-size:11px;
     letter-spacing:1px;
 }
 
-/* FEATURES */
+
+/* =========================
+   FEATURES
+========================= */
+
 .features{
     background:#f7f6f3;
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     text-align:center;
+
     padding:35px 20px;
 }
 
 .feature{
     padding:15px;
+
     border-right:1px solid #ddd;
 }
 
 .feature:last-child{
-    border:0;
+    border-right:0;
 }
 
 .feature strong{
-    font-size:12px;
-}
-
-.feature p{
-    margin-top:7px;
-    color:#777;
     font-size:11px;
 }
 
-/* FOOTER */
+.feature p{
+    color:#777;
+
+    font-size:10px;
+
+    margin-top:7px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
     background:#111;
-    color:white;
+
+    color:#fff;
+
     padding:65px 25px 25px;
 }
 
 .footer-grid{
     max-width:1400px;
+
     margin:auto;
+
     display:grid;
+
     grid-template-columns:2fr 1fr 1fr 1fr;
+
     gap:50px;
 }
 
 .footer-logo{
     font-family:Georgia,serif;
+
     font-size:28px;
+
     letter-spacing:4px;
 }
 
 .footer-about{
     color:#aaa;
+
     font-size:13px;
+
     line-height:1.8;
+
+    max-width:340px;
+
     margin-top:15px;
-    max-width:330px;
 }
 
 footer h4{
-    font-size:12px;
+    font-size:11px;
+
     letter-spacing:1px;
+
     margin-bottom:18px;
 }
 
 footer a{
     display:block;
+
     color:#aaa;
-    font-size:12px;
+
+    font-size:11px;
+
     margin-bottom:12px;
 }
 
 .copyright{
     max-width:1400px;
+
     margin:50px auto 0;
+
     padding-top:20px;
+
     border-top:1px solid #333;
-    text-align:center;
+
     color:#777;
+
+    text-align:center;
+
     font-size:10px;
 }
 
-/* WHATSAPP */
+
+/* =========================
+   WHATSAPP
+========================= */
+
 .whatsapp{
     position:fixed;
+
     right:20px;
     bottom:20px;
-    width:54px;
-    height:54px;
+
+    width:55px;
+    height:55px;
+
     border-radius:50%;
+
     background:#25D366;
-    color:white;
+
+    color:#fff;
+
     display:flex;
-    justify-content:center;
+
     align-items:center;
+    justify-content:center;
+
     font-size:25px;
-    z-index:1000;
+
+    z-index:1500;
+
     box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:900px){
 
     .nav{
@@ -640,19 +865,20 @@ footer a{
 
     .mobile-menu{
         display:block;
-        font-size:23px;
+        font-size:22px;
     }
 
     .header-inner{
         height:65px;
+        padding:0 15px;
     }
 
     .logo{
-        font-size:23px;
+        font-size:22px;
     }
 
     .icons{
-        gap:12px;
+        gap:11px;
         font-size:18px;
     }
 
@@ -683,24 +909,16 @@ footer a{
         gap:12px;
     }
 
-    .section{
-        padding:50px 12px;
-    }
-
-    .heading h2{
-        font-size:30px;
-    }
-
     .quick-add{
         display:none;
     }
 
-    .promo{
-        height:400px;
+    .section{
+        padding:55px 12px;
     }
 
-    .promo-content h2{
-        font-size:40px;
+    .heading h2{
+        font-size:31px;
     }
 
     .payment-inner{
@@ -710,11 +928,10 @@ footer a{
 
     .features{
         grid-template-columns:repeat(2,1fr);
-        gap:10px;
     }
 
     .feature{
-        border:0;
+        border-right:0;
         border-bottom:1px solid #ddd;
     }
 
@@ -723,6 +940,7 @@ footer a{
         gap:35px;
     }
 }
+
 
 @media(max-width:500px){
 
@@ -767,7 +985,7 @@ footer a{
     }
 
     .promo-content h2{
-        font-size:35px;
+        font-size:38px;
     }
 
     .footer-grid{
@@ -775,47 +993,94 @@ footer a{
     }
 
     .modal-box{
-        margin:15px auto;
+        margin:10px auto;
         padding:22px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- TOP BAR -->
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
 <div class="topbar">
     ADVANCE PAYMENT PAR DELIVERY BILKUL FREE • AZORA.PK
 </div>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
 
 <div class="header-inner">
 
-    <div class="mobile-menu">☰</div>
+    <div class="mobile-menu">
+        ☰
+    </div>
 
     <div class="logo">
         AZORA<span>.PK</span>
     </div>
 
     <ul class="nav">
-        <li><a href="#">NEW IN</a></li>
-        <li><a href="#">WOMEN</a></li>
-        <li><a href="#collection">UNSTITCHED</a></li>
-        <li><a href="#">READY TO WEAR</a></li>
-        <li><a href="#">MEN</a></li>
-        <li><a href="#">ACCESSORIES</a></li>
-        <li><a href="#">SALE</a></li>
+
+        <li>
+            <a href="#">NEW IN</a>
+        </li>
+
+        <li>
+            <a href="#women">WOMEN</a>
+        </li>
+
+        <li>
+            <a href="#unstitched">UNSTITCHED</a>
+        </li>
+
+        <li>
+            <a href="#ready">READY TO WEAR</a>
+        </li>
+
+        <li>
+            <a href="#gents">GENTS</a>
+        </li>
+
+        <li>
+            <a href="#kids">KIDS</a>
+        </li>
+
+        <li>
+            <a href="#sale">SALE</a>
+        </li>
+
     </ul>
 
+
     <div class="icons">
-        <span class="icon">⌕</span>
-        <span class="icon">♙</span>
-        <span class="icon">♡</span>
-        <span class="icon">🛍</span>
+
+        <span class="icon">
+            ⌕
+        </span>
+
+        <span class="icon">
+            ♙
+        </span>
+
+        <span class="icon">
+            ♡
+        </span>
+
+        <span class="icon">
+            🛍
+        </span>
+
     </div>
 
 </div>
@@ -823,29 +1088,40 @@ footer a{
 </header>
 
 
-<!-- HERO -->
-<section class="hero">
+<!-- =========================
+     HERO
+========================= -->
 
-<img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1800&q=85">
+<section class="hero" id="women">
+
+<img
+src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=1800&q=85"
+alt="Azora Collection"
+>
 
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<small>AZORA NEW COLLECTION</small>
+<small>
+AZORA NEW COLLECTION
+</small>
 
 <h1>
-    Summer<br>
-    Edit '26
+Summer<br>
+Edit '26
 </h1>
 
 <p>
-    Discover effortless Pakistani fashion,
-    crafted for every moment.
+Discover effortless Pakistani fashion,
+crafted for every moment.
 </p>
 
-<a class="hero-btn" href="#collection">
-    SHOP NOW
+<a
+class="hero-btn"
+href="#collection"
+>
+SHOP NOW
 </a>
 
 </div>
@@ -853,68 +1129,469 @@ footer a{
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- =========================
+     SHOP BY CATEGORY
+========================= -->
+
 <section class="section">
 
 <div class="heading">
-    <small>EXPLORE AZORA</small>
-    <h2>Shop By Category</h2>
+
+<small>
+EXPLORE AZORA
+</small>
+
+<h2>
+Shop By Category
+</h2>
+
 </div>
+
+
+<div class="main-tabs">
+
+<button class="active">
+WOMEN
+</button>
+
+<button>
+GENTS
+</button>
+
+<button>
+KIDS
+</button>
+
+</div>
+
+
+<!-- WOMEN -->
+
+<div class="sub-category">
+
+<button class="active">
+UNSTITCHED
+</button>
+
+<button>
+READY TO WEAR
+</button>
+
+<button>
+DUPATTAS
+</button>
+
+<button>
+HIJABS
+</button>
+
+<button>
+ACCESSORIES
+</button>
+
+</div>
+
+
+<div class="categories">
+
+<div class="category" id="unstitched">
+
+<img
+src="https://images.unsplash.com/photo-1610030469983-98e550d080a6?auto=format&fit=crop&w=800&q=85"
+alt="Unstitched"
+>
+
+<div class="category-text">
+
+<h3>
+Unstitched
+</h3>
+
+<span>
+SHOP COLLECTION →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category" id="ready">
+
+<img
+src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85"
+alt="Ready To Wear"
+>
+
+<div class="category-text">
+
+<h3>
+Ready To Wear
+</h3>
+
+<span>
+SHOP COLLECTION →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category">
+
+<img
+src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=85"
+alt="Accessories"
+>
+
+<div class="category-text">
+
+<h3>
+Accessories
+</h3>
+
+<span>
+SHOP COLLECTION →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category">
+
+<img
+src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=800&q=85"
+alt="Sale"
+>
+
+<div class="category-text">
+
+<h3>
+Sale
+</h3>
+
+<span>
+SHOP NOW →
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GENTS COLLECTION
+========================= -->
+
+<section class="section" id="gents">
+
+<div class="heading">
+
+<small>
+AZORA GENTS
+</small>
+
+<h2>
+Gents Collection
+</h2>
+
+</div>
+
+
+<div class="sub-category">
+
+<button class="active">
+SOFT COTTON
+</button>
+
+<button>
+HARD COTTON
+</button>
+
+<button>
+WAISTCOAT SUIT
+</button>
+
+</div>
+
 
 <div class="categories">
 
 <div class="category">
-<img src="https://images.unsplash.com/photo-1610030469983-98e550d080a6?auto=format&fit=crop&w=800&q=85">
+
+<img
+src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=800&q=85"
+alt="Soft Cotton"
+>
+
 <div class="category-text">
-<h3>Unstitched</h3>
-<span>SHOP COLLECTION →</span>
+
+<h3>
+Soft Cotton
+</h3>
+
+<span>
+SHOP GENTS →
+</span>
+
 </div>
+
 </div>
+
 
 <div class="category">
-<img src="https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=85">
+
+<img
+src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=800&q=85"
+alt="Hard Cotton"
+>
+
 <div class="category-text">
-<h3>Ready To Wear</h3>
-<span>SHOP COLLECTION →</span>
+
+<h3>
+Hard Cotton
+</h3>
+
+<span>
+SHOP GENTS →
+</span>
+
 </div>
+
 </div>
+
 
 <div class="category">
-<img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=800&q=85">
+
+<img
+src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=85"
+alt="Waistcoat Suit"
+>
+
 <div class="category-text">
-<h3>Accessories</h3>
-<span>SHOP COLLECTION →</span>
+
+<h3>
+Waistcoat Suit
+</h3>
+
+<span>
+SHOP GENTS →
+</span>
+
 </div>
+
 </div>
+
 
 <div class="category">
-<img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=800&q=85">
+
+<img
+src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=800&q=85"
+alt="Gents Collection"
+>
+
 <div class="category-text">
-<h3>Sale</h3>
-<span>SHOP NOW →</span>
-</div>
+
+<h3>
+Gents Edit
+</h3>
+
+<span>
+VIEW COLLECTION →
+</span>
+
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 
-<!-- PRODUCTS -->
-<section class="section" id="collection">
+<!-- =========================
+     KIDS COLLECTION
+========================= -->
+
+<section class="section" id="kids">
 
 <div class="heading">
-<small>AZORA PICKS</small>
-<h2>Best Sellers</h2>
+
+<small>
+AZORA KIDS
+</small>
+
+<h2>
+Kids Collection
+</h2>
+
 </div>
 
+
+<div class="sub-category">
+
+<button class="active">
+PRINT
+</button>
+
+<button>
+EMBROIDERY
+</button>
+
+<button>
+PLAIN
+</button>
+
+</div>
+
+
+<div class="categories">
+
+<div class="category">
+
+<img
+src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=85"
+alt="Kids Print"
+>
+
+<div class="category-text">
+
+<h3>
+Print
+</h3>
+
+<span>
+SHOP KIDS →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category">
+
+<img
+src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=800&q=85"
+alt="Kids Embroidery"
+>
+
+<div class="category-text">
+
+<h3>
+Embroidery
+</h3>
+
+<span>
+SHOP KIDS →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category">
+
+<img
+src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=85"
+alt="Kids Plain"
+>
+
+<div class="category-text">
+
+<h3>
+Plain
+</h3>
+
+<span>
+SHOP KIDS →
+</span>
+
+</div>
+
+</div>
+
+
+<div class="category">
+
+<img
+src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85"
+alt="Kids Collection"
+>
+
+<div class="category-text">
+
+<h3>
+Kids Edit
+</h3>
+
+<span>
+VIEW COLLECTION →
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BEST SELLERS
+========================= -->
+
+<section
+class="section"
+id="collection"
+>
+
+<div class="heading">
+
+<small>
+AZORA PICKS
+</small>
+
+<h2>
+Best Sellers
+</h2>
+
+</div>
+
+
 <div class="product-toolbar">
-<span>24 PRODUCTS</span>
+
+<span>
+24 PRODUCTS
+</span>
 
 <select class="sort">
-<option>Featured</option>
-<option>Price: Low to High</option>
-<option>Price: High to Low</option>
-<option>Newest</option>
+
+<option>
+Featured
+</option>
+
+<option>
+Price: Low to High
+</option>
+
+<option>
+Price: High to Low
+</option>
+
+<option>
+Newest
+</option>
+
 </select>
 
 </div>
@@ -922,417 +1599,20 @@ footer a{
 
 <div class="products">
 
+
 <!-- PRODUCT 1 -->
+
 <div class="product">
 
 <div class="product-image">
 
-<span class="sale">SALE</span>
-<span class="wishlist">♡</span>
-
-<img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=85">
-
-<div class="quick-add">
-ADD TO CART
-</div>
-
-</div>
-
-<div class="product-info">
-<div class="product-name">Printed Lawn 3 Piece Suit</div>
-<div class="price">
-Rs. 3,199
-<span class="old-price">Rs. 3,799</span>
-</div>
-<div class="discount">16% OFF</div>
-</div>
-
-</div>
-
-
-<!-- PRODUCT 2 -->
-<div class="product">
-
-<div class="product-image">
-
-<span class="sale">SALE</span>
-<span class="wishlist">♡</span>
-
-<img src="https://images.unsplash.com/photo-1585488431561-7e7d4cdb7d8b?auto=format&fit=crop&w=700&q=85">
-
-<div class="quick-add">
-ADD TO CART
-</div>
-
-</div>
-
-<div class="product-info">
-<div class="product-name">Embroidered Lawn Suit</div>
-<div class="price">
-Rs. 4,499
-<span class="old-price">Rs. 5,899</span>
-</div>
-<div class="discount">24% OFF</div>
-</div>
-
-</div>
-
-
-<!-- PRODUCT 3 -->
-<div class="product">
-
-<div class="product-image">
-
-<span class="sale">SALE</span>
-<span class="wishlist">♡</span>
-
-<img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=85">
-
-<div class="quick-add">
-ADD TO CART
-</div>
-
-</div>
-
-<div class="product-info">
-<div class="product-name">Premium Lawn 2 Piece</div>
-<div class="price">
-Rs. 2,499
-<span class="old-price">Rs. 3,399</span>
-</div>
-<div class="discount">26% OFF</div>
-</div>
-
-</div>
-
-
-<!-- PRODUCT 4 -->
-<div class="product">
-
-<div class="product-image">
-
-<span class="sale">SALE</span>
-<span class="wishlist">♡</span>
-
-<img src="https://images.unsplash.com/photo-1610030469668-8e9f2b7f7b8e?auto=format&fit=crop&w=700&q=85">
-
-<div class="quick-add">
-ADD TO CART
-</div>
-
-</div>
-
-<div class="product-info">
-<div class="product-name">Luxury Printed Collection</div>
-<div class="price">
-Rs. 3,699
-<span class="old-price">Rs. 4,699</span>
-</div>
-<div class="discount">21% OFF</div>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- PROMO -->
-<section class="section">
-
-<div class="promo">
-
-<img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=85">
-
-<div class="promo-overlay"></div>
-
-<div class="promo-content">
-
-<small>AZORA ESSENTIALS</small>
-
-<h2>
-Everyday.<br>
-Elevated.
-</h2>
-
-<a class="hero-btn" href="#collection">
-SHOP WOMEN
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ADVANCE PAYMENT BANNER -->
-<section class="payment-banner">
-
-<div class="payment-inner">
-
-<div>
-<div class="payment-title">
-Advance Payment = FREE Delivery
-</div>
-
-<div class="payment-text">
-Pay in advance through JazzCash or Meezan Bank and get FREE delivery.
-</div>
-</div>
-
-<button class="payment-btn" onclick="openPayment()">
-VIEW PAYMENT DETAILS
-</button>
-
-</div>
-
-</section>
-
-
-<!-- PAYMENT MODAL -->
-<div class="modal" id="paymentModal">
-
-<div class="modal-box">
-
-<div class="close" onclick="closePayment()">×</div>
-
-<div class="modal-title">
-Advance Payment
-</div>
-
-<p style="font-size:12px;color:#777;">
-Pay your order in advance and your delivery is completely FREE.
-</p>
-
-
-<div class="free-delivery">
-✓ ADVANCE PAYMENT CONFIRMED = FREE DELIVERY
-</div>
-
-
-<!-- JAZZCASH -->
-<div class="payment-method">
-
-<strong>JazzCash</strong>
-
-<div class="account">
-0308-440-5550
-</div>
-
-<button class="copy-btn"
-onclick="copyText('03084405550')">
-COPY NUMBER
-</button>
-
-</div>
-
-
-<!-- MEEZAN -->
-<div class="payment-method">
-
-<strong>Meezan Bank</strong>
-
-<div class="account">
-98430104527600
-</div>
-
-<button class="copy-btn"
-onclick="copyText('98430104527600')">
-COPY ACCOUNT
-</button>
-
-</div>
-
-
-<div class="payment-note">
-After making payment, enter your transaction ID below.
-Our team will verify the payment and process your order.
-</div>
-
-
-<div class="payment-form">
-
-<label>
-Transaction ID
-</label>
-
-<input
-type="text"
-id="transactionId"
-placeholder="Enter your transaction ID"
->
-
-
-<button class="paid-btn"
-onclick="paymentSubmitted()">
-I HAVE PAID
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- FEATURES -->
-<div class="features">
-
-<div class="feature">
-<strong>FREE DELIVERY</strong>
-<p>On advance payment orders</p>
-</div>
-
-<div class="feature">
-<strong>SECURE PAYMENT</strong>
-<p>JazzCash & Meezan Bank</p>
-</div>
-
-<div class="feature">
-<strong>EASY RETURNS</strong>
-<p>Simple return policy</p>
-</div>
-
-<div class="feature">
-<strong>WHATSAPP SUPPORT</strong>
-<p>0308-440-5550</p>
-</div>
-
-</div>
-
-
-<!-- FOOTER -->
-<footer>
-
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-logo">
-AZORA.PK
-</div>
-
-<p class="footer-about">
-Premium Pakistani fashion designed for
-modern women. Discover unstitched,
-ready-to-wear and accessories.
-</p>
-
-</div>
-
-
-<div>
-
-<h4>SHOP</h4>
-
-<a href="#">New In</a>
-<a href="#collection">Unstitched</a>
-<a href="#">Ready To Wear</a>
-<a href="#">Sale</a>
-
-</div>
-
-
-<div>
-
-<h4>HELP</h4>
-
-<a href="#">Contact Us</a>
-<a href="#">Track Order</a>
-<a href="#">Shipping</a>
-<a href="#">Returns</a>
-
-</div>
-
-
-<div>
-
-<h4>CONTACT</h4>
-
-<a href="https://wa.me/923084405550">
-WhatsApp: 0308-440-5550
-</a>
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-Facebook
-</a>
-
-<a href="#">
-TikTok
-</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-© 2026 AZORA.PK — ALL RIGHTS RESERVED
-</div>
-
-</footer>
-
-
-<!-- WHATSAPP BUTTON -->
-<a
-class="whatsapp"
-href="https://wa.me/923084405550"
-target="_blank"
-aria-label="WhatsApp">
-☏
-</a>
-
-
-<script>
-
-/* OPEN PAYMENT */
-function openPayment(){
-    document.getElementById("paymentModal").style.display="block";
-    document.body.style.overflow="hidden";
-}
-
-
-/* CLOSE PAYMENT */
-function closePayment(){
-    document.getElementById("paymentModal").style.display="none";
-    document.body.style.overflow="auto";
-}
-
-
-/* COPY PAYMENT DETAILS */
-function copyText(text){
-
-    navigator.clipboard.writeText(text)
-    .then(function(){
-
-        alert("Copied: " + text);
-
-    })
-    .catch(function(){
-
-        alert("Please copy manually: " + text);
-
-    });
-
-}
-
-
-/* PAYMENT SUBMITTED */
-function paymentSubmitted(){
-
-    const transaction =
-        document.getElementById("transactionId").value.trim();
-
-    if(transaction === ""){
-
-        alert("Please enter your Transaction ID.");
-
-        return;
-    }
-
-    alert(
-     
+<span class="sale">
+SALE
+</span>
+
+<span class="wishlist">
+♡
+</span>
+
+<img
+src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format
