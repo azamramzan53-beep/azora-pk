@@ -1,8 +1,16 @@
+<!-- =========================================================
+     AZORA PREMIUM WEBSITE
+     SAME PREMIUM STRUCTURE
+     UPDATED:
+     WhatsApp: 0308-440-5550
+     Meezan Bank: 98430104527600
+     ========================================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AZORA — Premium Fashion</title>
 
 <style>
@@ -27,9 +35,7 @@ body{
 }
 
 button,input,select,textarea{font:inherit}
-
 button{cursor:pointer}
-
 a{text-decoration:none;color:inherit}
 
 /* TOP BAR */
@@ -178,7 +184,7 @@ a{text-decoration:none;color:inherit}
   color:#fff;
 }
 
-/* COMMON */
+/* SECTIONS */
 .section{
   max-width:1400px;
   margin:auto;
@@ -221,7 +227,9 @@ a{text-decoration:none;color:inherit}
   -webkit-overflow-scrolling:touch;
 }
 
-.catalogRow::-webkit-scrollbar{display:none}
+.catalogRow::-webkit-scrollbar{
+  display:none;
+}
 
 .catalogItem{
   flex:0 0 112px;
@@ -252,7 +260,9 @@ a{text-decoration:none;color:inherit}
   transform:translateY(-4px);
 }
 
-.catalogItem:hover img{transform:scale(1.08)}
+.catalogItem:hover img{
+  transform:scale(1.08);
+}
 
 .catalogItem p{
   margin-top:12px;
@@ -304,6 +314,7 @@ a{text-decoration:none;color:inherit}
   font-size:9px;
   font-weight:bold;
   letter-spacing:1px;
+  z-index:2;
 }
 
 .heart{
@@ -316,6 +327,7 @@ a{text-decoration:none;color:inherit}
   border:1px solid rgba(255,255,255,.2);
   background:rgba(0,0,0,.55);
   color:#fff;
+  z-index:2;
 }
 
 .productInfo{
@@ -405,7 +417,9 @@ a{text-decoration:none;color:inherit}
   border-right:1px solid var(--line);
 }
 
-.feature:last-child{border:0}
+.feature:last-child{
+  border:0;
+}
 
 .feature strong{
   display:block;
@@ -461,15 +475,6 @@ footer li{
   cursor:pointer;
 }
 
-.copy{
-  max-width:1400px;
-  margin:50px auto 0;
-  padding-top:20px;
-  border-top:1px solid var(--line);
-  color:#555;
-  font-size:11px;
-}
-
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
@@ -501,7 +506,9 @@ footer li{
   padding:20px;
 }
 
-.modal.active{display:flex}
+.modal.active{
+  display:flex;
+}
 
 .modalBox{
   width:min(600px,100%);
@@ -546,7 +553,10 @@ footer li{
   outline:none;
 }
 
-.form textarea{min-height:90px;resize:vertical}
+.form textarea{
+  min-height:90px;
+  resize:vertical;
+}
 
 /* CART */
 .cartItem{
@@ -557,7 +567,9 @@ footer li{
   border-bottom:1px solid var(--line);
 }
 
-.cartItem small{color:#888}
+.cartItem small{
+  color:#888;
+}
 
 .qty{
   display:flex;
@@ -583,20 +595,31 @@ footer li{
 
 /* MOBILE */
 @media(max-width:900px){
-  .navlinks{display:none}
 
-  .hero{min-height:570px}
+  .navlinks{
+    display:none;
+  }
 
-  .heroContent{padding:70px 25px}
+  .hero{
+    min-height:570px;
+  }
+
+  .heroContent{
+    padding:70px 25px;
+  }
 
   .productGrid{
     grid-template-columns:repeat(2,1fr);
     gap:10px;
   }
 
-  .productInfo{padding:12px}
+  .productInfo{
+    padding:12px;
+  }
 
-  .productInfo h3{font-size:15px}
+  .productInfo h3{
+    font-size:15px;
+  }
 
   .features{
     grid-template-columns:repeat(2,1fr);
@@ -618,19 +641,37 @@ footer li{
     padding:35px 25px;
   }
 
-  .promoBox h2{font-size:35px}
+  .promoBox h2{
+    font-size:35px;
+  }
 }
 
 @media(max-width:520px){
-  .logo{font-size:23px;letter-spacing:5px}
 
-  .nav{padding:0 14px}
+  .logo{
+    font-size:23px;
+    letter-spacing:5px;
+  }
 
-  .section{padding:55px 15px}
+  .nav{
+    padding:0 14px;
+  }
 
-  .sectionHead h2{font-size:30px}
+  .section{
+    padding:55px 15px;
+  }
 
-  .catalogRow{gap:16px}
+  .sectionHead h2{
+    font-size:30px;
+  }
+
+  /* CATALOG ALWAYS ONE HORIZONTAL LINE */
+  .catalogRow{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    gap:16px;
+  }
 
   .catalogItem{
     flex:0 0 94px;
@@ -645,7 +686,9 @@ footer li{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .hero h1{font-size:51px}
+  .hero h1{
+    font-size:51px;
+  }
 
   .footerGrid{
     grid-template-columns:1fr;
@@ -665,1074 +708,392 @@ footer li{
 </div>
 
 <header class="header">
-  <nav class="nav">
+<nav class="nav">
 
-    <div class="logo">AZ<span>O</span>RA</div>
+  <div class="logo">AZ<span>O</span>RA</div>
 
-    <div class="navlinks">
-      <a href="#home">Home</a>
-      <a href="#ladies">Ladies</a>
-      <a href="#gents">Gents</a>
-      <a href="#kids">Kids</a>
-      <a href="#sale">Sale</a>
-    </div>
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#ladies">Ladies</a>
+    <a href="#gents">Gents</a>
+    <a href="#kids">Kids</a>
+    <a href="#sale">Sale</a>
+  </div>
 
-    <div class="actions">
-      <button class="iconbtn" onclick="openModal('searchModal')">⌕</button>
-      <button class="iconbtn" onclick="openModal('accountModal')">♙</button>
-      <button class="iconbtn" onclick="openCart()">🛍</button>
-    </div>
+  <div class="actions">
+    <button class="iconbtn" onclick="openModal('searchModal')">⌕</button>
+    <button class="iconbtn" onclick="openModal('accountModal')">♙</button>
+    <button class="iconbtn" onclick="openCart()">🛍</button>
+  </div>
 
-  </nav>
+</nav>
 </header>
 
-<!-- ORIGINAL PREMIUM HERO -->
+
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="heroContent">
 
-    <div class="eyebrow">AZORA • PREMIUM COLLECTION</div>
+<div class="heroContent">
 
-    <h1>
-      Elegance<br>
-      <em>Made</em> Timeless.
-    </h1>
-
-    <p>
-      Discover premium Pakistani fashion, refined fabrics and
-      carefully selected collections designed for modern elegance.
-    </p>
-
-    <button class="btn" onclick="document.getElementById('ladies').scrollIntoView()">
-      Explore Collection
-    </button>
-
+  <div class="eyebrow">
+    AZORA • PREMIUM COLLECTION
   </div>
+
+  <h1>
+    Elegance<br>
+    <em>Made</em> Timeless.
+  </h1>
+
+  <p>
+    Discover premium Pakistani fashion, refined fabrics
+    and carefully selected collections designed for
+    modern elegance.
+  </p>
+
+  <button class="btn"
+    onclick="document.getElementById('ladies').scrollIntoView()">
+    Explore Collection
+  </button>
+
+</div>
+
 </section>
 
 
 <!-- LADIES -->
 <section class="section" id="ladies">
 
-  <div class="sectionHead">
-    <div>
-      <span>LADIES COLLECTION</span>
-      <h2>Shop By Category</h2>
+<div class="sectionHead">
+  <div>
+    <span>LADIES COLLECTION</span>
+    <h2>Shop By Category</h2>
+  </div>
+</div>
+
+<div class="catalogWrap">
+
+<div class="catalogRow">
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>2 Piece</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>3 Piece</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Unstitched</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Ready To Wear</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Chiffon</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Embroidered</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Printed</p>
+  </div>
+
+</div>
+</div>
+
+
+<div class="productGrid">
+
+  <div class="product">
+    <div class="productImage">
+      <span class="badge">NEW</span>
+      <button class="heart">♡</button>
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80">
+    </div>
+
+    <div class="productInfo">
+      <small>LADIES • LAWN</small>
+      <h3>Royal Lawn Set</h3>
+      <span class="price">Rs. 4,299</span>
+      <button class="add"
+        onclick="addCart('Royal Lawn Set',4299)">
+        ADD TO CART
+      </button>
     </div>
   </div>
 
-  <!-- ONE HORIZONTAL LINE ONLY -->
-  <div class="catalogWrap">
-    <div class="catalogRow">
 
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>2 Piece</p>
-      </div>
+  <div class="product">
+    <div class="productImage">
+      <span class="badge">SALE</span>
+      <button class="heart">♡</button>
+      <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80">
+    </div>
 
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>3 Piece</p>
-      </div>
+    <div class="productInfo">
+      <small>LADIES • EMBROIDERED</small>
+      <h3>Ivory Embroidery</h3>
+      <span class="price">Rs. 3,799</span>
+      <span class="old">Rs. 5,200</span>
 
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Unstitched</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Ready To Wear</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1610189012906-9e5e5f9b6d1f?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Lawn</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Chiffon</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Embroidered</p>
-      </div>
-
-      <div class="catalogItem" onclick="filterProducts('Ladies')">
-        <div class="catalogCircle">
-          <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=500&q=80">
-        </div>
-        <p>Printed</p>
-      </div>
-
+      <button class="add"
+        onclick="addCart('Ivory Embroidery',3799)">
+        ADD TO CART
+      </button>
     </div>
   </div>
 
-  <!-- LADIES PRODUCTS -->
-  <div class="productGrid">
 
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">NEW</span>
-        <button class="heart" onclick="wishlist('Royal Lawn Set')">♡</button>
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • LAWN</small>
-        <h3>Royal Lawn Set</h3>
-        <span class="price">Rs. 4,299</span>
-        <button class="add" onclick="addCart('Royal Lawn Set',4299)">ADD TO CART</button>
-      </div>
+  <div class="product">
+    <div class="productImage">
+      <button class="heart">♡</button>
+      <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80">
     </div>
 
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">SALE</span>
-        <button class="heart" onclick="wishlist('Ivory Embroidery')">♡</button>
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • EMBROIDERED</small>
-        <h3>Ivory Embroidery</h3>
-        <span class="price">Rs. 3,799</span>
-        <span class="old">Rs. 5,200</span>
-        <button class="add" onclick="addCart('Ivory Embroidery',3799)">ADD TO CART</button>
-      </div>
-    </div>
+    <div class="productInfo">
+      <small>LADIES • CHIFFON</small>
+      <h3>Noir Chiffon</h3>
+      <span class="price">Rs. 5,499</span>
 
-    <div class="product">
-      <div class="productImage">
-        <button class="heart" onclick="wishlist('Noir Chiffon')">♡</button>
-        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • CHIFFON</small>
-        <h3>Noir Chiffon</h3>
-        <span class="price">Rs. 5,499</span>
-        <button class="add" onclick="addCart('Noir Chiffon',5499)">ADD TO CART</button>
-      </div>
+      <button class="add"
+        onclick="addCart('Noir Chiffon',5499)">
+        ADD TO CART
+      </button>
     </div>
-
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">NEW</span>
-        <button class="heart" onclick="wishlist('Pearl Print')">♡</button>
-        <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>LADIES • PRINTED</small>
-        <h3>Pearl Print</h3>
-        <span class="price">Rs. 3,999</span>
-        <button class="add" onclick="addCart('Pearl Print',3999)">ADD TO CART</button>
-      </div>
-    </div>
-
   </div>
+
+
+  <div class="product">
+    <div class="productImage">
+      <span class="badge">NEW</span>
+      <button class="heart">♡</button>
+      <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=80">
+    </div>
+
+    <div class="productInfo">
+      <small>LADIES • PRINTED</small>
+      <h3>Pearl Print</h3>
+      <span class="price">Rs. 3,999</span>
+
+      <button class="add"
+        onclick="addCart('Pearl Print',3999)">
+        ADD TO CART
+      </button>
+    </div>
+  </div>
+
+</div>
 </section>
 
 
 <!-- GENTS -->
 <section class="section" id="gents">
 
-  <div class="sectionHead">
-    <div>
-      <span>GENTS COLLECTION</span>
-      <h2>Premium Fabrics</h2>
+<div class="sectionHead">
+  <div>
+    <span>GENTS COLLECTION</span>
+    <h2>Premium Fabrics</h2>
+  </div>
+</div>
+
+<div class="catalogRow">
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Gents Cotton</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Soft Cotton</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Hard Cotton</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Wash & Wear</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Gents Suit</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Waistcoat</p>
+  </div>
+
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=500&q=80">
+    </div>
+    <p>Kurta</p>
+  </div>
+
+</div>
+
+
+<div class="productGrid" style="margin-top:35px">
+
+  <div class="product">
+    <div class="productImage">
+      <span class="badge">PREMIUM</span>
+      <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=80">
+    </div>
+
+    <div class="productInfo">
+      <small>GENTS • FABRIC</small>
+      <h3>Royal Wash & Wear</h3>
+      <span class="price">Rs. 3,500</span>
+
+      <button class="add"
+        onclick="addCart('Royal Wash & Wear',3500)">
+        ADD TO CART
+      </button>
     </div>
   </div>
 
-  <!-- ONE HORIZONTAL LINE -->
-  <div class="catalogRow">
 
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Gents Cotton</p>
+  <div class="product">
+    <div class="productImage">
+      <span class="badge">SALE</span>
+      <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=700&q=80">
     </div>
 
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Soft Cotton</p>
-    </div>
+    <div class="productInfo">
+      <small>GENTS • COTTON</small>
+      <h3>Classic Cotton</h3>
+      <span class="price">Rs. 3,200</span>
 
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Hard Cotton</p>
+      <button class="add"
+        onclick="addCart('Classic Cotton',3200)">
+        ADD TO CART
+      </button>
     </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Wash & Wear</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Gents Suit</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Waistcoat</p>
-    </div>
-
-    <div class="catalogItem" onclick="filterProducts('Gents')">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Kurta</p>
-    </div>
-
   </div>
 
-  <div class="productGrid" style="margin-top:35px">
 
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">PREMIUM</span>
-        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • FABRIC</small>
-        <h3>Royal Wash & Wear</h3>
-        <span class="price">Rs. 3,500</span>
-        <button class="add" onclick="addCart('Royal Wash & Wear',3500)">ADD TO CART</button>
-      </div>
+  <div class="product">
+    <div class="productImage">
+      <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=700&q=80">
     </div>
 
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">SALE</span>
-        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • COTTON</small>
-        <h3>Classic Cotton</h3>
-        <span class="price">Rs. 3,200</span>
-        <button class="add" onclick="addCart('Classic Cotton',3200)">ADD TO CART</button>
-      </div>
-    </div>
+    <div class="productInfo">
+      <small>GENTS • PREMIUM</small>
+      <h3>Executive Fabric</h3>
+      <span class="price">Rs. 4,500</span>
 
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • PREMIUM</small>
-        <h3>Executive Fabric</h3>
-        <span class="price">Rs. 4,500</span>
-        <button class="add" onclick="addCart('Executive Fabric',4500)">ADD TO CART</button>
-      </div>
+      <button class="add"
+        onclick="addCart('Executive Fabric',4500)">
+        ADD TO CART
+      </button>
     </div>
-
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>GENTS • SUIT</small>
-        <h3>Premium Suit Fabric</h3>
-        <span class="price">Rs. 5,900</span>
-        <button class="add" onclick="addCart('Premium Suit Fabric',5900)">ADD TO CART</button>
-      </div>
-    </div>
-
   </div>
+
+
+  <div class="product">
+    <div class="productImage">
+      <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=80">
+    </div>
+
+    <div class="productInfo">
+      <small>GENTS • SUIT</small>
+      <h3>Premium Suit Fabric</h3>
+      <span class="price">Rs. 5,900</span>
+
+      <button class="add"
+        onclick="addCart('Premium Suit Fabric',5900)">
+        ADD TO CART
+      </button>
+    </div>
+  </div>
+
+</div>
 </section>
 
 
 <!-- KIDS -->
 <section class="section" id="kids">
 
-  <div class="sectionHead">
-    <div>
-      <span>KIDS COLLECTION</span>
-      <h2>Little Luxury</h2>
-    </div>
-  </div>
-
-  <!-- ONE HORIZONTAL LINE -->
-  <div class="catalogRow">
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Print</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Embroidery</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Plain</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>2 Piece</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>3 Piece</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Girls</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Boys</p>
-    </div>
-
-  </div>
-
-  <div class="productGrid" style="margin-top:35px">
-
-    <div class="product">
-      <div class="productImage">
-        <span class="badge">KIDS</span>
-        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>KIDS • PRINT</small>
-        <h3>Little Star</h3>
-        <span class="price">Rs. 2,499</span>
-        <button class="add" onclick="addCart('Little Star',2499)">ADD TO CART</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>KIDS • CASUAL</small>
-        <h3>Mini Classic</h3>
-        <span class="price">Rs. 2,799</span>
-        <button class="add" onclick="addCart('Mini Classic',2799)">ADD TO CART</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>KIDS • 2 PIECE</small>
-        <h3>Festive Mini</h3>
-        <span class="price">Rs. 3,199</span>
-        <button class="add" onclick="addCart('Festive Mini',3199)">ADD TO CART</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <div class="productImage">
-        <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&q=80">
-      </div>
-      <div class="productInfo">
-        <small>KIDS • GIRLS</small>
-        <h3>Princess Print</h3>
-        <span class="price">Rs. 2,999</span>
-        <button class="add" onclick="addCart('Princess Print',2999)">ADD TO CART</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- OTHER CATALOGS -->
-<section class="section">
-
-  <div class="sectionHead">
-    <div>
-      <span>MORE COLLECTIONS</span>
-      <h2>Complete Your Look</h2>
-    </div>
-  </div>
-
-  <div class="catalogRow">
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1601924928370-1b7f7f6f8a7d?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Dupatta</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Plain Trousers</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Hijabs</p>
-    </div>
-
-    <div class="catalogItem">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Bags</p>
-    </div>
-
-    <div class="catalogItem" id="sale">
-      <div class="catalogCircle">
-        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=500&q=80">
-      </div>
-      <p>Sale</p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- PROMO -->
-<div class="promo">
-  <div class="promoBox">
-    <div>
-      <div class="eyebrow">AZORA EXCLUSIVE</div>
-      <h2>Premium Fashion.<br>Better Value.</h2>
-      <p>Advance payment customers receive FREE DELIVERY.</p>
-      <button class="btn" onclick="openModal('paymentModal')">
-        Payment Methods
-      </button>
-    </div>
+<div class="sectionHead">
+  <div>
+    <span>KIDS COLLECTION</span>
+    <h2>Little Luxury</h2>
   </div>
 </div>
 
+<div class="catalogRow">
 
-<!-- FEATURES -->
-<section class="section">
-  <div class="features">
-
-    <div class="feature">
-      <strong>Premium Quality</strong>
-      <span>Carefully selected fabrics</span>
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=500&q=80">
     </div>
-
-    <div class="feature">
-      <strong>Secure Checkout</strong>
-      <span>Simple & convenient ordering</span>
-    </div>
-
-    <div class="feature">
-      <strong>Free Delivery</strong>
-      <span>On advance payment</span>
-    </div>
-
-    <div class="feature">
-      <strong>WhatsApp Support</strong>
-      <span>0304-440-5550</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-  <div class="footerGrid">
-
-    <div>
-      <div class="footerLogo">AZORA</div>
-      <p>
-        Premium Pakistani fashion, fabrics and accessories
-        curated for timeless everyday elegance.
-      </p>
-    </div>
-
-    <div>
-      <h4>SHOP</h4>
-      <ul>
-        <li onclick="location.href='#ladies'">Ladies</li>
-        <li onclick="location.href='#gents'">Gents</li>
-        <li onclick="location.href='#kids'">Kids</li>
-        <li onclick="location.href='#sale'">Sale</li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>HELP</h4>
-      <ul>
-        <li onclick="openModal('aboutModal')">About AZORA</li>
-        <li onclick="openModal('paymentModal')">Payment Methods</li>
-        <li onclick="openCart()">Checkout</li>
-        <li onclick="openModal('accountModal')">My Account</li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>CONTACT</h4>
-      <ul>
-        <li>WhatsApp: 0304-440-5550</li>
-        <li>JazzCash: 0308-440-5550</li>
-        <li>Meezan Bank: 98430104527600</li>
-      </ul>
-    </div>
-
+    <p>Print</p>
   </div>
 
-  <div class="copy">
-    © 2026 AZORA. All Rights Reserved.
-  </div>
-
-</footer>
-
-
-<!-- WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/923084405550"
-   target="_blank"
-   aria-label="WhatsApp">
-  ☎
-</a>
-
-
-<!-- SEARCH MODAL -->
-<div class="modal" id="searchModal">
-  <div class="modalBox">
-    <button class="close" onclick="closeModal('searchModal')">×</button>
-    <h2>Search AZORA</h2>
-
-    <div class="form">
-      <input id="searchInput"
-             placeholder="Search products..."
-             oninput="searchProducts()">
-      <div id="searchResult"></div>
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=500&q=80">
     </div>
+    <p>Embroidery</p>
   </div>
-</div>
 
-
-<!-- ACCOUNT -->
-<div class="modal" id="accountModal">
-  <div class="modalBox">
-    <button class="close" onclick="closeModal('accountModal')">×</button>
-
-    <h2>My Account</h2>
-
-    <div class="form">
-      <input id="userName" placeholder="Full Name">
-      <input id="userEmail" type="email" placeholder="Email">
-      <input id="userPhone" placeholder="Phone Number">
-
-      <button class="btn" onclick="saveAccount()">
-        SAVE ACCOUNT
-      </button>
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=500&q=80">
     </div>
-
-    <p id="accountStatus"
-       style="color:#aaa;margin-top:15px;font-size:12px"></p>
+    <p>Plain</p>
   </div>
-</div>
 
-
-<!-- PAYMENT -->
-<div class="modal" id="paymentModal">
-  <div class="modalBox">
-    <button class="close" onclick="closeModal('paymentModal')">×</button>
-
-    <h2>Payment Methods</h2>
-
-    <div style="line-height:2;color:#bbb">
-
-      <p>
-        <strong style="color:#c8a96b">JazzCash</strong><br>
-        0308-440-5550
-      </p>
-
-      <br>
-
-      <p>
-        <strong style="color:#c8a96b">Meezan Bank</strong><br>
-        Account: 98430104527600
-      </p>
-
-      <br>
-
-      <p>
-        <strong style="color:#c8a96b">
-          ADVANCE PAYMENT
-        </strong><br>
-        FREE DELIVERY
-      </p>
-
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=500&q=80">
     </div>
+    <p>2 Piece</p>
   </div>
-</div>
 
-
-<!-- ABOUT -->
-<div class="modal" id="aboutModal">
-  <div class="modalBox">
-    <button class="close" onclick="closeModal('aboutModal')">×</button>
-
-    <h2>About AZORA</h2>
-
-    <p style="color:#aaa;line-height:1.9">
-      AZORA is a premium fashion destination focused on
-      Pakistani ladies, gents and kids collections.
-      We bring together elegant fabrics, modern designs
-      and carefully selected pieces for every occasion.
-    </p>
-
-  </div>
-</div>
-
-
-<!-- CART -->
-<div class="modal" id="cartModal">
-  <div class="modalBox">
-    <button class="close" onclick="closeModal('cartModal')">×</button>
-
-    <h2>Your Cart</h2>
-
-    <div id="cartItems"></div>
-
-    <div class="total">
-      <span>Total</span>
-      <strong id="cartTotal">Rs. 0</strong>
-    </div>
-
-    <button class="btn"
-            style="width:100%"
-            onclick="openCheckout()">
-      CHECKOUT
-    </button>
-  </div>
-</div>
-
-
-<!-- CHECKOUT -->
-<div class="modal" id="checkoutModal">
-  <div class="modalBox">
-
-    <button class="close"
-            onclick="closeModal('checkoutModal')">×</button>
-
-    <h2>Checkout</h2>
-
-    <div class="form">
-
-      <input id="cName" placeholder="Full Name *">
-      <input id="cEmail" type="email" placeholder="Email *">
-      <input id="cPhone" placeholder="Phone Number *">
-      <input id="cCity" placeholder="City *">
-      <textarea id="cAddress"
-                placeholder="Complete Address *"></textarea>
-      <input id="cPostal" placeholder="Postal Code">
-
-      <select id="cPayment">
-        <option value="">Select Payment Method</option>
-        <option>Cash on Delivery</option>
-        <option>JazzCash Advance</option>
-        <option>Meezan Bank Advance</option>
-      </select>
-
-      <input id="cTransaction"
-             placeholder="Transaction ID (if advance payment)">
-
-      <textarea id="cNotes"
-                placeholder="Order Notes"></textarea>
-
-      <button class="btn"
-              style="width:100%"
-              onclick="sendWhatsAppOrder()">
-        ORDER ON WHATSAPP
-      </button>
-
-    </div>
-
-  </div>
-</div>
-
-
-<script>
-
-/* =========================
-   CART
-========================= */
-
-let cart =
-JSON.parse(localStorage.getItem("azoraCart") || "[]");
-
-function saveCart(){
-  localStorage.setItem("azoraCart",JSON.stringify(cart));
-}
-
-function addCart(name,price){
-
-  const found=cart.find(item=>item.name===name);
-
-  if(found){
-    found.qty++;
-  }else{
-    cart.push({
-      name:name,
-      price:price,
-      qty:1
-    });
-  }
-
-  saveCart();
-
-  alert(name+" added to cart");
-}
-
-function removeCart(name){
-
-  cart=cart.filter(item=>item.name!==name);
-
-  saveCart();
-  renderCart();
-}
-
-function changeQty(name,amount){
-
-  const item=cart.find(x=>x.name===name);
-
-  if(!item)return;
-
-  item.qty+=amount;
-
-  if(item.qty<=0){
-    removeCart(name);
-    return;
-  }
-
-  saveCart();
-  renderCart();
-}
-
-function cartTotal(){
-
-  return cart.reduce(
-    (sum,item)=>sum+(item.price*item.qty),0
-  );
-}
-
-function renderCart(){
-
-  const box=document.getElementById("cartItems");
-
-  if(!cart.length){
-    box.innerHTML=
-      '<p style="color:#888">Your cart is empty.</p>';
-
-    document.getElementById("cartTotal").innerText="Rs. 0";
-    return;
-  }
-
-  box.innerHTML=cart.map(item=>`
-
-    <div class="cartItem">
-
-      <div>
-        <strong>${item.name}</strong>
-        <br>
-        <small>Rs. ${item.price.toLocaleString()}</small>
-
-        <div class="qty">
-          <button onclick="changeQty('${item.name}',-1)">−</button>
-          <span>${item.qty}</span>
-          <button onclick="changeQty('${item.name}',1)">+</button>
-        </div>
-      </div>
-
-      <button
-        style="background:none;border:0;color:#c8a96b"
-        onclick="removeCart('${item.name}')">
-        Remove
-      </button>
-
-    </div>
-
-  `).join("");
-
-  document.getElementById("cartTotal").innerText =
-    "Rs. "+cartTotal().toLocaleString();
-}
-
-function openCart(){
-  renderCart();
-  openModal("cartModal");
-}
-
-
-/* =========================
-   CHECKOUT
-========================= */
-
-function openCheckout(){
-
-  if(!cart.length){
-    alert("Your cart is empty.");
-    return;
-  }
-
-  closeModal("cartModal");
-  openModal("checkoutModal");
-}
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-function sendWhatsAppOrder(){
-
-  const name=document.getElementById("cName").value.trim();
-  const email=document.getElementById("cEmail").value.trim();
-  const phone=document.getElementById("cPhone").value.trim();
-  const city=document.getElementById("cCity").value.trim();
-  const address=document.getElementById("cAddress").value.trim();
-  const postal=document.getElementById("cPostal").value.trim();
-  const payment=document.getElementById("cPayment").value;
-  const transaction=document.getElementById("cTransaction").value.trim();
-  const notes=document.getElementById("cNotes").value.trim();
-
-  if(!name || !email || !phone || !city || !address || !payment){
-
-    alert("Please fill all required fields.");
-    return;
-  }
-
-  let message =
-`*AZORA NEW ORDER*
-
-*Customer Details*
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-City: ${city}
-Address: ${address}
-Postal Code: ${postal || "N/A"}
-
-*Products*`;
-
-  cart.forEach(item=>{
-    message +=
-`\n• ${item.name} × ${item.qty} = Rs. ${(item.price*item.qty).toLocaleString()}`;
-  });
-
-  message +=
-`\n\n*Total: Rs. ${cartTotal().toLocaleString()}*
-Payment: ${payment}
-Transaction ID: ${transaction || "N/A"}
-Order Notes: ${notes || "N/A"}
-
-Please confirm my order.`;
-
-  const url=
-    "https://wa.me/923044405550?text="+
-    encodeURIComponent(message);
-
-  window.open(url,"_blank");
-}
-
-
-/* =========================
-   MODALS
-========================= */
-
-function openModal(id){
-  document.getElementById(id).classList.add("active");
-}
-
-function closeModal(id){
-  document.getElementById(id).classList.remove("active");
-}
-
-document.querySelectorAll(".modal").forEach(modal=>{
-  modal.addEventListener("click",e=>{
-    if(e.target===modal){
-      modal.classList.remove("active");
-    }
-  });
-});
-
-
-/* =========================
-   ACCOUNT
-========================= */
-
-function saveAccount(){
-
-  const name=document.getElementById("userName").value;
-  const email=document.getElementById("userEmail").value;
-  const phone=document.getElementById("userPhone").value;
-
-  if(!name || !email || !phone){
-    alert("Please fill all fields.");
-    return;
-  }
-
-  localStorage.setItem(
-    "azoraUser",
-    JSON.stringify({name,email,phone})
-  );
-
-  document.getElementById("accountStatus").innerText =
-    "Account saved successfully.";
-
-}
-
-
-/* =========================
-   WISHLIST
-========================= */
-
-function wishlist(name){
-
-  let wishlist=
-    JSON.parse(localStorage.getItem("azoraWishlist") || "[]");
-
-  if(!wishlist.includes(name)){
-    wishlist.push(name);
-    localStorage.setItem(
-      "azoraWishlist",
-      JSON.stringify(wishlist)
-    );
-
-    alert(name+" added to wishlist.");
-  }else{
-    alert(name+" is already in wishlist.");
-  }
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-const products=[
-  "Royal Lawn Set",
-  "Ivory Embroidery",
-  "Noir Chiffon",
-  "Pearl Print",
-  "Royal Wash & Wear",
-  "Classic Cotton",
-  "Executive Fabric",
-  "Premium Suit Fabric",
-  "Little Star",
-  "Mini Classic",
-  "Festive Mini",
-  "Princess Print"
-];
-
-function searchProducts(){
-
-  const q=
-    document.getElementById("searchInput")
-    .value
-    .toLowerCase();
-
-  const results=
-    products.filter(x=>
-      x.toLowerCase().includes(q)
-    );
-
-  document.getElementById("searchResult").innerHTML=
-    results.length
-    ?
-    results.map(x=>
-      `<div style="
-        padding:12px 0;
-        border-bottom:1px solid #222;
-        color:#ddd">${x}</div>`
-    ).join("")
-    :
-    `<p style="color:#777">No products found.</p>`;
-}
-
-
-/* =========================
-   CATEGORY
-========================= */
-
-function filterProducts(category){
-
-  if(category==="Ladies"){
-    document.getElementById("ladies")
-      .scrollIntoView({behavior:"smooth"});
-  }
-
-  if(category==="Gents"){
-    document.getElementById("gents")
-      .scrollIntoView({behavior:"smooth"});
-  }
-
-}
-
-
-/* LOAD USER */
-(function(){
-
-  const user=
-    JSON.parse(localStorage.getItem("azoraUser") || "null");
-
-  if(user){
-
-    document.getElementById("userName").value=user.name;
-    document.getElementById("userEmail").value=user.email;
-    document.getElementById("userPhone").value=user.phone;
-
-  }
-
-})();
-
-</script>
-
-</body>
-</html>
+  <div class="catalogItem">
+    <div class="catalogCircle">
+      <img src="https://images.unspl
